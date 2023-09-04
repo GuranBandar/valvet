@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Globalization;
 using System.Web.UI;
+using Valvet.Objekt;
 
 namespace Valvet
 {

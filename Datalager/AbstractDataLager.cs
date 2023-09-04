@@ -1,6 +1,6 @@
 ﻿using GemensamService;
 
-namespace Valvet
+namespace Valvet.Datalager
 {
     /// <summary>
     /// Sätter upp connection till rätt databas, styrs från app.config 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading;
+using Valvet.Aktivitet;
+using Valvet.Objekt;
 
 namespace Valvet
 {

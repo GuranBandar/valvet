@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using Valvet.Datalager;
+using Valvet.Objekt;
 
-namespace Valvet
+namespace Valvet.Aktivitet
 {
     /// <summary>
     /// Klass för Användare
@@ -27,7 +29,6 @@ namespace Valvet
             AnvandareData anvandareData;
             AnvandareDS anvandareDS = new AnvandareDS();
             Anvandare anvandare = null;
-            Spelare spelare = null;
             try
             {
                 anvandareData = new AnvandareData();
@@ -37,25 +38,13 @@ namespace Valvet
                 {
                     //Inloggningen lyckades, skapa nu användarobjektet
                     anvandare = new Anvandare();
-                    spelare = new Spelare();
                     anvandare.AnvandarID = anvandareDS.Anvandare[0].AnvandarID;
                     anvandare.Anvandarnamn = anvandareDS.Anvandare[0].Anvandarnamn;
-                    anvandare.Anvandargrupp = anvandareDS.Anvandare[0].Anvandargrupp;
                     anvandare.Epostadress = (anvandareDS.Anvandare[0].IsEpostadressNull()) ?
                         string.Empty : anvandareDS.Anvandare[0].Epostadress;
                     anvandare.Losenord = anvandareDS.Anvandare[0].Losenord;
-                    anvandare.SenastInloggadDatum = anvandareDS.Anvandare[0].SenastByttLosenordDatum;
-                    anvandare.SenastByttLosenordDatum = anvandareDS.Anvandare[0].SenastByttLosenordDatum;
-                    anvandare.GIR = (anvandareDS.Anvandare[0].IsGIRNull()) ?
-                        string.Empty : anvandareDS.Anvandare[0].GIR;
-                    anvandare.WebBrowser = (anvandareDS.Anvandare[0].IsWebBrowserNull()) ?
-                        string.Empty : anvandareDS.Anvandare[0].WebBrowser;
-                    anvandare.Sprakkod = (anvandareDS.Anvandare[0].IsSprakkodNull()) ?
-                        "SE" : anvandareDS.Anvandare[0].Sprakkod;
-                    anvandare.Epostmeddelande = (anvandareDS.Anvandare[0].IsEpostmeddelandeNull()) ?
-                        string.Empty : anvandareDS.Anvandare[0].Epostmeddelande;
-                    anvandare.SpelarID = (anvandareDS.Anvandare[0].IsSpelarIDNull()) ?
-                        0 : anvandareDS.Anvandare[0].SpelarID;
+                    anvandare.SenastInloggadDatum = anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
+                    anvandare.SenastByttLosenordDatum = anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
 
                     //if (spelare.AktuelltSpelarID != 0)
                     //{ 
@@ -106,20 +95,10 @@ namespace Valvet
                 anvandare.Anvandarnamn = anvandareDS.Anvandare[0].Anvandarnamn;
                 anvandare.AnvandarID = anvandareDS.Anvandare[0].AnvandarID;
                 anvandare.Losenord = anvandareDS.Anvandare[0].Losenord;
-                anvandare.SpelarID = anvandareDS.Anvandare[0].SpelarID;
-                anvandare.SenastInloggadDatum = anvandareDS.Anvandare[0].SenastInloggadDatum;
-                anvandare.SenastByttLosenordDatum = anvandareDS.Anvandare[0].SenastByttLosenordDatum;
-                anvandare.Anvandargrupp = (anvandareDS.Anvandare[0].IsAnvandargruppNull())
-                    ? string.Empty : anvandareDS.Anvandare[0].Anvandargrupp;
+                anvandare.SenastInloggadDatum = anvandareDS.Anvandare[0].SenastInloggadDatum.ToString();
+                anvandare.SenastByttLosenordDatum = anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
                 anvandare.Epostadress = (anvandareDS.Anvandare[0].IsEpostadressNull())
                     ? string.Empty : anvandareDS.Anvandare[0].Epostadress;
-                anvandare.GIR = (anvandareDS.Anvandare[0].IsGIRNull())
-                    ? string.Empty : anvandareDS.Anvandare[0].GIR;
-                anvandare.WebBrowser = (anvandareDS.Anvandare[0].IsWebBrowserNull())
-                    ? string.Empty : anvandareDS.Anvandare[0].WebBrowser;
-                anvandare.Sprakkod = anvandareDS.Anvandare[0].Sprakkod;
-                anvandare.Epostmeddelande = (anvandareDS.Anvandare[0].IsEpostmeddelandeNull())
-                    ? string.Empty : anvandareDS.Anvandare[0].Epostmeddelande;
             }
             return anvandare;
         }
@@ -163,16 +142,9 @@ namespace Valvet
                         AnvandarID = (int)rad["AnvandarID"],
                         Anvandarnamn = rad["AnvandarNamn"].ToString(),
                         Losenord = rad["Losenord"].ToString(),
-                        SpelarID = (int)rad["SpelarID"],
-                        SpelarNamn = rad["SpelareNamn"].ToString(),
                         SenastInloggadDatum = rad["SenastInloggadDatum"].ToString(),
                         SenastByttLosenordDatum = rad["SenastByttLosenordDatum"].ToString(),
-                        Anvandargrupp = rad["Anvandargrupp"].ToString(),
-                        Epostadress = rad["Epostadress"].ToString(),
-                        GIR = rad["GIR"].ToString(),
-                        WebBrowser = rad["WebBrowser"].ToString(),
-                        Sprakkod = rad["Sprakkod"].ToString(),
-                        Epostmeddelande = rad["Epostmeddelande"].ToString()
+                        Epostadress = rad["Epostadress"].ToString()
                     });
                 }
                 return Anvandare;
@@ -216,16 +188,9 @@ namespace Valvet
                         AnvandarID = (int)rad["AnvandarID"],
                         Anvandarnamn = rad["AnvandarNamn"].ToString(),
                         Losenord = rad["Losenord"].ToString(),
-                        SpelarID = (int)rad["SpelarID"],
-                        SpelarNamn = rad["SpelareNamn"].ToString(),
                         SenastInloggadDatum = rad["SenastInloggadDatum"].ToString(),
                         SenastByttLosenordDatum = rad["SenastByttLosenordDatum"].ToString(),
-                        Anvandargrupp = rad["Anvandargrupp"].ToString(),
-                        Epostadress = rad["Epostadress"].ToString(),
-                        GIR = rad["GIR"].ToString(),
-                        WebBrowser = rad["WebBrowser"].ToString(),
-                        Sprakkod = rad["Sprakkod"].ToString(),
-                        Epostmeddelande = rad["Epostmeddelande"].ToString()
+                        Epostadress = rad["Epostadress"].ToString()
                     });
                 }
                 return Anvandare;

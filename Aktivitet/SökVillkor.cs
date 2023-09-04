@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Valvet
+namespace Valvet.Aktivitet
 {
     /// <summary>
     /// Klass för skapande av wherevillkor för statistiksökningar

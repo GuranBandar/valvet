@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Valvet
+namespace Valvet.Objekt
 {
     /// <summary>
     /// Anvandare innehåller information om en användare

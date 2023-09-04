@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using Valvet.Objekt;
 
-namespace Valvet
+namespace Valvet.Datalager
 {
     /// <summary>
     /// Datalagerklass för Användare
@@ -60,7 +61,7 @@ namespace Valvet
                 };
                 DatabasAccess.FyllEnkeltDataSet(sql, dbParameters, anvandareDS);
             }
-            catch (HookerException hex)
+            catch (ValvetException hex)
             {
                 throw hex;
             }
@@ -209,15 +210,9 @@ namespace Valvet
                 {
                     new DatabasParameters("@Anvandarnamn", DataTyp.VarChar, anvandare.Anvandarnamn.ToString()),
                     new DatabasParameters("@Losenord", DataTyp.VarChar, anvandare.Losenord.ToString()),
-                    new DatabasParameters("@SpelarID", DataTyp.Int, anvandare.SpelarID.ToString()),
                     new DatabasParameters("@SenastInloggadDatum", DataTyp.VarChar, anvandare.SenastByttLosenordDatum.ToString()),
                     new DatabasParameters("@SenastByttLosenordDatum", DataTyp.VarChar, anvandare.SenastByttLosenordDatum.ToString()),
-                    new DatabasParameters("@Anvandargrupp", DataTyp.Char, anvandare.Anvandargrupp.ToString()),
-                    new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString()),
-                    new DatabasParameters("@GIR", DataTyp.Char, anvandare.GIR.ToString()),
-                    new DatabasParameters("@WebBrowser", DataTyp.VarChar, anvandare.WebBrowser.ToString()),
-                    new DatabasParameters("@Sprakkod", DataTyp.Char, anvandare.Sprakkod.ToString()),
-                    new DatabasParameters("@Epostmeddelande", DataTyp.Char, anvandare.Epostmeddelande.ToString())
+                    new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString())
                 };
                 DatabasAccess.RunSql(sql, dbParameters);
                 sql = "SELECT LAST_INSERT_ID()";
@@ -268,15 +263,9 @@ namespace Valvet
                     new DatabasParameters("@AnvandarID", DataTyp.Int, anvandare.AnvandarID.ToString()),
                     new DatabasParameters("@Anvandarnamn", DataTyp.VarChar, anvandare.Anvandarnamn.ToString()),
                     new DatabasParameters("@Losenord", DataTyp.VarChar, anvandare.Losenord.ToString()),
-                    new DatabasParameters("@SpelarID", DataTyp.Int, anvandare.SpelarID.ToString()),
                     new DatabasParameters("@SenastInloggadDatum", DataTyp.VarChar, anvandare.SenastInloggadDatum.ToString()),
                     new DatabasParameters("@SenastByttLosenordDatum", DataTyp.VarChar, anvandare.SenastByttLosenordDatum.ToString()),
-                    new DatabasParameters("@Anvandargrupp", DataTyp.Char, anvandare.Anvandargrupp.ToString()),
-                    new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString()),
-                    new DatabasParameters("@GIR", DataTyp.Char, anvandare.GIR.ToString()),
-                    new DatabasParameters("@WebBrowser", DataTyp.VarChar, anvandare.WebBrowser.ToString()),
-                    new DatabasParameters("@Sprakkod", DataTyp.Char, anvandare.Sprakkod.ToString()),
-                    new DatabasParameters("@Epostmeddelande", DataTyp.Char, anvandare.Epostmeddelande.ToString())
+                    new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString())
                 };
                 DatabasAccess.RunSql(sql, dbParameters);
                 DatabasAccess.BekräftaTransaktion();
