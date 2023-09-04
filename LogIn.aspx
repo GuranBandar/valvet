@@ -22,7 +22,7 @@
                     <tr></tr>
                     <tr>
                         <td>
-                            <h3>Logga in på Quintagolfers</h3>
+                            <h3>Logga in till Valvet</h3>
                         </td>
                     </tr>
                     <tr>

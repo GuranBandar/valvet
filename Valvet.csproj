@@ -128,6 +128,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="App.Master" />
+    <Content Include="Images\Quinta-da-Ria.png" />
+    <Content Include="mystyle.css" />
     <Content Include="Objekt\AnvandareDS.xsc">
       <DependentUpon>AnvandareDS.xsd</DependentUpon>
     </Content>

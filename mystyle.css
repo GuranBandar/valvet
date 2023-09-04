@@ -1,0 +1,104 @@
+﻿body {
+    background-image: url('images/Quinta-da-Ria.png');
+    font-size: 10pt;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    cursor: url('images/Golf Cart Filled.cur');
+}
+
+.ButtonClass {
+    cursor: url('images/Golf Cart Filled.cur');
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    line-height: 20pt;
+    font-weight: bold;
+    margin-bottom: 14pt;
+    color: #000000;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    line-height: 18pt;
+    font-weight: bold;
+    margin-bottom: 10pt;
+    color: #2B4A90;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    line-height: 16pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+    color: #000000;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    font-weight: bold;
+    line-height: 14pt;
+    margin-bottom: 0pt;
+    color: #2B4A90;
+}
+
+h5 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    line-height: 16pt;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 0pt;
+    color: #000000;
+}
+
+h6 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    line-height: 16pt;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 0pt;
+    color: #000000;
+}
+
+.main-content {
+    float: left;
+    width: 570px;
+    margin: 0 40px 0 0;
+}
+
+DIV.form {
+    overflow: hidden;
+}
+
+LABEL {
+    display: block;
+    font-weight: bold;
+}
+
+FIELDSET.group {
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid white;
+}
+
+FIELDSET.submit {
+    margin-top: 30px;
+}
+
+b {
+    font-weight: bold;
+}
+/* Set paragraph text to be bold. */
+p {
+    border: 2px solid powderblue;
+    margin: 50px;
+    padding: 30px;
+}

@@ -6,7 +6,7 @@ using Valvet.Objekt;
 namespace Valvet
 {
     /// <summary>
-    /// Klass för att logga in på Bokningswebben
+    /// Klass för att logga in till Valvet
     /// </summary>
     public partial class LogIn : PageBase
     {
