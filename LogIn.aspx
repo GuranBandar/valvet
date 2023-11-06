@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="LogIn" Language="C#" MasterPageFile="~/App.Master"
-    AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="Valvet.LogIn" %>
+    AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="Valvetwebb.LogIn" %>
 
 <asp:Content ContentPlaceHolderID="Main" runat="server">
     <script type="text/javascript">

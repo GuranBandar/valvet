@@ -3,7 +3,8 @@ using System.Configuration;
 using System.Text;
 using Valvet.Objekt;
 
-namespace Valvet
+namespace Valvetwebb
+
 {
     /// <summary>
     /// Master web page

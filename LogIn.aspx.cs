@@ -3,7 +3,8 @@ using System.Threading;
 using Valvet.Aktivitet;
 using Valvet.Objekt;
 
-namespace Valvet
+namespace Valvetwebb
+
 {
     /// <summary>
     /// Klass för att logga in till Valvet
