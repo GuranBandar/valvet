@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Valvet.Objekt {
+namespace Valvetwebb.Aktivitet {
     
     
     /// <summary>
@@ -291,6 +291,8 @@ namespace Valvet.Objekt {
             
             private global::System.Data.DataColumn columnEpostadress;
             
+            private global::System.Data.DataColumn columnAktiv;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public AnvandareDataTable() {
@@ -374,6 +376,14 @@ namespace Valvet.Objekt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AktivColumn {
+                get {
+                    return this.columnAktiv;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace Valvet.Objekt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AnvandareRow AddAnvandareRow(string Anvandarnamn, string Losenord, System.DateTime SenastInloggadDatum, System.DateTime SenastByttLosenordDatum, string Epostadress) {
+            public AnvandareRow AddAnvandareRow(string Anvandarnamn, string Losenord, System.DateTime SenastInloggadDatum, System.DateTime SenastByttLosenordDatum, string Epostadress, string Aktiv) {
                 AnvandareRow rowAnvandareRow = ((AnvandareRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -417,7 +427,8 @@ namespace Valvet.Objekt {
                         Losenord,
                         SenastInloggadDatum,
                         SenastByttLosenordDatum,
-                        Epostadress};
+                        Epostadress,
+                        Aktiv};
                 rowAnvandareRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAnvandareRow);
                 return rowAnvandareRow;
@@ -453,6 +464,7 @@ namespace Valvet.Objekt {
                 this.columnSenastInloggadDatum = base.Columns["SenastInloggadDatum"];
                 this.columnSenastByttLosenordDatum = base.Columns["SenastByttLosenordDatum"];
                 this.columnEpostadress = base.Columns["Epostadress"];
+                this.columnAktiv = base.Columns["Aktiv"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,6 +482,8 @@ namespace Valvet.Objekt {
                 base.Columns.Add(this.columnSenastByttLosenordDatum);
                 this.columnEpostadress = new global::System.Data.DataColumn("Epostadress", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEpostadress);
+                this.columnAktiv = new global::System.Data.DataColumn("Aktiv", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAktiv);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAnvandarID}, true));
                 this.columnAnvandarID.AutoIncrement = true;
@@ -483,6 +497,7 @@ namespace Valvet.Objekt {
                 this.columnLosenord.AllowDBNull = false;
                 this.columnLosenord.MaxLength = 50;
                 this.columnEpostadress.MaxLength = 150;
+                this.columnAktiv.MaxLength = 1;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -706,6 +721,22 @@ namespace Valvet.Objekt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Aktiv {
+                get {
+                    try {
+                        return ((string)(this[this.tableAnvandare.AktivColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Aktiv\' in table \'Anvandare\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAnvandare.AktivColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSenastInloggadDatumNull() {
                 return this.IsNull(this.tableAnvandare.SenastInloggadDatumColumn);
             }
@@ -738,6 +769,18 @@ namespace Valvet.Objekt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEpostadressNull() {
                 this[this.tableAnvandare.EpostadressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAktivNull() {
+                return this.IsNull(this.tableAnvandare.AktivColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAktivNull() {
+                this[this.tableAnvandare.AktivColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -776,7 +819,7 @@ namespace Valvet.Objekt {
         }
     }
 }
-namespace Valvet.Objekt.AnvandareDSTableAdapters {
+namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
     
     
     /// <summary>
@@ -906,6 +949,7 @@ namespace Valvet.Objekt.AnvandareDSTableAdapters {
             tableMapping.ColumnMappings.Add("SenastInloggadDatum", "SenastInloggadDatum");
             tableMapping.ColumnMappings.Add("SenastByttLosenordDatum", "SenastByttLosenordDatum");
             tableMapping.ColumnMappings.Add("Epostadress", "Epostadress");
+            tableMapping.ColumnMappings.Add("Aktiv", "Aktiv");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -915,23 +959,25 @@ namespace Valvet.Objekt.AnvandareDSTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Anvandare] ([Anvandarnamn], [Losenord], [SenastInloggadDatum]," +
-                " [SenastByttLosenordDatum], [Epostadress]) VALUES (@Anvandarnamn, @Losenord, @Se" +
-                "nastInloggadDatum, @SenastByttLosenordDatum, @Epostadress)";
+                " [SenastByttLosenordDatum], [Epostadress], [Aktiv]) VALUES (@Anvandarnamn, @Lose" +
+                "nord, @SenastInloggadDatum, @SenastByttLosenordDatum, @Epostadress, @Aktiv)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Losenord", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Losenord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SenastInloggadDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SenastInloggadDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SenastByttLosenordDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SenastByttLosenordDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Epostadress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Epostadress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aktiv", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aktiv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Anvandare] SET [Anvandarnamn] = @Anvandarnamn, [Losenord] = @Losenord, [SenastInloggadDatum] = @SenastInloggadDatum, [SenastByttLosenordDatum] = @SenastByttLosenordDatum, [Epostadress] = @Epostadress WHERE (([AnvandarID] = @Original_AnvandarID))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Anvandare] SET [Anvandarnamn] = @Anvandarnamn, [Losenord] = @Losenord, [SenastInloggadDatum] = @SenastInloggadDatum, [SenastByttLosenordDatum] = @SenastByttLosenordDatum, [Epostadress] = @Epostadress, [Aktiv] = @Aktiv WHERE (([AnvandarID] = @Original_AnvandarID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Losenord", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Losenord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SenastInloggadDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SenastInloggadDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SenastByttLosenordDatum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SenastByttLosenordDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Epostadress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Epostadress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aktiv", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aktiv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -949,7 +995,7 @@ namespace Valvet.Objekt.AnvandareDSTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT AnvandarID, Anvandarnamn, Losenord, SenastInloggadDatum, SenastByttLosenor" +
-                "dDatum, Epostadress FROM dbo.Anvandare";
+                "dDatum, Epostadress, Aktiv FROM dbo.Anvandare";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1032,7 +1078,7 @@ namespace Valvet.Objekt.AnvandareDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Anvandarnamn, string Losenord, global::System.Nullable<global::System.DateTime> SenastInloggadDatum, global::System.Nullable<global::System.DateTime> SenastByttLosenordDatum, string Epostadress) {
+        public virtual int Insert(string Anvandarnamn, string Losenord, global::System.Nullable<global::System.DateTime> SenastInloggadDatum, global::System.Nullable<global::System.DateTime> SenastByttLosenordDatum, string Epostadress, string Aktiv) {
             if ((Anvandarnamn == null)) {
                 throw new global::System.ArgumentNullException("Anvandarnamn");
             }
@@ -1063,6 +1109,12 @@ namespace Valvet.Objekt.AnvandareDSTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Epostadress));
             }
+            if ((Aktiv == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Aktiv));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1083,7 +1135,7 @@ namespace Valvet.Objekt.AnvandareDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Anvandarnamn, string Losenord, global::System.Nullable<global::System.DateTime> SenastInloggadDatum, global::System.Nullable<global::System.DateTime> SenastByttLosenordDatum, string Epostadress, int Original_AnvandarID) {
+        public virtual int Update(string Anvandarnamn, string Losenord, global::System.Nullable<global::System.DateTime> SenastInloggadDatum, global::System.Nullable<global::System.DateTime> SenastByttLosenordDatum, string Epostadress, string Aktiv, int Original_AnvandarID) {
             if ((Anvandarnamn == null)) {
                 throw new global::System.ArgumentNullException("Anvandarnamn");
             }
@@ -1114,7 +1166,13 @@ namespace Valvet.Objekt.AnvandareDSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Epostadress));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_AnvandarID));
+            if ((Aktiv == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Aktiv));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_AnvandarID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

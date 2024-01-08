@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using Valvet.Datalager;
-using Valvet.Objekt;
+using Valvetwebb.Datalager;
+using Valvetwebb.Kontroller;
+using Valvetwebb.Objekt;
 
-namespace Valvet.Aktivitet
+namespace Valvetwebb.Aktivitet
 {
     /// <summary>
     /// Klass för Användare
@@ -43,31 +44,11 @@ namespace Valvet.Aktivitet
                     anvandare.Epostadress = (anvandareDS.Anvandare[0].IsEpostadressNull()) ?
                         string.Empty : anvandareDS.Anvandare[0].Epostadress;
                     anvandare.Losenord = anvandareDS.Anvandare[0].Losenord;
-                    anvandare.SenastInloggadDatum = anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
-                    anvandare.SenastByttLosenordDatum = anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
-
-                    //if (spelare.AktuelltSpelarID != 0)
-                    //{ 
-                    ////och läs nu aktuell Anvandare för att komplettera användarobjektet
-                    //SpelareAktivitet spelareAktivitet = new SpelareAktivitet();
-                    //spelare = spelareAktivitet.HämtaSpelare(spelare.AktuelltSpelarID);
-                    //if (spelare != null)
-                    //{
-                    //    anvandare.AktuelltSpelarID = spelare.AktuelltSpelarID;
-                    //    anvandare.Namn = spelare.Namn;
-                    //    anvandare.ExaktHcp = spelare.ExaktHcp;
-                    //    anvandare.Klass = spelare.Klass;
-                    //    anvandare.Kön = spelare.Kön;
-                    //    anvandare.Revisionsdatum = spelare.Revisionsdatum;
-                    //    anvandare.HemmabanaNr = spelare.HemmabanaNr;
-                    //    anvandare.GolfID = spelare.GolfID;
-                    //    anvandare.UppdatDatum = spelare.UppdatDatum;
-                    //    if (spelare.GolfklubbNr != 0)
-                    //    {
-                    //        anvandare.GolfklubbNr = spelare.GolfklubbNr;
-                    //    }
-                    //}
-                    //}
+                    anvandare.SenastInloggadDatum = (anvandareDS.Anvandare[0].IsSenastInloggadDatumNull()) ?
+                        string.Empty : anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
+                    anvandare.SenastByttLosenordDatum = (anvandareDS.Anvandare[0].IsSenastByttLosenordDatumNull()) ?
+                        string.Empty : anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
+                    anvandare.Aktiv = anvandareDS.Anvandare[0].Aktiv.ToString();
                 }
             }
             catch (Exception ex)
@@ -95,10 +76,13 @@ namespace Valvet.Aktivitet
                 anvandare.Anvandarnamn = anvandareDS.Anvandare[0].Anvandarnamn;
                 anvandare.AnvandarID = anvandareDS.Anvandare[0].AnvandarID;
                 anvandare.Losenord = anvandareDS.Anvandare[0].Losenord;
-                anvandare.SenastInloggadDatum = anvandareDS.Anvandare[0].SenastInloggadDatum.ToString();
-                anvandare.SenastByttLosenordDatum = anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
+                anvandare.SenastInloggadDatum = (anvandareDS.Anvandare[0].IsSenastInloggadDatumNull()) ?
+                    string.Empty : anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
+                anvandare.SenastByttLosenordDatum = (anvandareDS.Anvandare[0].IsSenastByttLosenordDatumNull()) ?
+                    string.Empty : anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
                 anvandare.Epostadress = (anvandareDS.Anvandare[0].IsEpostadressNull())
                     ? string.Empty : anvandareDS.Anvandare[0].Epostadress;
+                anvandare.Aktiv = anvandareDS.Anvandare[0].Aktiv.ToString();
             }
             return anvandare;
         }
@@ -109,7 +93,7 @@ namespace Valvet.Aktivitet
         /// <param name="namn">Aktuell namn</param>
         /// <param name="anvandarGrupp">Ev anvädargrupp i sökningen</param>
         /// <returns>Typat dataset med efterfrågat data</returns>
-        public List<Anvandare> SökAnvandare(string namn, string anvandarGrupp)
+        public List<Anvandare> SökAnvandare(string anvandarnamn)
         {
             DataSet anvandareDS = new DataSet();
             AnvandareData AnvandareData = new AnvandareData();
@@ -118,14 +102,9 @@ namespace Valvet.Aktivitet
             string sql = "";
             try
             {
-                if (namn.ToString() != "")
+                if (anvandarnamn.ToString() != "")
                 {
-                    WhereMedLikeEfter(namn, "a.Anvandarnamn", ref sqlSok, ref antArgument);
-                }
-
-                if (anvandarGrupp.ToString() != "")
-                {
-                    WhereMedLikeEfter(anvandarGrupp, "a.Anvandargrupp", ref sqlSok, ref antArgument);
+                    WhereMedLikeEfter(anvandarnamn, "a.Anvandarnamn", ref sqlSok, ref antArgument);
                 }
 
                 if (antArgument > 0)
@@ -144,53 +123,8 @@ namespace Valvet.Aktivitet
                         Losenord = rad["Losenord"].ToString(),
                         SenastInloggadDatum = rad["SenastInloggadDatum"].ToString(),
                         SenastByttLosenordDatum = rad["SenastByttLosenordDatum"].ToString(),
-                        Epostadress = rad["Epostadress"].ToString()
-                    });
-                }
-                return Anvandare;
-            }
-            catch (ValvetException)
-            {
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// Söker rad/-er från tabellen Anvandare i aktuell databas med angivet sökvillkor.
-        /// </summary>
-        /// <param name="namn">Aktuell namn</param>
-        /// <returns>Typat dataset med efterfrågat data</returns>
-        public List<Anvandare> SökSpelareIAnvandare(string namn)
-        {
-            DataSet anvandareDS = new DataSet();
-            AnvandareData AnvandareData = new AnvandareData();
-            short antArgument = 0;
-            string sqlSok = "";
-            string sql = "";
-            try
-            {
-                if (namn.ToString() != "")
-                {
-                    WhereMedLikeEfter(namn, "s.Namn", ref sqlSok, ref antArgument);
-                }
-
-                if (antArgument > 0)
-                {
-                    sql = sql + " WHERE " + sqlSok;
-                }
-
-                anvandareDS = AnvandareData.SökAnvandare(sql);
-                List<Anvandare> Anvandare = new List<Anvandare>(anvandareDS.Tables["Anvandare"].Rows.Count);
-                foreach (DataRow rad in anvandareDS.Tables["Anvandare"].Rows)
-                {
-                    Anvandare.Add(new Anvandare()
-                    {
-                        AnvandarID = (int)rad["AnvandarID"],
-                        Anvandarnamn = rad["AnvandarNamn"].ToString(),
-                        Losenord = rad["Losenord"].ToString(),
-                        SenastInloggadDatum = rad["SenastInloggadDatum"].ToString(),
-                        SenastByttLosenordDatum = rad["SenastByttLosenordDatum"].ToString(),
-                        Epostadress = rad["Epostadress"].ToString()
+                        Epostadress = rad["Epostadress"].ToString(),
+                        Aktiv = rad["Aktiv"].ToString()
                     });
                 }
                 return Anvandare;
@@ -236,6 +170,7 @@ namespace Valvet.Aktivitet
         /// <summary>
         ///     Metoden kollar informationen innan uppdatering ska göras
         /// </summary>
+        /// <param name="anvandare">Objekt Anvandare som ska kollas</param>
         /// <param name="Golfklubb">Golfklubbobjekt med informationen som ska kollas</param>
         /// <param name="felID">Ev felID som returneras</param>
         /// <param name="felmeddelande">Ev felmeddelande som returneras</param>

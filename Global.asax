@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Valvet.Global" Language="C#" %>
+<%@ Application Codebehind="Global.asax.cs" Inherits="Valvetwebb.Global" Language="C#" %>

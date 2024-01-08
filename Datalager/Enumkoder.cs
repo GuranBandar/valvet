@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Valvet.Datalager
+namespace Valvetwebb.Datalager
 {
     /// <summary>
     /// Alla datatyper

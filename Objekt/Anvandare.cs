@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Valvet.Objekt
+namespace Valvetwebb.Objekt
 {
     /// <summary>
     /// Anvandare innehåller information om en användare
@@ -34,11 +34,15 @@ namespace Valvet.Objekt
         /// </summary>
         public string SenastByttLosenordDatum { get; set; }
 
-
         /// <summary>
         /// Användarens epostadress
         /// </summary>
         public string Epostadress { get; set; }
+
+        /// <summary>
+        /// Användaren aktiv
+        /// </summary>
+        public string Aktiv { get; set; }
         #endregion
 
         /// <summary>

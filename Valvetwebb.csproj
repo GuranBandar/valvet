@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Valvet</RootNamespace>
-    <AssemblyName>Valvet</AssemblyName>
+    <RootNamespace>Valvetwebb</RootNamespace>
+    <AssemblyName>Valvetwebb</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -131,15 +131,15 @@
     <Content Include="Images\Quinta-da-Ria.png" />
     <Content Include="Images\Valvet.jpeg" />
     <Content Include="mystyle.css" />
-    <Content Include="Objekt\AnvandareDS.xsc">
+    <Content Include="Aktivitet\AnvandareDS.xsc">
       <DependentUpon>AnvandareDS.xsd</DependentUpon>
     </Content>
-    <None Include="Objekt\AnvandareDS.xsd">
+    <None Include="Aktivitet\AnvandareDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AnvandareDS.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Objekt\AnvandareDS.xss">
+    <Content Include="Aktivitet\AnvandareDS.xss">
       <DependentUpon>AnvandareDS.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -180,6 +180,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aktivitet\AnvandareAktivitet.cs" />
+    <Compile Include="Aktivitet\AnvandareDS.cs">
+      <DependentUpon>AnvandareDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Aktivitet\AnvandareDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnvandareDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Aktivitet\SökVillkor.cs" />
     <Compile Include="App.Master.cs">
       <DependentUpon>App.Master</DependentUpon>
@@ -226,14 +234,6 @@
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Objekt\Anvandare.cs" />
-    <Compile Include="Objekt\AnvandareDS.cs">
-      <DependentUpon>AnvandareDS.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Objekt\AnvandareDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AnvandareDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

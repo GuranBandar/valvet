@@ -1,7 +1,7 @@
 ﻿using GemensamService;
 using System;
 
-namespace Valvet
+namespace Valvetwebb.Kontroller
 {
     /// <summary>
     /// Summary description for HookerException.

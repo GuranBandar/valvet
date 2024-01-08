@@ -1,6 +1,7 @@
 ﻿using System;
+using Valvetwebb.Kontroller;
 
-namespace Valvet.Aktivitet
+namespace Valvetwebb.Aktivitet
 {
     /// <summary>
     /// Klass för skapande av wherevillkor för statistiksökningar

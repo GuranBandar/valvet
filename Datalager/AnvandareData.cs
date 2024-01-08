@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Valvet.Objekt;
+using Valvetwebb.Objekt;
+using Valvetwebb.Aktivitet;
+using Valvetwebb.Kontroller;
 
-namespace Valvet.Datalager
+namespace Valvetwebb.Datalager
 {
     /// <summary>
     /// Datalagerklass för Användare
@@ -73,6 +75,34 @@ namespace Valvet.Datalager
         }
 
         /// <summary>
+        /// Hämtar rad från tabellen Anvandare i aktuell databas med angiven nyckel.
+        /// </summary>
+        /// <param name="sqlSok">Eventuellt where-villkor</param>
+        /// <returns>Typat dataset med efterfrågat data</returns>
+        public DataSet SökAnvandare(string sqlSok)
+        {
+            DataSet anvandareDS = new DataSet();
+
+            try
+            {
+                string sql = "SELECT a.* FROM Anvandare a " +
+                    sqlSok.ToString();
+                anvandareDS = DatabasAccess.RunSql(sql);
+                anvandareDS.Tables[0].TableName = "Anvandare";
+            }
+            catch (ValvetException hex)
+            {
+                throw hex;
+            }
+            finally
+            {
+                DatabasAccess.Dispose();
+            }
+            return anvandareDS;
+        }
+
+
+        /// <summary>
         /// Datum för senaste inloggning uppdateras
         /// </summary>
         /// <param name="anvandarID">Aktuellt användarID</param>
@@ -107,37 +137,6 @@ namespace Valvet.Datalager
             {
                 DatabasAccess.ÅngraTransaktion();
                 throw ex;
-            }
-            finally
-            {
-                DatabasAccess.Dispose();
-            }
-        }
-
-        /// <summary>
-        /// Hämtar rad/-er från tabellen Bana i aktuell databas med angiven nyckel.
-        /// </summary>
-        /// <param name="sqlSok">Eventuellt where-villkor</param>
-        /// <returns>Typat dataset med efterfrågat data</returns>
-        public DataSet SökAnvandare(string sqlSok)
-        {
-            DataSet anvandareDS = new DataSet();
-            string sql;
-
-            try
-            {
-                sql = "SELECT a.*, s.Namn AS SpelareNamn " +
-                        "FROM Anvandare a " +
-                        "LEFT OUTER JOIN Spelare s ON s.SpelarId = a.SpelarID" +
-                    sqlSok.ToString() +
-                    " ORDER BY a.Anvandarnamn";
-                anvandareDS = DatabasAccess.RunSql(sql);
-                anvandareDS.Tables[0].TableName = "Anvandare";
-                return anvandareDS;
-            }
-            catch (ValvetException hex)
-            {
-                throw hex;
             }
             finally
             {
@@ -198,21 +197,22 @@ namespace Valvet.Datalager
             try
             {
                 DatabasAccess.SkapaTransaktion();
-                sql = "INSERT INTO Anvandare(Anvandarnamn, Losenord, SpelarID, " +
+                sql = "INSERT INTO Anvandare(Anvandarnamn, Losenord, " +
                     "SenastInloggadDatum, " +
-                    "SenastByttLosenordDatum, Anvandargrupp, Epostadress, GIR, WebBrowser, " +
-                    "Sprakkod, Epostmeddelande)" +
+                    "SenastByttLosenordDatum, Epostadress, " +
+                    "Aktiv)" +
                     "VALUES " +
-                    "(@Anvandarnamn, @Losenord, @SpelarID, @SenastInloggadDatum, " +
-                    "@SenastByttLosenordDatum, @Anvandargrupp, @Epostadress, @GIR, @WebBrowser, " +
-                    "@Sprakkod, @Epostmeddelande)";
+                    "(@Anvandarnamn, @Losenord, @SenastInloggadDatum, " +
+                    "@SenastByttLosenordDatum, @Epostadress, " +
+                    "@Aktiv)";
                 List<DatabasParameters> dbParameters = new List<DatabasParameters>()
                 {
                     new DatabasParameters("@Anvandarnamn", DataTyp.VarChar, anvandare.Anvandarnamn.ToString()),
                     new DatabasParameters("@Losenord", DataTyp.VarChar, anvandare.Losenord.ToString()),
                     new DatabasParameters("@SenastInloggadDatum", DataTyp.VarChar, anvandare.SenastByttLosenordDatum.ToString()),
                     new DatabasParameters("@SenastByttLosenordDatum", DataTyp.VarChar, anvandare.SenastByttLosenordDatum.ToString()),
-                    new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString())
+                    new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString()),
+                    new DatabasParameters("@Aktiv", DataTyp.VarChar, anvandare.Aktiv.ToString())
                 };
                 DatabasAccess.RunSql(sql, dbParameters);
                 sql = "SELECT LAST_INSERT_ID()";
@@ -253,10 +253,10 @@ namespace Valvet.Datalager
             {
                 sql = "UPDATE Anvandare " +
                     "SET Anvandarnamn = @Anvandarnamn, Losenord = @Losenord, " +
-                    "SpelarID = @SpelarID, SenastInloggadDatum = @SenastInloggadDatum, " +
+                    "SenastInloggadDatum = @SenastInloggadDatum, " +
                     "SenastByttLosenordDatum = @SenastByttLosenordDatum, " +
-                    "Anvandargrupp = @Anvandargrupp, Epostadress = @Epostadress, GIR = @GIR, WebBrowser = @WebBrowser, " +
-                    "Sprakkod = @Sprakkod, Epostmeddelande = @Epostmeddelande " +
+                    "Epostadress = @Epostadress, " +
+                    "Aktiv = @Aktiv " +
                     "WHERE AnvandarID = @AnvandarID";
                 List<DatabasParameters> dbParameters = new List<DatabasParameters>()
                 {
@@ -265,7 +265,8 @@ namespace Valvet.Datalager
                     new DatabasParameters("@Losenord", DataTyp.VarChar, anvandare.Losenord.ToString()),
                     new DatabasParameters("@SenastInloggadDatum", DataTyp.VarChar, anvandare.SenastInloggadDatum.ToString()),
                     new DatabasParameters("@SenastByttLosenordDatum", DataTyp.VarChar, anvandare.SenastByttLosenordDatum.ToString()),
-                    new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString())
+                    new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString()),
+                    new DatabasParameters("@Aktiv", DataTyp.VarChar, anvandare.Aktiv.ToString())
                 };
                 DatabasAccess.RunSql(sql, dbParameters);
                 DatabasAccess.BekräftaTransaktion();
