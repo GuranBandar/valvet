@@ -127,9 +127,16 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="App.Master" />
-    <Content Include="Images\Quinta-da-Ria.png" />
     <Content Include="Images\Valvet.jpeg" />
+    <Content Include="MessageBox.aspx" />
     <Content Include="mystyle.css" />
+    <Content Include="LogIn.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Aktivitet\AnvandareDS.xsc">
       <DependentUpon>AnvandareDS.xsd</DependentUpon>
     </Content>
@@ -141,13 +148,6 @@
     <Content Include="Aktivitet\AnvandareDS.xss">
       <DependentUpon>AnvandareDS.xsd</DependentUpon>
     </Content>
-    <Content Include="LogIn.aspx" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.esm.js" />
-    <Content Include="Scripts\bootstrap.esm.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -183,9 +183,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aktivitet\AnvandareAktivitet.cs" />
-    <Compile Include="Aktivitet\AnvandareDS.cs">
-      <DependentUpon>AnvandareDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Aktivitet\AnvandareDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -235,6 +232,13 @@
     </Compile>
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBox.aspx.cs">
+      <DependentUpon>MessageBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MessageBox.aspx.designer.cs">
+      <DependentUpon>MessageBox.aspx</DependentUpon>
     </Compile>
     <Compile Include="Objekt\Anvandare.cs" />
     <Compile Include="PageBase.cs">

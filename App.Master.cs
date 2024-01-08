@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Text;
+using System.Web;
 using Valvetwebb.Objekt;
 
 namespace Valvetwebb
@@ -12,7 +13,6 @@ namespace Valvetwebb
     public partial class App : System.Web.UI.MasterPage
     {
         private string navigateUrl;
-        PageBase pageBase = new PageBase();
 
         #region "Properties"
 
@@ -59,7 +59,7 @@ namespace Valvetwebb
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            //navigateUrl = ConfigurationManager.AppSettings["BounceUrl"].ToString();
+            navigateUrl = "LogIn.aspx";
 
             CreateWebUser();
 
@@ -72,6 +72,9 @@ namespace Valvetwebb
         /// <param name="e">Arguments</param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetNoStore();
             //string myPageUrl;
             //string logOutUrl;
             //string statJS;

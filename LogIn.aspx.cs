@@ -26,9 +26,18 @@ namespace Valvetwebb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblErrorMessage.Visible = false;
-            txtAnvandarNamn.Focus();
-            GetCurrentCulture();
+            if (!IsPostBack)
+            {
+                lblErrorMessage.Visible = false;
+                txtAnvandarNamn.Text = string.Empty;
+                txtLosenord.Text = string.Empty;
+                txtAnvandarNamn.Focus();
+                GetCurrentCulture();
+                Session["MessageTitle"] = "Inloggning";
+                Session["MessageText"] = string.Empty;
+                Session["Referencepage"] = "LogIn.aspx";
+                Session["Buttons"] = "OK";
+            }
         }
 
         protected void knappOK_Click(object sender, EventArgs e)
@@ -56,19 +65,22 @@ namespace Valvetwebb
 
                         Session["AnvandarNamn"] = txtAnvandarNamn.Text;
                         Session["WebUser"] = anvandare;
-                        Session["NyBokning"] = string.Empty;
-                        Response.Redirect("Meny.aspx");
+                        Session["Losenord"] = txtLosenord.Text;
+                        Session["Navigation"] = "Yes";
+                        Response.Redirect("Valvlista.aspx");
                     }
                     else
                     {
                         txtAnvandarNamn.Text = "";
                         txtLosenord.Text = "";
-                        lblErrorMessage.Text = "Felaktig inloggning";
+                        Session["MessageText"] = "Felaktig inloggning";
+                        Response.Redirect("MessageBox.aspx");
                     }
                 }
                 else
                 {
-                    lblErrorMessage.Text = "Användare saknas";
+                    Session["MessageText"] = "Användare saknas eller lösenord felaktigt";
+                    Response.Redirect("MessageBox.aspx");
                 }
             }
             catch (ThreadAbortException tex)
@@ -77,8 +89,9 @@ namespace Valvetwebb
             }
             catch (Exception ex)
             {
-                lblErrorMessage.Text = ex.Message + " Source: " + ex.Source + 
+                Session["MessageText"] = ex.Message + " Source: " + ex.Source +
                     " i metoden Login.aspx.cs.kanppOK";
+                Response.Redirect("MessageBox.aspx");
             }
         }
         protected void knappAvbryt_Click(object sender, EventArgs e)

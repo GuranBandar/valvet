@@ -10,6 +10,37 @@
     cursor: url('images/Golf Cart Filled.cur');
 }
 
+.brödtext {
+    background-color: white;
+    border: thin;
+}
+
+.custom-table {
+    background-color: whitesmoke;
+    border: none;
+}
+
+.textbox {
+    background-color: lightgrey;
+    border: thin;
+}
+
+.messagetext {
+    background-color: lightgrey;
+    border: none;
+    text-align: center;
+}
+
+.rubriktext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    line-height: 16pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+    color: #000000;
+    text-align: center;
+}
+
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14pt;
@@ -20,6 +51,7 @@ h1 {
 }
 
 h2 {
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12pt;
     line-height: 18pt;
@@ -35,6 +67,7 @@ h3 {
     font-weight: bold;
     margin-bottom: 6pt;
     color: #000000;
+    text-align: center;
 }
 
 h4 {

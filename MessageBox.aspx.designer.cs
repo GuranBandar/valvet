@@ -11,62 +11,35 @@ namespace Valvetwebb
 {
 
 
-    public partial class LogIn
+    public partial class MessageBox
     {
 
         /// <summary>
-        /// TableHeader control.
+        /// TableNMeddelande control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable TableHeader;
+        protected global::System.Web.UI.HtmlControls.HtmlTable TableNMeddelande;
 
         /// <summary>
-        /// lblErrorMessage control.
+        /// Titel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
+        protected global::System.Web.UI.WebControls.Label Titel;
 
         /// <summary>
-        /// lblAnvandarNamn control.
+        /// lblMessagetext control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAnvandarNamn;
-
-        /// <summary>
-        /// txtAnvandarNamn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnvandarNamn;
-
-        /// <summary>
-        /// lblLosen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLosen;
-
-        /// <summary>
-        /// txtLosenord control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLosenord;
+        protected global::System.Web.UI.WebControls.Label lblMessagetext;
 
         /// <summary>
         /// knappOK control.
@@ -78,31 +51,22 @@ namespace Valvetwebb
         protected global::System.Web.UI.WebControls.Button knappOK;
 
         /// <summary>
-        /// Label3 control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// knappAvbryt control.
+        /// knappTabort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button knappAvbryt;
-
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Button knappTabort;
 
         /// <summary>
         /// Label1 control.
@@ -112,5 +76,14 @@ namespace Valvetwebb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// knappAvbryt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button knappAvbryt;
     }
 }

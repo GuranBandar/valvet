@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Globalization;
+using System.Web;
 using System.Web.UI;
 using Valvetwebb.Objekt;
 
@@ -116,6 +119,23 @@ namespace Valvetwebb
             Culture.DateTimeFormat.ShortDatePattern = "yyyy-MM-dd";
         }
 
+        /// <summary>
+        /// Rensa cachen
+        /// </summary>
+        public void ClearCacheItems()
+        {
+            List<string> keys = new List<string>();
+            IDictionaryEnumerator enumerator = Cache.GetEnumerator();
+
+            while (enumerator.MoveNext())
+                keys.Add(enumerator.Key.ToString());
+
+            for (int i = 0; i < keys.Count; i++)
+                Cache.Remove(keys[i]);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "cle", "windows.history.clear", true);
+        }
+
+
         protected void Logga(string logmessage)
         {
             //Loggning.SkrivaPaLoggfil("Nu ska vi logga lite");
@@ -141,34 +161,31 @@ namespace Valvetwebb
         }
 
         /// <summary>
-        /// Get text from the Global Resourcefile.
+        /// Skriv meddelande
         /// </summary>
-        /// <param name="name">Actual text</param>
+        /// <param name="text">Actual text</param>
         /// <returns>A string with the actual text.</returns>
-        public string GetText(string name)
+        public void MessageBox()
         {
-            string foo = null;
-            //defaultLanguage = ConfigurationManager.AppSettings["GlobalEnvironmentLanguage"];
-
-            //try
-            //{
-            //    foo = Översätt(name, defaultLanguage);
-
-            //    if (foo == null)
-            //    {
-            //        foo = "Text saknas: " + name;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    //Logga skiten
-            //    Logging.WriteLog("E", "Textfel i " + ObjectInformation.GetMethodName() + "\n\n" + ex.ToString(),
-            //        1998);
-            //}
-
-            return foo;
+            Response.Redirect("MessageBox.aspx");
         }
 
-
+        /// <summary>
+        /// Dags att logga ut
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void SessionLogout()
+        {
+            Session.Clear();
+            Session["Navigation"] = null;
+            Session.Abandon();
+            Session["Referencepage"] = null;
+            Response.Cookies.Clear();
+            ClearCacheItems();
+            Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetNoStore();
+        }
     }
 }

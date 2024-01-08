@@ -45,12 +45,15 @@
                         <td></td>
                         <td>
                             <asp:Button ID="knappOK" runat="server" Text="OK" OnClick="knappOK_Click" />
+                            <asp:Label ID="Label3" Width="1%" runat="server"></asp:Label>
                             <asp:Button ID="knappAvbryt" runat="server" Text="Avbryt" OnClick="knappAvbryt_Click" />
                         </td>
                     </tr>
                     <tr>
-                    </tr>
-                    <tr>
+                        <td>
+                            <asp:Label ID="Label2" Width="1%" runat="server"></asp:Label>
+                            <asp:Label ID="Label1" Width="1%" runat="server"></asp:Label>
+                        </td>
                     </tr>
                 </table>
             </div>
