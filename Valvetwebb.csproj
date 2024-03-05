@@ -128,6 +128,7 @@
     <Content Include="Global.asax" />
     <Content Include="App.Master" />
     <Content Include="Images\Valvet.jpeg" />
+    <Content Include="Valvlista.aspx" />
     <Content Include="MessageBox.aspx" />
     <Content Include="mystyle.css" />
     <Content Include="LogIn.aspx" />
@@ -224,6 +225,15 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Kontroller\Extensions.cs" />
+    <Compile Include="Kontroller\GUI_kontroller.cs" />
+    <Compile Include="Valvlista.aspx.cs">
+      <DependentUpon>Valvlista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Valvlista.aspx.designer.cs">
+      <DependentUpon>Valvlista.aspx</DependentUpon>
     </Compile>
     <Compile Include="Kontroller\ValvetException.cs" />
     <Compile Include="LogIn.aspx.cs">

@@ -42,7 +42,7 @@ namespace Valvetwebb
 
         protected void knappOK_Click(object sender, EventArgs e)
         {
-            Anvandare anvandare = new Anvandare();
+            Anvandare Anvandare = new Anvandare();
             AnvandareAktivitet anvandareAktivitet = new AnvandareAktivitet();
 
             try
@@ -51,20 +51,20 @@ namespace Valvetwebb
 
                 if (txtAnvandarNamn.Text.Length > 0)
                 {
-                    anvandare = anvandareAktivitet.LoggaIn(txtAnvandarNamn.Text, txtLosenord.Text);
+                    Anvandare = anvandareAktivitet.LoggaIn(txtAnvandarNamn.Text, txtLosenord.Text);
 
-                    if (anvandare != null)
+                    if (Anvandare != null)
                     {
                         //Inloggningen lyckades, spara nu användarobjektet
                         string inloggadDatum = DateTime.Now.ToString("yyyy-MM-dd");
-                        anvandare.SenastInloggadDatum = inloggadDatum;
-                        AppUser = anvandare;
-                        anvandareAktivitet.Spara(anvandare, false, ref FelID, ref Feltext);
-                                                anvandareAktivitet.InloggningOK(anvandare.AnvandarID, anvandare.SenastInloggadDatum,
+                        Anvandare.SenastInloggadDatum = inloggadDatum;
+                        AppUser = Anvandare;
+                        anvandareAktivitet.Spara(Anvandare, false, ref FelID, ref Feltext);
+                                                anvandareAktivitet.InloggningOK(Anvandare.AnvandarID, Anvandare.SenastInloggadDatum,
                                                     ref FelID, ref Feltext);
 
                         Session["AnvandarNamn"] = txtAnvandarNamn.Text;
-                        Session["WebUser"] = anvandare;
+                        Session["WebUser"] = Anvandare;
                         Session["Losenord"] = txtLosenord.Text;
                         Session["Navigation"] = "Yes";
                         Response.Redirect("Valvlista.aspx");

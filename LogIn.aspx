@@ -29,20 +29,23 @@
                         <td>
                             <asp:Label ID="lblAnvandarNamn" runat="server" Text="Anändarnamn:"></asp:Label>
                         </td>
+                    </tr>
+                    <tr>
                         <td>
                             <asp:TextBox ID="txtAnvandarNamn" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="lblLosen" runat="server" Text="Lösenord:"></asp:Label>
+                            <asp:Label ID="lblLosen" runat="server" Text="Huvudlösenord"></asp:Label>
                         </td>
+                    </tr>
+                    <tr>
                         <td>
                             <asp:TextBox ID="txtLosenord" runat="server" TextMode="Password"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
                         <td>
                             <asp:Button ID="knappOK" runat="server" Text="OK" OnClick="knappOK_Click" />
                             <asp:Label ID="Label3" Width="1%" runat="server"></asp:Label>
