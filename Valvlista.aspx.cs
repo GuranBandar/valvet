@@ -35,23 +35,23 @@ namespace Valvetwebb
                 gUI_Kontroller = new GUI_kontroller();
                 GetCurrentCulture();
                 //lblErrorMessage.Text = string.Empty;
-                Session["Referencepage"] = "Kalender.aspx";
-                Session["MessageTitle"] = "Kalender";
+                Session["Referencepage"] = "Valvlista.aspx";
+                Session["MessageTitle"] = "Valvlista";
                 Session["MessageText"] = string.Empty;
 
-                if (Session["FromDatum"] == null)
-                {
-                    //Visa kalender från dagens datum
-                    //DatePicker.SelectedDate = DateTime.Today;
-                    DateTime selectedDate = DateTime.Today;
-                    //txtDatum.Text = selectedDate.ToString("yyyy-MM-dd");
-                    this.knappSearch_Click(sender, e);
-                }
-                else
-                {
-                    //txtDatum.Text = Session["FromDatum"].ToString();
-                    this.knappSearch_Click(sender, e);
-                }
+                //if (Session["FromDatum"] == null)
+                //{
+                //    //Visa kalender från dagens datum
+                //    //DatePicker.SelectedDate = DateTime.Today;
+                //    DateTime selectedDate = DateTime.Today;
+                //    //txtDatum.Text = selectedDate.ToString("yyyy-MM-dd");
+                //    this.knappSearch_Click(sender, e);
+                //}
+                //else
+                //{
+                //    //txtDatum.Text = Session["FromDatum"].ToString();
+                //    this.knappSearch_Click(sender, e);
+                //}
             }
         }
 
@@ -108,8 +108,8 @@ namespace Valvetwebb
             //}
             //Session["FromDatum"] = txtDatum.Text;
             //FromDatum = txtDatum.Text;
-            //dgList.DataSource = InitieraKalender();
-            //dgList.DataBind();
+            dgList.DataSource = InitieraValvlista();
+            dgList.DataBind();
         }
 
         protected void knappAvbryt_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace Valvetwebb
         /// Sök bokningar med bokningsdatum
         /// </summary>
         /// <returns></returns>
-        private DataView InitieraKalender()
+        private DataView InitieraValvlista()
         {
             //Loggning.SkrivaPaLoggfil("Nu ska kalendern initieras med sökdatum = "
             //    + FromDatum.ToString());            

@@ -20,17 +20,17 @@ namespace Valvetwebb.Aktivitet {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("AnvandareDS")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ValvpostDS")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class AnvandareDS : global::System.Data.DataSet {
+    public partial class ValvpostDS : global::System.Data.DataSet {
         
-        private AnvandareDataTable tableAnvandare;
+        private ValvpostDataTable tableValvpost;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public AnvandareDS() {
+        public ValvpostDS() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Valvetwebb.Aktivitet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected AnvandareDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ValvpostDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Valvetwebb.Aktivitet {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Anvandare"] != null)) {
-                    base.Tables.Add(new AnvandareDataTable(ds.Tables["Anvandare"]));
+                if ((ds.Tables["Valvpost"] != null)) {
+                    base.Tables.Add(new ValvpostDataTable(ds.Tables["Valvpost"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Valvetwebb.Aktivitet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AnvandareDataTable Anvandare {
+        public ValvpostDataTable Valvpost {
             get {
-                return this.tableAnvandare;
+                return this.tableValvpost;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Valvetwebb.Aktivitet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            AnvandareDS cln = ((AnvandareDS)(base.Clone()));
+            ValvpostDS cln = ((ValvpostDS)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Valvetwebb.Aktivitet {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Anvandare"] != null)) {
-                    base.Tables.Add(new AnvandareDataTable(ds.Tables["Anvandare"]));
+                if ((ds.Tables["Valvpost"] != null)) {
+                    base.Tables.Add(new ValvpostDataTable(ds.Tables["Valvpost"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Valvetwebb.Aktivitet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAnvandare = ((AnvandareDataTable)(base.Tables["Anvandare"]));
+            this.tableValvpost = ((ValvpostDataTable)(base.Tables["Valvpost"]));
             if ((initTable == true)) {
-                if ((this.tableAnvandare != null)) {
-                    this.tableAnvandare.InitVars();
+                if ((this.tableValvpost != null)) {
+                    this.tableValvpost.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Valvetwebb.Aktivitet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "AnvandareDS";
+            this.DataSetName = "ValvpostDS";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/AnvandareDS.xsd";
+            this.Namespace = "http://tempuri.org/ValvpostDS.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAnvandare = new AnvandareDataTable();
-            base.Tables.Add(this.tableAnvandare);
+            this.tableValvpost = new ValvpostDataTable();
+            base.Tables.Add(this.tableValvpost);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeAnvandare() {
+        private bool ShouldSerializeValvpost() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Valvetwebb.Aktivitet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            AnvandareDS ds = new AnvandareDS();
+            ValvpostDS ds = new ValvpostDS();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,35 +270,47 @@ namespace Valvetwebb.Aktivitet {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void AnvandareRowChangeEventHandler(object sender, AnvandareRowChangeEvent e);
+        public delegate void ValvpostRowChangeEventHandler(object sender, ValvpostRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AnvandareDataTable : global::System.Data.TypedTableBase<AnvandareRow> {
+        public partial class ValvpostDataTable : global::System.Data.TypedTableBase<ValvpostRow> {
+            
+            private global::System.Data.DataColumn columnPostID;
             
             private global::System.Data.DataColumn columnAnvandarID;
             
             private global::System.Data.DataColumn columnKonto;
             
-            private global::System.Data.DataColumn columnAnvandarnamn;
+            private global::System.Data.DataColumn columnInloggning;
             
             private global::System.Data.DataColumn columnLosenord;
             
-            private global::System.Data.DataColumn columnSenastInloggadDatum;
+            private global::System.Data.DataColumn columnPostnamn;
             
-            private global::System.Data.DataColumn columnSenastByttLosenordDatum;
+            private global::System.Data.DataColumn columnAnvandarnamn;
             
-            private global::System.Data.DataColumn columnEpostadress;
+            private global::System.Data.DataColumn columnWebbadress;
             
-            private global::System.Data.DataColumn columnAktiv;
+            private global::System.Data.DataColumn columnAnteckningar;
+            
+            private global::System.Data.DataColumn columnPostlogga;
+            
+            private global::System.Data.DataColumn columnAnvandarNamnSkapad;
+            
+            private global::System.Data.DataColumn columnSkapadDatum;
+            
+            private global::System.Data.DataColumn columnAnvandarNamnUppdat;
+            
+            private global::System.Data.DataColumn columnUppdatDatum;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AnvandareDataTable() {
-                this.TableName = "Anvandare";
+            public ValvpostDataTable() {
+                this.TableName = "Valvpost";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -306,7 +318,7 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AnvandareDataTable(global::System.Data.DataTable table) {
+            internal ValvpostDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -323,9 +335,17 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected AnvandareDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ValvpostDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PostIDColumn {
+                get {
+                    return this.columnPostID;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -346,9 +366,9 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AnvandarnamnColumn {
+            public global::System.Data.DataColumn InloggningColumn {
                 get {
-                    return this.columnAnvandarnamn;
+                    return this.columnInloggning;
                 }
             }
             
@@ -362,33 +382,73 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SenastInloggadDatumColumn {
+            public global::System.Data.DataColumn PostnamnColumn {
                 get {
-                    return this.columnSenastInloggadDatum;
+                    return this.columnPostnamn;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SenastByttLosenordDatumColumn {
+            public global::System.Data.DataColumn AnvandarnamnColumn {
                 get {
-                    return this.columnSenastByttLosenordDatum;
+                    return this.columnAnvandarnamn;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EpostadressColumn {
+            public global::System.Data.DataColumn WebbadressColumn {
                 get {
-                    return this.columnEpostadress;
+                    return this.columnWebbadress;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AktivColumn {
+            public global::System.Data.DataColumn AnteckningarColumn {
                 get {
-                    return this.columnAktiv;
+                    return this.columnAnteckningar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PostloggaColumn {
+                get {
+                    return this.columnPostlogga;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AnvandarNamnSkapadColumn {
+                get {
+                    return this.columnAnvandarNamnSkapad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SkapadDatumColumn {
+                get {
+                    return this.columnSkapadDatum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AnvandarNamnUppdatColumn {
+                get {
+                    return this.columnAnvandarNamnUppdat;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UppdatDatumColumn {
+                get {
+                    return this.columnUppdatDatum;
                 }
             }
             
@@ -403,60 +463,66 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AnvandareRow this[int index] {
+            public ValvpostRow this[int index] {
                 get {
-                    return ((AnvandareRow)(this.Rows[index]));
+                    return ((ValvpostRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AnvandareRowChangeEventHandler AnvandareRowChanging;
+            public event ValvpostRowChangeEventHandler ValvpostRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AnvandareRowChangeEventHandler AnvandareRowChanged;
+            public event ValvpostRowChangeEventHandler ValvpostRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AnvandareRowChangeEventHandler AnvandareRowDeleting;
+            public event ValvpostRowChangeEventHandler ValvpostRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AnvandareRowChangeEventHandler AnvandareRowDeleted;
+            public event ValvpostRowChangeEventHandler ValvpostRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddAnvandareRow(AnvandareRow row) {
+            public void AddValvpostRow(ValvpostRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AnvandareRow AddAnvandareRow(string Konto, string Anvandarnamn, string Losenord, string SenastInloggadDatum, string SenastByttLosenordDatum, string Epostadress, string Aktiv) {
-                AnvandareRow rowAnvandareRow = ((AnvandareRow)(this.NewRow()));
+            public ValvpostRow AddValvpostRow(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, byte[] Postlogga, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
+                ValvpostRow rowValvpostRow = ((ValvpostRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
+                        AnvandarID,
                         Konto,
-                        Anvandarnamn,
+                        Inloggning,
                         Losenord,
-                        SenastInloggadDatum,
-                        SenastByttLosenordDatum,
-                        Epostadress,
-                        Aktiv};
-                rowAnvandareRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAnvandareRow);
-                return rowAnvandareRow;
+                        Postnamn,
+                        Anvandarnamn,
+                        Webbadress,
+                        Anteckningar,
+                        Postlogga,
+                        AnvandarNamnSkapad,
+                        SkapadDatum,
+                        AnvandarNamnUppdat,
+                        UppdatDatum};
+                rowValvpostRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowValvpostRow);
+                return rowValvpostRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AnvandareRow FindByAnvandarIDKonto(int AnvandarID, string Konto) {
-                return ((AnvandareRow)(this.Rows.Find(new object[] {
-                            AnvandarID,
-                            Konto})));
+            public ValvpostRow FindByPostIDAnvandarID(int PostID, int AnvandarID) {
+                return ((ValvpostRow)(this.Rows.Find(new object[] {
+                            PostID,
+                            AnvandarID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AnvandareDataTable cln = ((AnvandareDataTable)(base.Clone()));
+                ValvpostDataTable cln = ((ValvpostDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -464,85 +530,111 @@ namespace Valvetwebb.Aktivitet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AnvandareDataTable();
+                return new ValvpostDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
+                this.columnPostID = base.Columns["PostID"];
                 this.columnAnvandarID = base.Columns["AnvandarID"];
                 this.columnKonto = base.Columns["Konto"];
-                this.columnAnvandarnamn = base.Columns["Anvandarnamn"];
+                this.columnInloggning = base.Columns["Inloggning"];
                 this.columnLosenord = base.Columns["Losenord"];
-                this.columnSenastInloggadDatum = base.Columns["SenastInloggadDatum"];
-                this.columnSenastByttLosenordDatum = base.Columns["SenastByttLosenordDatum"];
-                this.columnEpostadress = base.Columns["Epostadress"];
-                this.columnAktiv = base.Columns["Aktiv"];
+                this.columnPostnamn = base.Columns["Postnamn"];
+                this.columnAnvandarnamn = base.Columns["Anvandarnamn"];
+                this.columnWebbadress = base.Columns["Webbadress"];
+                this.columnAnteckningar = base.Columns["Anteckningar"];
+                this.columnPostlogga = base.Columns["Postlogga"];
+                this.columnAnvandarNamnSkapad = base.Columns["AnvandarNamnSkapad"];
+                this.columnSkapadDatum = base.Columns["SkapadDatum"];
+                this.columnAnvandarNamnUppdat = base.Columns["AnvandarNamnUppdat"];
+                this.columnUppdatDatum = base.Columns["UppdatDatum"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
+                this.columnPostID = new global::System.Data.DataColumn("PostID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostID);
                 this.columnAnvandarID = new global::System.Data.DataColumn("AnvandarID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAnvandarID);
                 this.columnKonto = new global::System.Data.DataColumn("Konto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKonto);
-                this.columnAnvandarnamn = new global::System.Data.DataColumn("Anvandarnamn", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAnvandarnamn);
+                this.columnInloggning = new global::System.Data.DataColumn("Inloggning", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInloggning);
                 this.columnLosenord = new global::System.Data.DataColumn("Losenord", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLosenord);
-                this.columnSenastInloggadDatum = new global::System.Data.DataColumn("SenastInloggadDatum", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSenastInloggadDatum);
-                this.columnSenastByttLosenordDatum = new global::System.Data.DataColumn("SenastByttLosenordDatum", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSenastByttLosenordDatum);
-                this.columnEpostadress = new global::System.Data.DataColumn("Epostadress", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEpostadress);
-                this.columnAktiv = new global::System.Data.DataColumn("Aktiv", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAktiv);
+                this.columnPostnamn = new global::System.Data.DataColumn("Postnamn", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostnamn);
+                this.columnAnvandarnamn = new global::System.Data.DataColumn("Anvandarnamn", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnvandarnamn);
+                this.columnWebbadress = new global::System.Data.DataColumn("Webbadress", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWebbadress);
+                this.columnAnteckningar = new global::System.Data.DataColumn("Anteckningar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnteckningar);
+                this.columnPostlogga = new global::System.Data.DataColumn("Postlogga", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostlogga);
+                this.columnAnvandarNamnSkapad = new global::System.Data.DataColumn("AnvandarNamnSkapad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnvandarNamnSkapad);
+                this.columnSkapadDatum = new global::System.Data.DataColumn("SkapadDatum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSkapadDatum);
+                this.columnAnvandarNamnUppdat = new global::System.Data.DataColumn("AnvandarNamnUppdat", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnvandarNamnUppdat);
+                this.columnUppdatDatum = new global::System.Data.DataColumn("UppdatDatum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUppdatDatum);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnAnvandarID,
-                                this.columnKonto}, true));
-                this.columnAnvandarID.AutoIncrement = true;
-                this.columnAnvandarID.AutoIncrementSeed = -1;
-                this.columnAnvandarID.AutoIncrementStep = -1;
+                                this.columnPostID,
+                                this.columnAnvandarID}, true));
+                this.columnPostID.AutoIncrement = true;
+                this.columnPostID.AutoIncrementSeed = -1;
+                this.columnPostID.AutoIncrementStep = -1;
+                this.columnPostID.AllowDBNull = false;
+                this.columnPostID.ReadOnly = true;
                 this.columnAnvandarID.AllowDBNull = false;
-                this.columnAnvandarID.ReadOnly = true;
                 this.columnKonto.AllowDBNull = false;
                 this.columnKonto.MaxLength = 150;
-                this.columnAnvandarnamn.AllowDBNull = false;
-                this.columnAnvandarnamn.MaxLength = 50;
+                this.columnInloggning.MaxLength = 150;
                 this.columnLosenord.AllowDBNull = false;
                 this.columnLosenord.MaxLength = 50;
-                this.columnSenastInloggadDatum.MaxLength = 20;
-                this.columnSenastByttLosenordDatum.MaxLength = 20;
-                this.columnEpostadress.MaxLength = 150;
-                this.columnAktiv.MaxLength = 1;
+                this.columnPostnamn.AllowDBNull = false;
+                this.columnPostnamn.MaxLength = 50;
+                this.columnAnvandarnamn.AllowDBNull = false;
+                this.columnAnvandarnamn.MaxLength = 50;
+                this.columnWebbadress.MaxLength = 50;
+                this.columnAnteckningar.MaxLength = 1073741823;
+                this.columnAnvandarNamnSkapad.AllowDBNull = false;
+                this.columnAnvandarNamnSkapad.MaxLength = 50;
+                this.columnSkapadDatum.AllowDBNull = false;
+                this.columnSkapadDatum.MaxLength = 20;
+                this.columnAnvandarNamnUppdat.MaxLength = 50;
+                this.columnUppdatDatum.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AnvandareRow NewAnvandareRow() {
-                return ((AnvandareRow)(this.NewRow()));
+            public ValvpostRow NewValvpostRow() {
+                return ((ValvpostRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AnvandareRow(builder);
+                return new ValvpostRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(AnvandareRow);
+                return typeof(ValvpostRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.AnvandareRowChanged != null)) {
-                    this.AnvandareRowChanged(this, new AnvandareRowChangeEvent(((AnvandareRow)(e.Row)), e.Action));
+                if ((this.ValvpostRowChanged != null)) {
+                    this.ValvpostRowChanged(this, new ValvpostRowChangeEvent(((ValvpostRow)(e.Row)), e.Action));
                 }
             }
             
@@ -550,8 +642,8 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.AnvandareRowChanging != null)) {
-                    this.AnvandareRowChanging(this, new AnvandareRowChangeEvent(((AnvandareRow)(e.Row)), e.Action));
+                if ((this.ValvpostRowChanging != null)) {
+                    this.ValvpostRowChanging(this, new ValvpostRowChangeEvent(((ValvpostRow)(e.Row)), e.Action));
                 }
             }
             
@@ -559,8 +651,8 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.AnvandareRowDeleted != null)) {
-                    this.AnvandareRowDeleted(this, new AnvandareRowChangeEvent(((AnvandareRow)(e.Row)), e.Action));
+                if ((this.ValvpostRowDeleted != null)) {
+                    this.ValvpostRowDeleted(this, new ValvpostRowChangeEvent(((ValvpostRow)(e.Row)), e.Action));
                 }
             }
             
@@ -568,14 +660,14 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.AnvandareRowDeleting != null)) {
-                    this.AnvandareRowDeleting(this, new AnvandareRowChangeEvent(((AnvandareRow)(e.Row)), e.Action));
+                if ((this.ValvpostRowDeleting != null)) {
+                    this.ValvpostRowDeleting(this, new ValvpostRowChangeEvent(((ValvpostRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveAnvandareRow(AnvandareRow row) {
+            public void RemoveValvpostRow(ValvpostRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -584,7 +676,7 @@ namespace Valvetwebb.Aktivitet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                AnvandareDS ds = new AnvandareDS();
+                ValvpostDS ds = new ValvpostDS();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -602,7 +694,7 @@ namespace Valvetwebb.Aktivitet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AnvandareDataTable";
+                attribute2.FixedValue = "ValvpostDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -646,25 +738,36 @@ namespace Valvetwebb.Aktivitet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AnvandareRow : global::System.Data.DataRow {
+        public partial class ValvpostRow : global::System.Data.DataRow {
             
-            private AnvandareDataTable tableAnvandare;
+            private ValvpostDataTable tableValvpost;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AnvandareRow(global::System.Data.DataRowBuilder rb) : 
+            internal ValvpostRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAnvandare = ((AnvandareDataTable)(this.Table));
+                this.tableValvpost = ((ValvpostDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int PostID {
+                get {
+                    return ((int)(this[this.tableValvpost.PostIDColumn]));
+                }
+                set {
+                    this[this.tableValvpost.PostIDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int AnvandarID {
                 get {
-                    return ((int)(this[this.tableAnvandare.AnvandarIDColumn]));
+                    return ((int)(this[this.tableValvpost.AnvandarIDColumn]));
                 }
                 set {
-                    this[this.tableAnvandare.AnvandarIDColumn] = value;
+                    this[this.tableValvpost.AnvandarIDColumn] = value;
                 }
             }
             
@@ -672,21 +775,26 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Konto {
                 get {
-                    return ((string)(this[this.tableAnvandare.KontoColumn]));
+                    return ((string)(this[this.tableValvpost.KontoColumn]));
                 }
                 set {
-                    this[this.tableAnvandare.KontoColumn] = value;
+                    this[this.tableValvpost.KontoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Anvandarnamn {
+            public string Inloggning {
                 get {
-                    return ((string)(this[this.tableAnvandare.AnvandarnamnColumn]));
+                    try {
+                        return ((string)(this[this.tableValvpost.InloggningColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Inloggning\' in table \'Valvpost\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableAnvandare.AnvandarnamnColumn] = value;
+                    this[this.tableValvpost.InloggningColumn] = value;
                 }
             }
             
@@ -694,123 +802,207 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Losenord {
                 get {
-                    return ((string)(this[this.tableAnvandare.LosenordColumn]));
+                    return ((string)(this[this.tableValvpost.LosenordColumn]));
                 }
                 set {
-                    this[this.tableAnvandare.LosenordColumn] = value;
+                    this[this.tableValvpost.LosenordColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string SenastInloggadDatum {
+            public string Postnamn {
+                get {
+                    return ((string)(this[this.tableValvpost.PostnamnColumn]));
+                }
+                set {
+                    this[this.tableValvpost.PostnamnColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Anvandarnamn {
+                get {
+                    return ((string)(this[this.tableValvpost.AnvandarnamnColumn]));
+                }
+                set {
+                    this[this.tableValvpost.AnvandarnamnColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Webbadress {
                 get {
                     try {
-                        return ((string)(this[this.tableAnvandare.SenastInloggadDatumColumn]));
+                        return ((string)(this[this.tableValvpost.WebbadressColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SenastInloggadDatum\' in table \'Anvandare\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Webbadress\' in table \'Valvpost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAnvandare.SenastInloggadDatumColumn] = value;
+                    this[this.tableValvpost.WebbadressColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string SenastByttLosenordDatum {
+            public string Anteckningar {
                 get {
                     try {
-                        return ((string)(this[this.tableAnvandare.SenastByttLosenordDatumColumn]));
+                        return ((string)(this[this.tableValvpost.AnteckningarColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SenastByttLosenordDatum\' in table \'Anvandare\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Anteckningar\' in table \'Valvpost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAnvandare.SenastByttLosenordDatumColumn] = value;
+                    this[this.tableValvpost.AnteckningarColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Epostadress {
+            public byte[] Postlogga {
                 get {
                     try {
-                        return ((string)(this[this.tableAnvandare.EpostadressColumn]));
+                        return ((byte[])(this[this.tableValvpost.PostloggaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Epostadress\' in table \'Anvandare\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Postlogga\' in table \'Valvpost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAnvandare.EpostadressColumn] = value;
+                    this[this.tableValvpost.PostloggaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Aktiv {
+            public string AnvandarNamnSkapad {
+                get {
+                    return ((string)(this[this.tableValvpost.AnvandarNamnSkapadColumn]));
+                }
+                set {
+                    this[this.tableValvpost.AnvandarNamnSkapadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SkapadDatum {
+                get {
+                    return ((string)(this[this.tableValvpost.SkapadDatumColumn]));
+                }
+                set {
+                    this[this.tableValvpost.SkapadDatumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string AnvandarNamnUppdat {
                 get {
                     try {
-                        return ((string)(this[this.tableAnvandare.AktivColumn]));
+                        return ((string)(this[this.tableValvpost.AnvandarNamnUppdatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Aktiv\' in table \'Anvandare\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AnvandarNamnUppdat\' in table \'Valvpost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAnvandare.AktivColumn] = value;
+                    this[this.tableValvpost.AnvandarNamnUppdatColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSenastInloggadDatumNull() {
-                return this.IsNull(this.tableAnvandare.SenastInloggadDatumColumn);
+            public string UppdatDatum {
+                get {
+                    try {
+                        return ((string)(this[this.tableValvpost.UppdatDatumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UppdatDatum\' in table \'Valvpost\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableValvpost.UppdatDatumColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSenastInloggadDatumNull() {
-                this[this.tableAnvandare.SenastInloggadDatumColumn] = global::System.Convert.DBNull;
+            public bool IsInloggningNull() {
+                return this.IsNull(this.tableValvpost.InloggningColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSenastByttLosenordDatumNull() {
-                return this.IsNull(this.tableAnvandare.SenastByttLosenordDatumColumn);
+            public void SetInloggningNull() {
+                this[this.tableValvpost.InloggningColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSenastByttLosenordDatumNull() {
-                this[this.tableAnvandare.SenastByttLosenordDatumColumn] = global::System.Convert.DBNull;
+            public bool IsWebbadressNull() {
+                return this.IsNull(this.tableValvpost.WebbadressColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsEpostadressNull() {
-                return this.IsNull(this.tableAnvandare.EpostadressColumn);
+            public void SetWebbadressNull() {
+                this[this.tableValvpost.WebbadressColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetEpostadressNull() {
-                this[this.tableAnvandare.EpostadressColumn] = global::System.Convert.DBNull;
+            public bool IsAnteckningarNull() {
+                return this.IsNull(this.tableValvpost.AnteckningarColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAktivNull() {
-                return this.IsNull(this.tableAnvandare.AktivColumn);
+            public void SetAnteckningarNull() {
+                this[this.tableValvpost.AnteckningarColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAktivNull() {
-                this[this.tableAnvandare.AktivColumn] = global::System.Convert.DBNull;
+            public bool IsPostloggaNull() {
+                return this.IsNull(this.tableValvpost.PostloggaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPostloggaNull() {
+                this[this.tableValvpost.PostloggaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAnvandarNamnUppdatNull() {
+                return this.IsNull(this.tableValvpost.AnvandarNamnUppdatColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAnvandarNamnUppdatNull() {
+                this[this.tableValvpost.AnvandarNamnUppdatColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsUppdatDatumNull() {
+                return this.IsNull(this.tableValvpost.UppdatDatumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetUppdatDatumNull() {
+                this[this.tableValvpost.UppdatDatumColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -818,22 +1010,22 @@ namespace Valvetwebb.Aktivitet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class AnvandareRowChangeEvent : global::System.EventArgs {
+        public class ValvpostRowChangeEvent : global::System.EventArgs {
             
-            private AnvandareRow eventRow;
+            private ValvpostRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AnvandareRowChangeEvent(AnvandareRow row, global::System.Data.DataRowAction action) {
+            public ValvpostRowChangeEvent(ValvpostRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AnvandareRow Row {
+            public ValvpostRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -849,7 +1041,7 @@ namespace Valvetwebb.Aktivitet {
         }
     }
 }
-namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
+namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
     
     
     /// <summary>
@@ -861,7 +1053,7 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AnvandareTableAdapter : global::System.ComponentModel.Component {
+    public partial class ValvpostTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -875,7 +1067,7 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public AnvandareTableAdapter() {
+        public ValvpostTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -972,50 +1164,65 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Anvandare";
+            tableMapping.DataSetTable = "Valvpost";
+            tableMapping.ColumnMappings.Add("PostID", "PostID");
             tableMapping.ColumnMappings.Add("AnvandarID", "AnvandarID");
             tableMapping.ColumnMappings.Add("Konto", "Konto");
-            tableMapping.ColumnMappings.Add("Anvandarnamn", "Anvandarnamn");
+            tableMapping.ColumnMappings.Add("Inloggning", "Inloggning");
             tableMapping.ColumnMappings.Add("Losenord", "Losenord");
-            tableMapping.ColumnMappings.Add("SenastInloggadDatum", "SenastInloggadDatum");
-            tableMapping.ColumnMappings.Add("SenastByttLosenordDatum", "SenastByttLosenordDatum");
-            tableMapping.ColumnMappings.Add("Epostadress", "Epostadress");
-            tableMapping.ColumnMappings.Add("Aktiv", "Aktiv");
+            tableMapping.ColumnMappings.Add("Postnamn", "Postnamn");
+            tableMapping.ColumnMappings.Add("Anvandarnamn", "Anvandarnamn");
+            tableMapping.ColumnMappings.Add("Webbadress", "Webbadress");
+            tableMapping.ColumnMappings.Add("Anteckningar", "Anteckningar");
+            tableMapping.ColumnMappings.Add("Postlogga", "Postlogga");
+            tableMapping.ColumnMappings.Add("AnvandarNamnSkapad", "AnvandarNamnSkapad");
+            tableMapping.ColumnMappings.Add("SkapadDatum", "SkapadDatum");
+            tableMapping.ColumnMappings.Add("AnvandarNamnUppdat", "AnvandarNamnUppdat");
+            tableMapping.ColumnMappings.Add("UppdatDatum", "UppdatDatum");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Anvandare] WHERE (([AnvandarID] = @Original_AnvandarID) AND ([" +
-                "Konto] = @Original_Konto))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Valvpost] WHERE (([PostID] = @Original_PostID) AND ([AnvandarI" +
+                "D] = @Original_AnvandarID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PostID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PostID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Konto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Konto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Anvandare] ([Konto], [Anvandarnamn], [Losenord], [SenastInlogg" +
-                "adDatum], [SenastByttLosenordDatum], [Epostadress], [Aktiv]) VALUES (@Konto, @An" +
-                "vandarnamn, @Losenord, @SenastInloggadDatum, @SenastByttLosenordDatum, @Epostadr" +
-                "ess, @Aktiv)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Valvpost] ([AnvandarID], [Konto], [Inloggning], [Losenord], [Postnamn], [Anvandarnamn], [Webbadress], [Anteckningar], [Postlogga], [AnvandarNamnSkapad], [SkapadDatum], [AnvandarNamnUppdat], [UppdatDatum]) VALUES (@AnvandarID, @Konto, @Inloggning, @Losenord, @Postnamn, @Anvandarnamn, @Webbadress, @Anteckningar, @Postlogga, @AnvandarNamnSkapad, @SkapadDatum, @AnvandarNamnUppdat, @UppdatDatum)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Konto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Konto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Losenord", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Losenord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SenastInloggadDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SenastInloggadDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SenastByttLosenordDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SenastByttLosenordDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Epostadress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Epostadress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aktiv", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aktiv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inloggning", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inloggning", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Losenord", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Losenord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Postnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Postnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Webbadress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Webbadress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anteckningar", global::System.Data.SqlDbType.NText, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anteckningar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Postlogga", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Postlogga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarNamnSkapad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarNamnSkapad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SkapadDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SkapadDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarNamnUppdat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarNamnUppdat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UppdatDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UppdatDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Anvandare] SET [Konto] = @Konto, [Anvandarnamn] = @Anvandarnamn, [Losenord] = @Losenord, [SenastInloggadDatum] = @SenastInloggadDatum, [SenastByttLosenordDatum] = @SenastByttLosenordDatum, [Epostadress] = @Epostadress, [Aktiv] = @Aktiv WHERE (([AnvandarID] = @Original_AnvandarID) AND ([Konto] = @Original_Konto))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Valvpost] SET [AnvandarID] = @AnvandarID, [Konto] = @Konto, [Inloggning] = @Inloggning, [Losenord] = @Losenord, [Postnamn] = @Postnamn, [Anvandarnamn] = @Anvandarnamn, [Webbadress] = @Webbadress, [Anteckningar] = @Anteckningar, [Postlogga] = @Postlogga, [AnvandarNamnSkapad] = @AnvandarNamnSkapad, [SkapadDatum] = @SkapadDatum, [AnvandarNamnUppdat] = @AnvandarNamnUppdat, [UppdatDatum] = @UppdatDatum WHERE (([PostID] = @Original_PostID) AND ([AnvandarID] = @Original_AnvandarID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Konto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Konto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Losenord", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Losenord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SenastInloggadDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SenastInloggadDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SenastByttLosenordDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SenastByttLosenordDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Epostadress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Epostadress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aktiv", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aktiv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inloggning", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inloggning", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Losenord", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Losenord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Postnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Postnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Webbadress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Webbadress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anteckningar", global::System.Data.SqlDbType.NText, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anteckningar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Postlogga", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Postlogga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarNamnSkapad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarNamnSkapad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SkapadDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SkapadDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarNamnUppdat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarNamnUppdat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UppdatDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UppdatDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PostID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PostID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Konto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Konto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1031,8 +1238,9 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AnvandarID, Konto, Anvandarnamn, Losenord, SenastInloggadDatum, SenastBytt" +
-                "LosenordDatum, Epostadress, Aktiv FROM dbo.Anvandare";
+            this._commandCollection[0].CommandText = "SELECT PostID, AnvandarID, Konto, Inloggning, Losenord, Postnamn, Anvandarnamn, W" +
+                "ebbadress, Anteckningar, Postlogga, AnvandarNamnSkapad, SkapadDatum, AnvandarNam" +
+                "nUppdat, UppdatDatum FROM dbo.Valvpost";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1040,7 +1248,7 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(AnvandareDS.AnvandareDataTable dataTable) {
+        public virtual int Fill(ValvpostDS.ValvpostDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1053,9 +1261,9 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual AnvandareDS.AnvandareDataTable GetData() {
+        public virtual ValvpostDS.ValvpostDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            AnvandareDS.AnvandareDataTable dataTable = new AnvandareDS.AnvandareDataTable();
+            ValvpostDS.ValvpostDataTable dataTable = new ValvpostDS.ValvpostDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1063,15 +1271,15 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(AnvandareDS.AnvandareDataTable dataTable) {
+        public virtual int Update(ValvpostDS.ValvpostDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(AnvandareDS dataSet) {
-            return this.Adapter.Update(dataSet, "Anvandare");
+        public virtual int Update(ValvpostDS dataSet) {
+            return this.Adapter.Update(dataSet, "Valvpost");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1093,14 +1301,9 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_AnvandarID, string Original_Konto) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_AnvandarID));
-            if ((Original_Konto == null)) {
-                throw new global::System.ArgumentNullException("Original_Konto");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Konto));
-            }
+        public virtual int Delete(int Original_PostID, int Original_AnvandarID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PostID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_AnvandarID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1121,48 +1324,79 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Konto, string Anvandarnamn, string Losenord, string SenastInloggadDatum, string SenastByttLosenordDatum, string Epostadress, string Aktiv) {
+        public virtual int Insert(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, byte[] Postlogga, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AnvandarID));
             if ((Konto == null)) {
                 throw new global::System.ArgumentNullException("Konto");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Konto));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Konto));
             }
-            if ((Anvandarnamn == null)) {
-                throw new global::System.ArgumentNullException("Anvandarnamn");
+            if ((Inloggning == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Anvandarnamn));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Inloggning));
             }
             if ((Losenord == null)) {
                 throw new global::System.ArgumentNullException("Losenord");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Losenord));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Losenord));
             }
-            if ((SenastInloggadDatum == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SenastInloggadDatum));
-            }
-            if ((SenastByttLosenordDatum == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((Postnamn == null)) {
+                throw new global::System.ArgumentNullException("Postnamn");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(SenastByttLosenordDatum));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Postnamn));
             }
-            if ((Epostadress == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((Anvandarnamn == null)) {
+                throw new global::System.ArgumentNullException("Anvandarnamn");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Epostadress));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Anvandarnamn));
             }
-            if ((Aktiv == null)) {
+            if ((Webbadress == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Aktiv));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Webbadress));
+            }
+            if ((Anteckningar == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Anteckningar));
+            }
+            if ((Postlogga == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((byte[])(Postlogga));
+            }
+            if ((AnvandarNamnSkapad == null)) {
+                throw new global::System.ArgumentNullException("AnvandarNamnSkapad");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(AnvandarNamnSkapad));
+            }
+            if ((SkapadDatum == null)) {
+                throw new global::System.ArgumentNullException("SkapadDatum");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(SkapadDatum));
+            }
+            if ((AnvandarNamnUppdat == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(AnvandarNamnUppdat));
+            }
+            if ((UppdatDatum == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(UppdatDatum));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1184,56 +1418,82 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Konto, string Anvandarnamn, string Losenord, string SenastInloggadDatum, string SenastByttLosenordDatum, string Epostadress, string Aktiv, int Original_AnvandarID, string Original_Konto) {
+        public virtual int Update(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, byte[] Postlogga, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AnvandarID));
             if ((Konto == null)) {
                 throw new global::System.ArgumentNullException("Konto");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Konto));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Konto));
             }
-            if ((Anvandarnamn == null)) {
-                throw new global::System.ArgumentNullException("Anvandarnamn");
+            if ((Inloggning == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Anvandarnamn));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Inloggning));
             }
             if ((Losenord == null)) {
                 throw new global::System.ArgumentNullException("Losenord");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Losenord));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Losenord));
             }
-            if ((SenastInloggadDatum == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(SenastInloggadDatum));
-            }
-            if ((SenastByttLosenordDatum == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((Postnamn == null)) {
+                throw new global::System.ArgumentNullException("Postnamn");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(SenastByttLosenordDatum));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Postnamn));
             }
-            if ((Epostadress == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((Anvandarnamn == null)) {
+                throw new global::System.ArgumentNullException("Anvandarnamn");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Epostadress));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Anvandarnamn));
             }
-            if ((Aktiv == null)) {
+            if ((Webbadress == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Aktiv));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Webbadress));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_AnvandarID));
-            if ((Original_Konto == null)) {
-                throw new global::System.ArgumentNullException("Original_Konto");
+            if ((Anteckningar == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Konto));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Anteckningar));
             }
+            if ((Postlogga == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((byte[])(Postlogga));
+            }
+            if ((AnvandarNamnSkapad == null)) {
+                throw new global::System.ArgumentNullException("AnvandarNamnSkapad");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(AnvandarNamnSkapad));
+            }
+            if ((SkapadDatum == null)) {
+                throw new global::System.ArgumentNullException("SkapadDatum");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(SkapadDatum));
+            }
+            if ((AnvandarNamnUppdat == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(AnvandarNamnUppdat));
+            }
+            if ((UppdatDatum == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(UppdatDatum));
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_PostID));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_AnvandarID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1254,8 +1514,8 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Anvandarnamn, string Losenord, string SenastInloggadDatum, string SenastByttLosenordDatum, string Epostadress, string Aktiv, int Original_AnvandarID, string Original_Konto) {
-            return this.Update(Original_Konto, Anvandarnamn, Losenord, SenastInloggadDatum, SenastByttLosenordDatum, Epostadress, Aktiv, Original_AnvandarID, Original_Konto);
+        public virtual int Update(string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, byte[] Postlogga, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
+            return this.Update(Original_AnvandarID, Konto, Inloggning, Losenord, Postnamn, Anvandarnamn, Webbadress, Anteckningar, Postlogga, AnvandarNamnSkapad, SkapadDatum, AnvandarNamnUppdat, UppdatDatum, Original_PostID, Original_AnvandarID);
         }
     }
     
@@ -1271,7 +1531,7 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private AnvandareTableAdapter _anvandareTableAdapter;
+        private ValvpostTableAdapter _valvpostTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1293,12 +1553,12 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public AnvandareTableAdapter AnvandareTableAdapter {
+        public ValvpostTableAdapter ValvpostTableAdapter {
             get {
-                return this._anvandareTableAdapter;
+                return this._valvpostTableAdapter;
             }
             set {
-                this._anvandareTableAdapter = value;
+                this._valvpostTableAdapter = value;
             }
         }
         
@@ -1321,9 +1581,9 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._anvandareTableAdapter != null) 
-                            && (this._anvandareTableAdapter.Connection != null))) {
-                    return this._anvandareTableAdapter.Connection;
+                if (((this._valvpostTableAdapter != null) 
+                            && (this._valvpostTableAdapter.Connection != null))) {
+                    return this._valvpostTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1338,7 +1598,7 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._anvandareTableAdapter != null)) {
+                if ((this._valvpostTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1350,14 +1610,14 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(AnvandareDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ValvpostDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._anvandareTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Anvandare.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._valvpostTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Valvpost.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._anvandareTableAdapter.Update(updatedRows));
+                    result = (result + this._valvpostTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1369,13 +1629,13 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(AnvandareDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ValvpostDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._anvandareTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Anvandare.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._valvpostTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Valvpost.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._anvandareTableAdapter.Update(addedRows));
+                    result = (result + this._valvpostTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1387,13 +1647,13 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(AnvandareDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ValvpostDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._anvandareTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Anvandare.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._valvpostTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Valvpost.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._anvandareTableAdapter.Update(deletedRows));
+                    result = (result + this._valvpostTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1429,15 +1689,15 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(AnvandareDS dataSet) {
+        public virtual int UpdateAll(ValvpostDS dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._anvandareTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._anvandareTableAdapter.Connection) == false))) {
+            if (((this._valvpostTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._valvpostTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1473,13 +1733,13 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._anvandareTableAdapter != null)) {
-                    revertConnections.Add(this._anvandareTableAdapter, this._anvandareTableAdapter.Connection);
-                    this._anvandareTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._anvandareTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._anvandareTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._anvandareTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._anvandareTableAdapter.Adapter);
+                if ((this._valvpostTableAdapter != null)) {
+                    revertConnections.Add(this._valvpostTableAdapter, this._valvpostTableAdapter.Connection);
+                    this._valvpostTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._valvpostTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._valvpostTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._valvpostTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._valvpostTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1540,9 +1800,9 @@ namespace Valvetwebb.Aktivitet.AnvandareDSTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._anvandareTableAdapter != null)) {
-                    this._anvandareTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._anvandareTableAdapter]));
-                    this._anvandareTableAdapter.Transaction = null;
+                if ((this._valvpostTableAdapter != null)) {
+                    this._valvpostTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._valvpostTableAdapter]));
+                    this._valvpostTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

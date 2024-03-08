@@ -12,43 +12,32 @@
             </tr>
         </table>
         <div class="form">
-            <table id="TableKalender" style="margin: auto; border: 3px solid white"
+            <table id="TableValvlista" style="margin: auto; border: 3px solid white"
                 class="form" runat="server">
+                <tr></tr>
+                <tr>
+                    <td>
+                        <h3>Mitt valv</h3>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <div class="table-responsive">
                             <table>
                                 <tr>
-                                    <td></td>
                                     <td>
-                                        <asp:Label ID="lblSearchDate" runat="server"
-                                            Text="Bokningsdatum from:" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="lblSearchPost" runat="server" Text="Sök i Mitt valv" Font-Bold="true" CssClass="rubriktext"></asp:Label>
                                     </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <asp:Calendar ID="DatePicker" runat="server"
-                                            Visible="false"
-                                            OnSelectionChanged="DatePicker_selection_changed">
-                                            <TitleStyle BackColor="LightGray"
-                                                ForeColor="White"></TitleStyle>
-                                            <DayStyle BackColor="White"></DayStyle>
-                                            <SelectedDayStyle BackColor="LightGray"
-                                                Font-Bold="True"></SelectedDayStyle>
-                                        </asp:Calendar>
-                                        <asp:TextBox ID="txtDatum" runat="server" Enabled="false"></asp:TextBox>
-                                        <asp:LinkButton ID="lnkPickDate" runat="server"
-                                            OnClick="lnkPickDate_Click" ForeColor="White"
-                                            Font-Bold="true">Välj datum</asp:LinkButton>
-                                    </td>
-
-                                    <td></td>
-                                    <td>
-                                        <asp:Button ID="knappSearch" runat="server"
-                                            Text="Sök"
-                                            OnClick="knappSearch_Click"
-                                            CssClass="ButtonClass" />
-                                    </td>
+                                    <tr>
+                                        <td>
+                                            <asp:TextBox ID="txtSearchPost" runat="server"></asp:TextBox>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <asp:Button ID="knappSearch" runat="server" Text="Sök"
+                                                OnClick="knappSearch_Click" CssClass="ButtonClass" />
+                                        </td>
+                                    </tr>
                                 </tr>
                             </table>
                         </div>
@@ -67,16 +56,19 @@
                                         <ItemStyle BackColor="White"></ItemStyle>
                                         <HeaderStyle Font-Bold="True" BackColor="#91BADD"></HeaderStyle>
                                         <Columns>
-                                            <asp:BoundColumn Visible="False" DataField="Bokningsnummer"></asp:BoundColumn>
-                                            <asp:BoundColumn DataField="Datum" HeaderText="Datum"></asp:BoundColumn>
-                                            <asp:BoundColumn DataField="Bokade tider" HeaderText="Bokade tider"></asp:BoundColumn>
-                                            <asp:BoundColumn DataField="Bana" HeaderText="Bana"></asp:BoundColumn>
-                                            <asp:BoundColumn DataField="Dag" HeaderText="Dag"></asp:BoundColumn>
+                                            <asp:BoundColumn DataField="Postnummer"></asp:BoundColumn>
+                                            <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:Image ID="Postlogga" Height="100" Width="100" runat="server" DataImageUrlField='acer.se' />
+                                                    >>>>>>>>display image on this part
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+                                            <asp:BoundColumn DataField="Postnamn" HeaderText="Namn"></asp:BoundColumn>
                                             <asp:ButtonColumn
                                                 HeaderText="Visa"
                                                 ButtonType="PushButton"
                                                 Text="Visa"
-                                                CommandName="VisaBokning" />
+                                                CommandName="VisaPost" />
                                         </Columns>
                                     </asp:DataGrid>
                                 </td>

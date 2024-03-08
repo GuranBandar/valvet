@@ -33,49 +33,31 @@ namespace Valvetwebb
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
 
         /// <summary>
-        /// TableKalender control.
+        /// TableValvlista control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable TableKalender;
+        protected global::System.Web.UI.HtmlControls.HtmlTable TableValvlista;
 
         /// <summary>
-        /// lblSearchDate control.
+        /// lblSearchPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSearchDate;
+        protected global::System.Web.UI.WebControls.Label lblSearchPost;
 
         /// <summary>
-        /// DatePicker control.
+        /// txtSearchPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar DatePicker;
-
-        /// <summary>
-        /// txtDatum control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDatum;
-
-        /// <summary>
-        /// lnkPickDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkPickDate;
+        protected global::System.Web.UI.WebControls.TextBox txtSearchPost;
 
         /// <summary>
         /// knappSearch control.

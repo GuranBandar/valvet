@@ -22,12 +22,22 @@
                     <tr></tr>
                     <tr>
                         <td>
-                            <h3>Logga in till Valvet</h3>
+                            <h3>Valvinloggning</h3>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="lblAnvandarNamn" runat="server" Text="Anändarnamn:"></asp:Label>
+                            <asp:Label ID="Label7" Height="4px" Width="3%" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblAnvandarNamn" runat="server" Text="Anändarnamn:" CssClass="rubriktext"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label4" Height="4px" Width="3%" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -37,7 +47,17 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="lblLosen" runat="server" Text="Huvudlösenord"></asp:Label>
+                            <asp:Label ID="Label5" Height="4px" Width="3%" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblLosen" runat="server" Text="Huvudlösenord" CssClass="rubriktext"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label6" Height="4px" Width="3%" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -47,15 +67,19 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="knappOK" runat="server" Text="OK" OnClick="knappOK_Click" />
-                            <asp:Label ID="Label3" Width="1%" runat="server"></asp:Label>
-                            <asp:Button ID="knappAvbryt" runat="server" Text="Avbryt" OnClick="knappAvbryt_Click" />
+                            <asp:Label ID="Label8" Height="4px" Width="3%" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label2" Width="1%" runat="server"></asp:Label>
-                            <asp:Label ID="Label1" Width="1%" runat="server"></asp:Label>
+                            <asp:Button ID="knappOK" runat="server" Text="OK" OnClick="knappOK_Click" CssClass="ButtonClass" />
+                            <asp:Label ID="Label3" Width="1%" runat="server"></asp:Label>
+                            <asp:Button ID="knappAvbryt" runat="server" Text="Avbryt" OnClick="knappAvbryt_Click" CssClass="ButtonClass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label1" Height="4px" Width="3%" runat="server"></asp:Label>
                         </td>
                     </tr>
                 </table>
