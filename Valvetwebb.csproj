@@ -197,16 +197,16 @@
     <Content Include="Aktivitet\AnvandareDS.xss">
       <DependentUpon>AnvandareDS.xsd</DependentUpon>
     </Content>
-    <Content Include="Aktivitet\ValvpostDS.xsc">
-      <DependentUpon>ValvpostDS.xsd</DependentUpon>
+    <Content Include="Aktivitet\ValvPostDS.xsc">
+      <DependentUpon>ValvPostDS.xsd</DependentUpon>
     </Content>
-    <None Include="Aktivitet\ValvpostDS.xsd">
+    <None Include="Aktivitet\ValvPostDS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ValvpostDS.Designer.cs</LastGenOutput>
+      <LastGenOutput>ValvPostDS.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Aktivitet\ValvpostDS.xss">
-      <DependentUpon>ValvpostDS.xsd</DependentUpon>
+    <Content Include="Aktivitet\ValvPostDS.xss">
+      <DependentUpon>ValvPostDS.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
@@ -249,10 +249,11 @@
       <DependentUpon>AnvandareDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Aktivitet\SökVillkor.cs" />
-    <Compile Include="Aktivitet\ValvpostDS.Designer.cs">
+    <Compile Include="Aktivitet\ValvpostAktivitet.cs" />
+    <Compile Include="Aktivitet\ValvPostDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ValvpostDS.xsd</DependentUpon>
+      <DependentUpon>ValvPostDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="App.Master.cs">
       <DependentUpon>App.Master</DependentUpon>
@@ -280,7 +281,7 @@
     <Compile Include="Datalager\AbstractDataLager.cs" />
     <Compile Include="Datalager\AnvandareData.cs" />
     <Compile Include="Datalager\Enumkoder.cs" />
-    <Compile Include="Datalager\ValvpostData.cs" />
+    <Compile Include="Datalager\ValvPostData.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,7 +294,7 @@
     </Compile>
     <Compile Include="Kontroller\Extensions.cs" />
     <Compile Include="Kontroller\GUI_kontroller.cs" />
-    <Compile Include="Objekt\Valvpost.cs" />
+    <Compile Include="Objekt\ValvPost.cs" />
     <Compile Include="Valvlista.aspx.cs">
       <DependentUpon>Valvlista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

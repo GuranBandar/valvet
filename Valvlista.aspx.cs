@@ -1,9 +1,11 @@
-﻿using Valvetwebb.Kontroller;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.Web.UI.WebControls;
+using Valvetwebb.Aktivitet;
+using Valvetwebb.Kontroller;
+using Valvetwebb.Objekt;
 
 namespace Valvetwebb
 {
@@ -52,6 +54,8 @@ namespace Valvetwebb
                 //    //txtDatum.Text = Session["FromDatum"].ToString();
                 //    this.knappSearch_Click(sender, e);
                 //}
+                this.knappSearch_Click(sender, e);
+
             }
         }
 
@@ -64,26 +68,13 @@ namespace Valvetwebb
         {
             TableCell itemCell = e.Item.Cells[0];
             string item = itemCell.Text;
-            TableCell itemDag = e.Item.Cells[4];
-            string dag;
+            TableCell itemPost = e.Item.Cells[4];
+            int postID;
             string sidan;
             try
             {
-                dag = itemDag.Text;
-                switch (dag)
-                {
-                    case "Tisdagsgäng":
-                        Session["Bokningsdag"] = "Tisdag";
-                        sidan = "Tisdagslista.aspx";
-                        break;
-                    case "Torsdagsgubs":
-                        Session["Bokningsdag"] = "Torsdag";
-                        sidan = "Tisdagslista.aspx";
-                        break;
-                    default:
-                        sidan = "Kalender.aspx";
-                        break;
-                }
+                //postID = (int)itemPost.Text;
+                sidan = "ValvPost.aspx";
                 VisaSida(sidan, "BokningID", item);
             }
             catch (Exception ex)
@@ -112,9 +103,14 @@ namespace Valvetwebb
             dgList.DataBind();
         }
 
+        protected void knappNy_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         protected void knappAvbryt_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Meny.aspx");
+            Response.Redirect("LogIn.aspx");
         }
 
         /// <summary>
@@ -147,50 +143,31 @@ namespace Valvetwebb
         /// <returns></returns>
         private DataView InitieraValvlista()
         {
-            //Loggning.SkrivaPaLoggfil("Nu ska kalendern initieras med sökdatum = "
-            //    + FromDatum.ToString());            
-            //BokningAktivitet bokningAktivitet = new BokningAktivitet();
-            //List<BokningDag> bokningDagList = 
-            //    bokningAktivitet.SearchBokning(FromDatum);
+            ValvpostAktivitet ValvpostAktivitet = new ValvpostAktivitet();
+            List<ValvPost> valvpostList = ValvpostAktivitet.HämtaAlla();
             DataTable dt = new DataTable();
             DataRow dr;
-            dt.Columns.Add(new DataColumn("Bokningsnummer", typeof(Int32)));
-            dt.Columns.Add(new DataColumn("Datum", typeof(string)));
-            dt.Columns.Add(new DataColumn("Bokade tider", typeof(string)));
-            dt.Columns.Add(new DataColumn("Bana", typeof(string)));
-            dt.Columns.Add(new DataColumn("Dag", typeof(string)));
+            dt.Columns.Add(new DataColumn("PostID", typeof(Int32)));
+            dt.Columns.Add(new DataColumn("Postnummer", typeof(Int32)));
+            dt.Columns.Add(new DataColumn("Postnamn", typeof(string)));
 
-            //if (bokningDagList.Count > 0)
-            //{
-            //    foreach (BokningDag bokning in bokningDagList)
-            //    {
-            //        dr = dt.NewRow();
-            //        dr[0] = bokning.BokningID;
-            //        dr[1] = bokning.Datum;
-            //        dr[2] = bokning.Tider;
-            //        dr[3] = bokning.Bana;
-
-            //        switch (bokning.TisdagTorsdag)
-            //        {
-            //            case 2:
-            //                dr[4] = "Tisdagsgäng";
-            //                break;
-            //            case 4:
-            //                dr[4] = "Torsdagsgubs";
-            //                break;
-            //            default:
-            //                break;
-            //        }
-
-            //        dt.Rows.Add(dr);
-            //    }
-            //}
-            //else
-            //{
-            //    //Visa felmeddelande och ta bort ev From-datum
-            //    Session["FromDatum"] = string.Empty;
-            //    //MessageBoxOKButton("Finns inga kommande bokningar");
-            //}
+            if (valvpostList.Count > 0)
+            {
+                foreach (ValvPost valvpost in valvpostList)
+                {
+                    dr = dt.NewRow();
+                    dr[0] = valvpost.PostID;
+                    dr[1] = 1;
+                    dr[2] = valvpost.Postnamn;
+                    dt.Rows.Add(dr);
+                }
+            }
+            else
+            {
+                //Visa felmeddelande och ta bort ev From-datum
+                Session["FromDatum"] = string.Empty;
+                //MessageBoxOKButton("Finns inga kommande bokningar");
+            }
 
             DataView dv = new DataView(dt);
             return dv;

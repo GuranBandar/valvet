@@ -20,17 +20,17 @@ namespace Valvetwebb.Aktivitet {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ValvpostDS")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ValvPostDS")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ValvpostDS : global::System.Data.DataSet {
+    public partial class ValvPostDS : global::System.Data.DataSet {
         
-        private ValvpostDataTable tableValvpost;
+        private ValvPostDataTable tableValvPost;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ValvpostDS() {
+        public ValvPostDS() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Valvetwebb.Aktivitet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected ValvpostDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ValvPostDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Valvetwebb.Aktivitet {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Valvpost"] != null)) {
-                    base.Tables.Add(new ValvpostDataTable(ds.Tables["Valvpost"]));
+                if ((ds.Tables["ValvPost"] != null)) {
+                    base.Tables.Add(new ValvPostDataTable(ds.Tables["ValvPost"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Valvetwebb.Aktivitet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ValvpostDataTable Valvpost {
+        public ValvPostDataTable ValvPost {
             get {
-                return this.tableValvpost;
+                return this.tableValvPost;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Valvetwebb.Aktivitet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ValvpostDS cln = ((ValvpostDS)(base.Clone()));
+            ValvPostDS cln = ((ValvPostDS)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Valvetwebb.Aktivitet {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Valvpost"] != null)) {
-                    base.Tables.Add(new ValvpostDataTable(ds.Tables["Valvpost"]));
+                if ((ds.Tables["ValvPost"] != null)) {
+                    base.Tables.Add(new ValvPostDataTable(ds.Tables["ValvPost"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Valvetwebb.Aktivitet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableValvpost = ((ValvpostDataTable)(base.Tables["Valvpost"]));
+            this.tableValvPost = ((ValvPostDataTable)(base.Tables["ValvPost"]));
             if ((initTable == true)) {
-                if ((this.tableValvpost != null)) {
-                    this.tableValvpost.InitVars();
+                if ((this.tableValvPost != null)) {
+                    this.tableValvPost.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Valvetwebb.Aktivitet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ValvpostDS";
+            this.DataSetName = "ValvPostDS";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ValvpostDS.xsd";
+            this.Namespace = "http://tempuri.org/ValvPostDS.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableValvpost = new ValvpostDataTable();
-            base.Tables.Add(this.tableValvpost);
+            this.tableValvPost = new ValvPostDataTable();
+            base.Tables.Add(this.tableValvPost);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeValvpost() {
+        private bool ShouldSerializeValvPost() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Valvetwebb.Aktivitet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ValvpostDS ds = new ValvpostDS();
+            ValvPostDS ds = new ValvPostDS();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace Valvetwebb.Aktivitet {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ValvpostRowChangeEventHandler(object sender, ValvpostRowChangeEvent e);
+        public delegate void ValvPostRowChangeEventHandler(object sender, ValvPostRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ValvpostDataTable : global::System.Data.TypedTableBase<ValvpostRow> {
+        public partial class ValvPostDataTable : global::System.Data.TypedTableBase<ValvPostRow> {
             
             private global::System.Data.DataColumn columnPostID;
             
@@ -297,8 +297,6 @@ namespace Valvetwebb.Aktivitet {
             
             private global::System.Data.DataColumn columnAnteckningar;
             
-            private global::System.Data.DataColumn columnPostlogga;
-            
             private global::System.Data.DataColumn columnAnvandarNamnSkapad;
             
             private global::System.Data.DataColumn columnSkapadDatum;
@@ -309,8 +307,8 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ValvpostDataTable() {
-                this.TableName = "Valvpost";
+            public ValvPostDataTable() {
+                this.TableName = "ValvPost";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -318,7 +316,7 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ValvpostDataTable(global::System.Data.DataTable table) {
+            internal ValvPostDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -335,7 +333,7 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ValvpostDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ValvPostDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -414,14 +412,6 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PostloggaColumn {
-                get {
-                    return this.columnPostlogga;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn AnvandarNamnSkapadColumn {
                 get {
                     return this.columnAnvandarNamnSkapad;
@@ -463,34 +453,34 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ValvpostRow this[int index] {
+            public ValvPostRow this[int index] {
                 get {
-                    return ((ValvpostRow)(this.Rows[index]));
+                    return ((ValvPostRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ValvpostRowChangeEventHandler ValvpostRowChanging;
+            public event ValvPostRowChangeEventHandler ValvPostRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ValvpostRowChangeEventHandler ValvpostRowChanged;
+            public event ValvPostRowChangeEventHandler ValvPostRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ValvpostRowChangeEventHandler ValvpostRowDeleting;
+            public event ValvPostRowChangeEventHandler ValvPostRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ValvpostRowChangeEventHandler ValvpostRowDeleted;
+            public event ValvPostRowChangeEventHandler ValvPostRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddValvpostRow(ValvpostRow row) {
+            public void AddValvPostRow(ValvPostRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ValvpostRow AddValvpostRow(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, byte[] Postlogga, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
-                ValvpostRow rowValvpostRow = ((ValvpostRow)(this.NewRow()));
+            public ValvPostRow AddValvPostRow(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
+                ValvPostRow rowValvPostRow = ((ValvPostRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         AnvandarID,
@@ -501,20 +491,19 @@ namespace Valvetwebb.Aktivitet {
                         Anvandarnamn,
                         Webbadress,
                         Anteckningar,
-                        Postlogga,
                         AnvandarNamnSkapad,
                         SkapadDatum,
                         AnvandarNamnUppdat,
                         UppdatDatum};
-                rowValvpostRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowValvpostRow);
-                return rowValvpostRow;
+                rowValvPostRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowValvPostRow);
+                return rowValvPostRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ValvpostRow FindByPostIDAnvandarID(int PostID, int AnvandarID) {
-                return ((ValvpostRow)(this.Rows.Find(new object[] {
+            public ValvPostRow FindByPostIDAnvandarID(int PostID, int AnvandarID) {
+                return ((ValvPostRow)(this.Rows.Find(new object[] {
                             PostID,
                             AnvandarID})));
             }
@@ -522,7 +511,7 @@ namespace Valvetwebb.Aktivitet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ValvpostDataTable cln = ((ValvpostDataTable)(base.Clone()));
+                ValvPostDataTable cln = ((ValvPostDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -530,7 +519,7 @@ namespace Valvetwebb.Aktivitet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ValvpostDataTable();
+                return new ValvPostDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -545,7 +534,6 @@ namespace Valvetwebb.Aktivitet {
                 this.columnAnvandarnamn = base.Columns["Anvandarnamn"];
                 this.columnWebbadress = base.Columns["Webbadress"];
                 this.columnAnteckningar = base.Columns["Anteckningar"];
-                this.columnPostlogga = base.Columns["Postlogga"];
                 this.columnAnvandarNamnSkapad = base.Columns["AnvandarNamnSkapad"];
                 this.columnSkapadDatum = base.Columns["SkapadDatum"];
                 this.columnAnvandarNamnUppdat = base.Columns["AnvandarNamnUppdat"];
@@ -573,8 +561,6 @@ namespace Valvetwebb.Aktivitet {
                 base.Columns.Add(this.columnWebbadress);
                 this.columnAnteckningar = new global::System.Data.DataColumn("Anteckningar", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAnteckningar);
-                this.columnPostlogga = new global::System.Data.DataColumn("Postlogga", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPostlogga);
                 this.columnAnvandarNamnSkapad = new global::System.Data.DataColumn("AnvandarNamnSkapad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAnvandarNamnSkapad);
                 this.columnSkapadDatum = new global::System.Data.DataColumn("SkapadDatum", typeof(string), null, global::System.Data.MappingType.Element);
@@ -613,28 +599,28 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ValvpostRow NewValvpostRow() {
-                return ((ValvpostRow)(this.NewRow()));
+            public ValvPostRow NewValvPostRow() {
+                return ((ValvPostRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ValvpostRow(builder);
+                return new ValvPostRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ValvpostRow);
+                return typeof(ValvPostRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ValvpostRowChanged != null)) {
-                    this.ValvpostRowChanged(this, new ValvpostRowChangeEvent(((ValvpostRow)(e.Row)), e.Action));
+                if ((this.ValvPostRowChanged != null)) {
+                    this.ValvPostRowChanged(this, new ValvPostRowChangeEvent(((ValvPostRow)(e.Row)), e.Action));
                 }
             }
             
@@ -642,8 +628,8 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ValvpostRowChanging != null)) {
-                    this.ValvpostRowChanging(this, new ValvpostRowChangeEvent(((ValvpostRow)(e.Row)), e.Action));
+                if ((this.ValvPostRowChanging != null)) {
+                    this.ValvPostRowChanging(this, new ValvPostRowChangeEvent(((ValvPostRow)(e.Row)), e.Action));
                 }
             }
             
@@ -651,8 +637,8 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ValvpostRowDeleted != null)) {
-                    this.ValvpostRowDeleted(this, new ValvpostRowChangeEvent(((ValvpostRow)(e.Row)), e.Action));
+                if ((this.ValvPostRowDeleted != null)) {
+                    this.ValvPostRowDeleted(this, new ValvPostRowChangeEvent(((ValvPostRow)(e.Row)), e.Action));
                 }
             }
             
@@ -660,14 +646,14 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ValvpostRowDeleting != null)) {
-                    this.ValvpostRowDeleting(this, new ValvpostRowChangeEvent(((ValvpostRow)(e.Row)), e.Action));
+                if ((this.ValvPostRowDeleting != null)) {
+                    this.ValvPostRowDeleting(this, new ValvPostRowChangeEvent(((ValvPostRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveValvpostRow(ValvpostRow row) {
+            public void RemoveValvPostRow(ValvPostRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -676,7 +662,7 @@ namespace Valvetwebb.Aktivitet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ValvpostDS ds = new ValvpostDS();
+                ValvPostDS ds = new ValvPostDS();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -694,7 +680,7 @@ namespace Valvetwebb.Aktivitet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ValvpostDataTable";
+                attribute2.FixedValue = "ValvPostDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -738,25 +724,25 @@ namespace Valvetwebb.Aktivitet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ValvpostRow : global::System.Data.DataRow {
+        public partial class ValvPostRow : global::System.Data.DataRow {
             
-            private ValvpostDataTable tableValvpost;
+            private ValvPostDataTable tableValvPost;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ValvpostRow(global::System.Data.DataRowBuilder rb) : 
+            internal ValvPostRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableValvpost = ((ValvpostDataTable)(this.Table));
+                this.tableValvPost = ((ValvPostDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int PostID {
                 get {
-                    return ((int)(this[this.tableValvpost.PostIDColumn]));
+                    return ((int)(this[this.tableValvPost.PostIDColumn]));
                 }
                 set {
-                    this[this.tableValvpost.PostIDColumn] = value;
+                    this[this.tableValvPost.PostIDColumn] = value;
                 }
             }
             
@@ -764,10 +750,10 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int AnvandarID {
                 get {
-                    return ((int)(this[this.tableValvpost.AnvandarIDColumn]));
+                    return ((int)(this[this.tableValvPost.AnvandarIDColumn]));
                 }
                 set {
-                    this[this.tableValvpost.AnvandarIDColumn] = value;
+                    this[this.tableValvPost.AnvandarIDColumn] = value;
                 }
             }
             
@@ -775,10 +761,10 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Konto {
                 get {
-                    return ((string)(this[this.tableValvpost.KontoColumn]));
+                    return ((string)(this[this.tableValvPost.KontoColumn]));
                 }
                 set {
-                    this[this.tableValvpost.KontoColumn] = value;
+                    this[this.tableValvPost.KontoColumn] = value;
                 }
             }
             
@@ -787,14 +773,14 @@ namespace Valvetwebb.Aktivitet {
             public string Inloggning {
                 get {
                     try {
-                        return ((string)(this[this.tableValvpost.InloggningColumn]));
+                        return ((string)(this[this.tableValvPost.InloggningColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Inloggning\' in table \'Valvpost\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Inloggning\' in table \'ValvPost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableValvpost.InloggningColumn] = value;
+                    this[this.tableValvPost.InloggningColumn] = value;
                 }
             }
             
@@ -802,10 +788,10 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Losenord {
                 get {
-                    return ((string)(this[this.tableValvpost.LosenordColumn]));
+                    return ((string)(this[this.tableValvPost.LosenordColumn]));
                 }
                 set {
-                    this[this.tableValvpost.LosenordColumn] = value;
+                    this[this.tableValvPost.LosenordColumn] = value;
                 }
             }
             
@@ -813,10 +799,10 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Postnamn {
                 get {
-                    return ((string)(this[this.tableValvpost.PostnamnColumn]));
+                    return ((string)(this[this.tableValvPost.PostnamnColumn]));
                 }
                 set {
-                    this[this.tableValvpost.PostnamnColumn] = value;
+                    this[this.tableValvPost.PostnamnColumn] = value;
                 }
             }
             
@@ -824,10 +810,10 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Anvandarnamn {
                 get {
-                    return ((string)(this[this.tableValvpost.AnvandarnamnColumn]));
+                    return ((string)(this[this.tableValvPost.AnvandarnamnColumn]));
                 }
                 set {
-                    this[this.tableValvpost.AnvandarnamnColumn] = value;
+                    this[this.tableValvPost.AnvandarnamnColumn] = value;
                 }
             }
             
@@ -836,14 +822,14 @@ namespace Valvetwebb.Aktivitet {
             public string Webbadress {
                 get {
                     try {
-                        return ((string)(this[this.tableValvpost.WebbadressColumn]));
+                        return ((string)(this[this.tableValvPost.WebbadressColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Webbadress\' in table \'Valvpost\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Webbadress\' in table \'ValvPost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableValvpost.WebbadressColumn] = value;
+                    this[this.tableValvPost.WebbadressColumn] = value;
                 }
             }
             
@@ -852,30 +838,14 @@ namespace Valvetwebb.Aktivitet {
             public string Anteckningar {
                 get {
                     try {
-                        return ((string)(this[this.tableValvpost.AnteckningarColumn]));
+                        return ((string)(this[this.tableValvPost.AnteckningarColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Anteckningar\' in table \'Valvpost\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Anteckningar\' in table \'ValvPost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableValvpost.AnteckningarColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public byte[] Postlogga {
-                get {
-                    try {
-                        return ((byte[])(this[this.tableValvpost.PostloggaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Postlogga\' in table \'Valvpost\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableValvpost.PostloggaColumn] = value;
+                    this[this.tableValvPost.AnteckningarColumn] = value;
                 }
             }
             
@@ -883,10 +853,10 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string AnvandarNamnSkapad {
                 get {
-                    return ((string)(this[this.tableValvpost.AnvandarNamnSkapadColumn]));
+                    return ((string)(this[this.tableValvPost.AnvandarNamnSkapadColumn]));
                 }
                 set {
-                    this[this.tableValvpost.AnvandarNamnSkapadColumn] = value;
+                    this[this.tableValvPost.AnvandarNamnSkapadColumn] = value;
                 }
             }
             
@@ -894,10 +864,10 @@ namespace Valvetwebb.Aktivitet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string SkapadDatum {
                 get {
-                    return ((string)(this[this.tableValvpost.SkapadDatumColumn]));
+                    return ((string)(this[this.tableValvPost.SkapadDatumColumn]));
                 }
                 set {
-                    this[this.tableValvpost.SkapadDatumColumn] = value;
+                    this[this.tableValvPost.SkapadDatumColumn] = value;
                 }
             }
             
@@ -906,14 +876,14 @@ namespace Valvetwebb.Aktivitet {
             public string AnvandarNamnUppdat {
                 get {
                     try {
-                        return ((string)(this[this.tableValvpost.AnvandarNamnUppdatColumn]));
+                        return ((string)(this[this.tableValvPost.AnvandarNamnUppdatColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AnvandarNamnUppdat\' in table \'Valvpost\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AnvandarNamnUppdat\' in table \'ValvPost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableValvpost.AnvandarNamnUppdatColumn] = value;
+                    this[this.tableValvPost.AnvandarNamnUppdatColumn] = value;
                 }
             }
             
@@ -922,87 +892,75 @@ namespace Valvetwebb.Aktivitet {
             public string UppdatDatum {
                 get {
                     try {
-                        return ((string)(this[this.tableValvpost.UppdatDatumColumn]));
+                        return ((string)(this[this.tableValvPost.UppdatDatumColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UppdatDatum\' in table \'Valvpost\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'UppdatDatum\' in table \'ValvPost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableValvpost.UppdatDatumColumn] = value;
+                    this[this.tableValvPost.UppdatDatumColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsInloggningNull() {
-                return this.IsNull(this.tableValvpost.InloggningColumn);
+                return this.IsNull(this.tableValvPost.InloggningColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetInloggningNull() {
-                this[this.tableValvpost.InloggningColumn] = global::System.Convert.DBNull;
+                this[this.tableValvPost.InloggningColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsWebbadressNull() {
-                return this.IsNull(this.tableValvpost.WebbadressColumn);
+                return this.IsNull(this.tableValvPost.WebbadressColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetWebbadressNull() {
-                this[this.tableValvpost.WebbadressColumn] = global::System.Convert.DBNull;
+                this[this.tableValvPost.WebbadressColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsAnteckningarNull() {
-                return this.IsNull(this.tableValvpost.AnteckningarColumn);
+                return this.IsNull(this.tableValvPost.AnteckningarColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetAnteckningarNull() {
-                this[this.tableValvpost.AnteckningarColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPostloggaNull() {
-                return this.IsNull(this.tableValvpost.PostloggaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPostloggaNull() {
-                this[this.tableValvpost.PostloggaColumn] = global::System.Convert.DBNull;
+                this[this.tableValvPost.AnteckningarColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsAnvandarNamnUppdatNull() {
-                return this.IsNull(this.tableValvpost.AnvandarNamnUppdatColumn);
+                return this.IsNull(this.tableValvPost.AnvandarNamnUppdatColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetAnvandarNamnUppdatNull() {
-                this[this.tableValvpost.AnvandarNamnUppdatColumn] = global::System.Convert.DBNull;
+                this[this.tableValvPost.AnvandarNamnUppdatColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsUppdatDatumNull() {
-                return this.IsNull(this.tableValvpost.UppdatDatumColumn);
+                return this.IsNull(this.tableValvPost.UppdatDatumColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetUppdatDatumNull() {
-                this[this.tableValvpost.UppdatDatumColumn] = global::System.Convert.DBNull;
+                this[this.tableValvPost.UppdatDatumColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1010,22 +968,22 @@ namespace Valvetwebb.Aktivitet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ValvpostRowChangeEvent : global::System.EventArgs {
+        public class ValvPostRowChangeEvent : global::System.EventArgs {
             
-            private ValvpostRow eventRow;
+            private ValvPostRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ValvpostRowChangeEvent(ValvpostRow row, global::System.Data.DataRowAction action) {
+            public ValvPostRowChangeEvent(ValvPostRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ValvpostRow Row {
+            public ValvPostRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1041,7 +999,7 @@ namespace Valvetwebb.Aktivitet {
         }
     }
 }
-namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
+namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
     
     
     /// <summary>
@@ -1053,7 +1011,7 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ValvpostTableAdapter : global::System.ComponentModel.Component {
+    public partial class ValvPostTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1067,7 +1025,7 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ValvpostTableAdapter() {
+        public ValvPostTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1164,7 +1122,7 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Valvpost";
+            tableMapping.DataSetTable = "ValvPost";
             tableMapping.ColumnMappings.Add("PostID", "PostID");
             tableMapping.ColumnMappings.Add("AnvandarID", "AnvandarID");
             tableMapping.ColumnMappings.Add("Konto", "Konto");
@@ -1174,7 +1132,6 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
             tableMapping.ColumnMappings.Add("Anvandarnamn", "Anvandarnamn");
             tableMapping.ColumnMappings.Add("Webbadress", "Webbadress");
             tableMapping.ColumnMappings.Add("Anteckningar", "Anteckningar");
-            tableMapping.ColumnMappings.Add("Postlogga", "Postlogga");
             tableMapping.ColumnMappings.Add("AnvandarNamnSkapad", "AnvandarNamnSkapad");
             tableMapping.ColumnMappings.Add("SkapadDatum", "SkapadDatum");
             tableMapping.ColumnMappings.Add("AnvandarNamnUppdat", "AnvandarNamnUppdat");
@@ -1182,14 +1139,14 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Valvpost] WHERE (([PostID] = @Original_PostID) AND ([AnvandarI" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ValvPost] WHERE (([PostID] = @Original_PostID) AND ([AnvandarI" +
                 "D] = @Original_AnvandarID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PostID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PostID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Valvpost] ([AnvandarID], [Konto], [Inloggning], [Losenord], [Postnamn], [Anvandarnamn], [Webbadress], [Anteckningar], [Postlogga], [AnvandarNamnSkapad], [SkapadDatum], [AnvandarNamnUppdat], [UppdatDatum]) VALUES (@AnvandarID, @Konto, @Inloggning, @Losenord, @Postnamn, @Anvandarnamn, @Webbadress, @Anteckningar, @Postlogga, @AnvandarNamnSkapad, @SkapadDatum, @AnvandarNamnUppdat, @UppdatDatum)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ValvPost] ([AnvandarID], [Konto], [Inloggning], [Losenord], [Postnamn], [Anvandarnamn], [Webbadress], [Anteckningar], [AnvandarNamnSkapad], [SkapadDatum], [AnvandarNamnUppdat], [UppdatDatum]) VALUES (@AnvandarID, @Konto, @Inloggning, @Losenord, @Postnamn, @Anvandarnamn, @Webbadress, @Anteckningar, @AnvandarNamnSkapad, @SkapadDatum, @AnvandarNamnUppdat, @UppdatDatum)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Konto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Konto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1199,14 +1156,13 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Webbadress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Webbadress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anteckningar", global::System.Data.SqlDbType.NText, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anteckningar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Postlogga", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Postlogga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarNamnSkapad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarNamnSkapad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SkapadDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SkapadDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarNamnUppdat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarNamnUppdat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UppdatDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UppdatDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Valvpost] SET [AnvandarID] = @AnvandarID, [Konto] = @Konto, [Inloggning] = @Inloggning, [Losenord] = @Losenord, [Postnamn] = @Postnamn, [Anvandarnamn] = @Anvandarnamn, [Webbadress] = @Webbadress, [Anteckningar] = @Anteckningar, [Postlogga] = @Postlogga, [AnvandarNamnSkapad] = @AnvandarNamnSkapad, [SkapadDatum] = @SkapadDatum, [AnvandarNamnUppdat] = @AnvandarNamnUppdat, [UppdatDatum] = @UppdatDatum WHERE (([PostID] = @Original_PostID) AND ([AnvandarID] = @Original_AnvandarID))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ValvPost] SET [AnvandarID] = @AnvandarID, [Konto] = @Konto, [Inloggning] = @Inloggning, [Losenord] = @Losenord, [Postnamn] = @Postnamn, [Anvandarnamn] = @Anvandarnamn, [Webbadress] = @Webbadress, [Anteckningar] = @Anteckningar, [AnvandarNamnSkapad] = @AnvandarNamnSkapad, [SkapadDatum] = @SkapadDatum, [AnvandarNamnUppdat] = @AnvandarNamnUppdat, [UppdatDatum] = @UppdatDatum WHERE (([PostID] = @Original_PostID) AND ([AnvandarID] = @Original_AnvandarID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Konto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Konto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1216,7 +1172,6 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Webbadress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Webbadress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anteckningar", global::System.Data.SqlDbType.NText, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anteckningar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Postlogga", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Postlogga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarNamnSkapad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarNamnSkapad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SkapadDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SkapadDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarNamnUppdat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarNamnUppdat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1239,8 +1194,8 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PostID, AnvandarID, Konto, Inloggning, Losenord, Postnamn, Anvandarnamn, W" +
-                "ebbadress, Anteckningar, Postlogga, AnvandarNamnSkapad, SkapadDatum, AnvandarNam" +
-                "nUppdat, UppdatDatum FROM dbo.Valvpost";
+                "ebbadress, Anteckningar, AnvandarNamnSkapad, SkapadDatum, AnvandarNamnUppdat, Up" +
+                "pdatDatum FROM dbo.ValvPost";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1248,7 +1203,7 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ValvpostDS.ValvpostDataTable dataTable) {
+        public virtual int Fill(ValvPostDS.ValvPostDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1261,9 +1216,9 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ValvpostDS.ValvpostDataTable GetData() {
+        public virtual ValvPostDS.ValvPostDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ValvpostDS.ValvpostDataTable dataTable = new ValvpostDS.ValvpostDataTable();
+            ValvPostDS.ValvPostDataTable dataTable = new ValvPostDS.ValvPostDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1271,15 +1226,15 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ValvpostDS.ValvpostDataTable dataTable) {
+        public virtual int Update(ValvPostDS.ValvPostDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ValvpostDS dataSet) {
-            return this.Adapter.Update(dataSet, "Valvpost");
+        public virtual int Update(ValvPostDS dataSet) {
+            return this.Adapter.Update(dataSet, "ValvPost");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1324,7 +1279,7 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, byte[] Postlogga, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
+        public virtual int Insert(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AnvandarID));
             if ((Konto == null)) {
                 throw new global::System.ArgumentNullException("Konto");
@@ -1368,35 +1323,29 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Anteckningar));
             }
-            if ((Postlogga == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((byte[])(Postlogga));
-            }
             if ((AnvandarNamnSkapad == null)) {
                 throw new global::System.ArgumentNullException("AnvandarNamnSkapad");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(AnvandarNamnSkapad));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(AnvandarNamnSkapad));
             }
             if ((SkapadDatum == null)) {
                 throw new global::System.ArgumentNullException("SkapadDatum");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(SkapadDatum));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(SkapadDatum));
             }
             if ((AnvandarNamnUppdat == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(AnvandarNamnUppdat));
+            }
+            if ((UppdatDatum == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(AnvandarNamnUppdat));
-            }
-            if ((UppdatDatum == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(UppdatDatum));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(UppdatDatum));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1418,7 +1367,7 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, byte[] Postlogga, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
+        public virtual int Update(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AnvandarID));
             if ((Konto == null)) {
                 throw new global::System.ArgumentNullException("Konto");
@@ -1462,38 +1411,32 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Anteckningar));
             }
-            if ((Postlogga == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((byte[])(Postlogga));
-            }
             if ((AnvandarNamnSkapad == null)) {
                 throw new global::System.ArgumentNullException("AnvandarNamnSkapad");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(AnvandarNamnSkapad));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(AnvandarNamnSkapad));
             }
             if ((SkapadDatum == null)) {
                 throw new global::System.ArgumentNullException("SkapadDatum");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(SkapadDatum));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(SkapadDatum));
             }
             if ((AnvandarNamnUppdat == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(AnvandarNamnUppdat));
+            }
+            if ((UppdatDatum == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(AnvandarNamnUppdat));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(UppdatDatum));
             }
-            if ((UppdatDatum == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(UppdatDatum));
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_PostID));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_AnvandarID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_PostID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_AnvandarID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1514,8 +1457,8 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, byte[] Postlogga, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
-            return this.Update(Original_AnvandarID, Konto, Inloggning, Losenord, Postnamn, Anvandarnamn, Webbadress, Anteckningar, Postlogga, AnvandarNamnSkapad, SkapadDatum, AnvandarNamnUppdat, UppdatDatum, Original_PostID, Original_AnvandarID);
+        public virtual int Update(string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
+            return this.Update(Original_AnvandarID, Konto, Inloggning, Losenord, Postnamn, Anvandarnamn, Webbadress, Anteckningar, AnvandarNamnSkapad, SkapadDatum, AnvandarNamnUppdat, UppdatDatum, Original_PostID, Original_AnvandarID);
         }
     }
     
@@ -1531,7 +1474,7 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private ValvpostTableAdapter _valvpostTableAdapter;
+        private ValvPostTableAdapter _valvPostTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1553,12 +1496,12 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ValvpostTableAdapter ValvpostTableAdapter {
+        public ValvPostTableAdapter ValvPostTableAdapter {
             get {
-                return this._valvpostTableAdapter;
+                return this._valvPostTableAdapter;
             }
             set {
-                this._valvpostTableAdapter = value;
+                this._valvPostTableAdapter = value;
             }
         }
         
@@ -1581,9 +1524,9 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._valvpostTableAdapter != null) 
-                            && (this._valvpostTableAdapter.Connection != null))) {
-                    return this._valvpostTableAdapter.Connection;
+                if (((this._valvPostTableAdapter != null) 
+                            && (this._valvPostTableAdapter.Connection != null))) {
+                    return this._valvPostTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1598,7 +1541,7 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._valvpostTableAdapter != null)) {
+                if ((this._valvPostTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1610,14 +1553,14 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(ValvpostDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ValvPostDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._valvpostTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Valvpost.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._valvPostTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ValvPost.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._valvpostTableAdapter.Update(updatedRows));
+                    result = (result + this._valvPostTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1629,13 +1572,13 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(ValvpostDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ValvPostDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._valvpostTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Valvpost.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._valvPostTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ValvPost.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._valvpostTableAdapter.Update(addedRows));
+                    result = (result + this._valvPostTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1647,13 +1590,13 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(ValvpostDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ValvPostDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._valvpostTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Valvpost.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._valvPostTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ValvPost.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._valvpostTableAdapter.Update(deletedRows));
+                    result = (result + this._valvPostTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1689,15 +1632,15 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(ValvpostDS dataSet) {
+        public virtual int UpdateAll(ValvPostDS dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._valvpostTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._valvpostTableAdapter.Connection) == false))) {
+            if (((this._valvPostTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._valvPostTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1733,13 +1676,13 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._valvpostTableAdapter != null)) {
-                    revertConnections.Add(this._valvpostTableAdapter, this._valvpostTableAdapter.Connection);
-                    this._valvpostTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._valvpostTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._valvpostTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._valvpostTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._valvpostTableAdapter.Adapter);
+                if ((this._valvPostTableAdapter != null)) {
+                    revertConnections.Add(this._valvPostTableAdapter, this._valvPostTableAdapter.Connection);
+                    this._valvPostTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._valvPostTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._valvPostTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._valvPostTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._valvPostTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1800,9 +1743,9 @@ namespace Valvetwebb.Aktivitet.ValvpostDSTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._valvpostTableAdapter != null)) {
-                    this._valvpostTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._valvpostTableAdapter]));
-                    this._valvpostTableAdapter.Transaction = null;
+                if ((this._valvPostTableAdapter != null)) {
+                    this._valvPostTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._valvPostTableAdapter]));
+                    this._valvPostTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
