@@ -49,6 +49,7 @@ namespace Valvetwebb.Aktivitet
                     anvandare.SenastByttLosenordDatum = (anvandareDS.Anvandare[0].IsSenastByttLosenordDatumNull()) ?
                         string.Empty : anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
                     anvandare.Aktiv = anvandareDS.Anvandare[0].Aktiv.ToString();
+                    anvandare.Konto = anvandareDS.Anvandare[0].Konto.ToString();
                 }
             }
             catch (Exception ex)

@@ -43,6 +43,11 @@ namespace Valvetwebb.Objekt
         /// Användaren aktiv
         /// </summary>
         public string Aktiv { get; set; }
+
+        /// <summary>
+        /// Användarens konto
+        /// </summary>
+        public string Konto { get; set; }
         #endregion
 
         /// <summary>

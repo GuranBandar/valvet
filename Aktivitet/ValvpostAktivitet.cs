@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 using Valvetwebb.Datalager;
 using Valvetwebb.Kontroller;
 using Valvetwebb.Objekt;
@@ -10,33 +7,33 @@ using Valvetwebb.Objekt;
 namespace Valvetwebb.Aktivitet
 {
     /// <summary>
-    /// Klass för Vavpost aktivitet
+    /// Klass för ValvPost aktivitet
     /// 
-    /// Innehåller alla metoder för klassen Valvposts verksamhetslogik.
+    /// Innehåller alla metoder för klassen ValvPosts verksamhetslogik.
     /// </summary>
-    public sealed class ValvpostAktivitet : SökVillkor
+    public sealed class ValvPostAktivitet : SökVillkor
     {
         /// <summary>
-        /// Hämta alla Valvposter från tabellen Valvpost i aktuell databas
+        /// Hämta alla Valvposter från tabellen Valvpost i aktuell databas för inloggad användare
         /// </summary>
         /// <returns>Typat dataset med efterfrågat data</returns>
-        public List<ValvPost> HämtaAlla()
+        public List<ValvPost> HämtaAlla(string konto)
         {
-            DataSet valvpostDS = new DataSet();
-            ValvPostData ValvpostData = new ValvPostData();
+            DataSet valvPostDS = new DataSet();
+            ValvPostData ValvPostData = new ValvPostData();
 
             try
             {
-                valvpostDS = ValvpostData.HämtaAlla();
-                List<ValvPost> Valvpost = new List<ValvPost>(valvpostDS.Tables["ValvPost"].Rows.Count);
-                foreach (DataRow rad in valvpostDS.Tables["ValvPost"].Rows)
+                valvPostDS = ValvPostData.HämtaAlla(konto);
+                List<ValvPost> ValvPost = new List<ValvPost>(valvPostDS.Tables["ValvPost"].Rows.Count);
+                foreach (DataRow rad in valvPostDS.Tables["ValvPost"].Rows)
                 {
-                    Valvpost.Add(new ValvPost()
+                    ValvPost.Add(new ValvPost()
                     {
                         PostID = (int)rad["PostID"],
                         AnvandarID = (int)rad["AnvandarID"],
                         Konto = rad["Konto"].ToString(),
-                        Inloggning = rad["Inloggning"].ToString(),
+                        Usernamn = rad["Usernamn"].ToString(),
                         Losenord = rad["Losenord"].ToString(),
                         Postnamn = rad["Postnamn"].ToString(),
                         Webbadress = rad["Webbadress"].ToString(),
@@ -47,7 +44,7 @@ namespace Valvetwebb.Aktivitet
                         UppdatDatum = rad["UppdatDatum"].ToString()
                     }); ;
                 }
-                return Valvpost;
+                return ValvPost;
             }
             catch (ValvetException)
             {
@@ -65,28 +62,28 @@ namespace Valvetwebb.Aktivitet
         {
             ValvPostData ValvPostData = new ValvPostData();
             ValvPostDS ValvpostDS = ValvPostData.HämtaValvPost(postID, anvandarID);
-            ValvPost Valvpost = null;
+            ValvPost ValvPost = null;
 
             if (ValvpostDS.ValvPost.Count == 1)
             {
                 //Skapa Användarobjektet
-                Valvpost = new ValvPost();
-                Valvpost.PostID = ValvpostDS.ValvPost[0].PostID;
-                Valvpost.AnvandarID = ValvpostDS.ValvPost[0].AnvandarID;
-                Valvpost.Konto = ValvpostDS.ValvPost[0].Konto;
-                Valvpost.Inloggning = ValvpostDS.ValvPost[0].Inloggning;
-                Valvpost.Losenord = ValvpostDS.ValvPost[0].Losenord;
-                Valvpost.Postnamn = ValvpostDS.ValvPost[0].Postnamn;
-                Valvpost.Webbadress = (ValvpostDS.ValvPost[0].IsWebbadressNull()) ?
+                ValvPost = new ValvPost();
+                ValvPost.PostID = ValvpostDS.ValvPost[0].PostID;
+                ValvPost.AnvandarID = ValvpostDS.ValvPost[0].AnvandarID;
+                ValvPost.Konto = ValvpostDS.ValvPost[0].Konto;
+                ValvPost.Usernamn = ValvpostDS.ValvPost[0].Usernamn;
+                ValvPost.Losenord = ValvpostDS.ValvPost[0].Losenord;
+                ValvPost.Postnamn = ValvpostDS.ValvPost[0].Postnamn;
+                ValvPost.Webbadress = (ValvpostDS.ValvPost[0].IsWebbadressNull()) ?
                     string.Empty : ValvpostDS.ValvPost[0].Webbadress;
-                Valvpost.AnvandarNamnSkapad = ValvpostDS.ValvPost[0].AnvandarNamnSkapad;
-                Valvpost.SkapadDatum = ValvpostDS.ValvPost[0].SkapadDatum;
-                Valvpost.AnvandarNamnUppdat = (ValvpostDS.ValvPost[0].IsAnvandarNamnUppdatNull()) ?
+                ValvPost.AnvandarNamnSkapad = ValvpostDS.ValvPost[0].AnvandarNamnSkapad;
+                ValvPost.SkapadDatum = ValvpostDS.ValvPost[0].SkapadDatum;
+                ValvPost.AnvandarNamnUppdat = (ValvpostDS.ValvPost[0].IsAnvandarNamnUppdatNull()) ?
                     string.Empty : ValvpostDS.ValvPost[0].AnvandarNamnUppdat.ToString();
-                Valvpost.UppdatDatum = (ValvpostDS.ValvPost[0].IsUppdatDatumNull()) ?
+                ValvPost.UppdatDatum = (ValvpostDS.ValvPost[0].IsUppdatDatumNull()) ?
                     string.Empty : ValvpostDS.ValvPost[0].UppdatDatum.ToString();
             }
-            return Valvpost;
+            return ValvPost;
         }
     }
 }

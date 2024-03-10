@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Globalization;
 using System.Web.UI.WebControls;
 using Valvetwebb.Aktivitet;
 using Valvetwebb.Kontroller;
@@ -68,14 +67,13 @@ namespace Valvetwebb
         {
             TableCell itemCell = e.Item.Cells[0];
             string item = itemCell.Text;
-            TableCell itemPost = e.Item.Cells[4];
-            int postID;
             string sidan;
+
             try
             {
                 //postID = (int)itemPost.Text;
-                sidan = "ValvPost.aspx";
-                VisaSida(sidan, "BokningID", item);
+                sidan = "ValvPostInfo.aspx";
+                VisaSida(sidan, "PostID", item);
             }
             catch (Exception ex)
             {
@@ -143,8 +141,9 @@ namespace Valvetwebb
         /// <returns></returns>
         private DataView InitieraValvlista()
         {
-            ValvpostAktivitet ValvpostAktivitet = new ValvpostAktivitet();
-            List<ValvPost> valvpostList = ValvpostAktivitet.HämtaAlla();
+            Anvandare webUser = (Anvandare)Session["WebUser"];
+            ValvPostAktivitet ValvpostAktivitet = new ValvPostAktivitet();
+            List<ValvPost> valvpostList = ValvpostAktivitet.HämtaAlla(webUser.Konto);
             DataTable dt = new DataTable();
             DataRow dr;
             dt.Columns.Add(new DataColumn("PostID", typeof(Int32)));

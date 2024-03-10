@@ -10,15 +10,19 @@ namespace Valvetwebb.Datalager
 {
     public sealed class ValvPostData : AbstractDataLager
     {
-        public DataSet HämtaAlla()
+        public DataSet HämtaAlla(string konto)
         {
             DataSet valvpostDS = new DataSet();
 
             try
             {
                 valvpostDS.EnforceConstraints = false;
-                string sql = "SELECT * FROM ValvPost ORDER BY Postnamn";
-                valvpostDS = DatabasAccess.RunSql(sql);
+                string sql = "SELECT * FROM ValvPost WHERE Konto = @Konto ORDER BY Postnamn";
+                List<DatabasParameters> dbParameters = new List<DatabasParameters>()
+                {
+                    new DatabasParameters("@Konto", DataTyp.Int, konto.ToString())
+                };
+                valvpostDS = DatabasAccess.FyllDataSet(sql, dbParameters);
                 valvpostDS.Tables[0].TableName = "ValvPost";
             }
             catch (ValvetException hex)
@@ -117,18 +121,18 @@ namespace Valvetwebb.Datalager
             try
             {
                 DatabasAccess.SkapaTransaktion();
-                sql = "INSERT INTO ValvPost (AnvandarID, Konto, Inloggning, Losenord, Postnamn, " +
+                sql = "INSERT INTO ValvPost (AnvandarID, Konto, Usernamn, Losenord, Postnamn, " +
                     "Webbadress, Anteckningar, AnvandarNamnSkapad, SkapadDatum, " +
                     "AnvandarNamnUppdat, UppdatDatum) " + 
                     "Values " +
-                    "(@AnvandarID, @Konto, @Inloggning, @Losenord, @Postnamn, " +
+                    "(@AnvandarID, @Konto, @Usernamn, @Losenord, @Postnamn, " +
                     "@Webbadress, @Anteckningar, @AnvandarNamnSkapad, @SkapadDatum, " +
                     "@AnvandarNamnUppdat, @UppdatDatum)";
                 List<DatabasParameters> dbParameters = new List<DatabasParameters>()
                 {
                     new DatabasParameters("@AnvandarID", DataTyp.Int, ValvPost.AnvandarID.ToString()),
                     new DatabasParameters("@Konto", DataTyp.VarChar, ValvPost.Konto.ToString()),
-                    new DatabasParameters("@Inloggning", DataTyp.VarChar, ValvPost.Inloggning.ToString()),
+                    new DatabasParameters("@Usernamn", DataTyp.VarChar, ValvPost.Usernamn.ToString()),
                     new DatabasParameters("@Losenord", DataTyp.VarChar, ValvPost.Losenord.ToString()),
                     new DatabasParameters("@Postnamn", DataTyp.VarChar, ValvPost.Postnamn.ToString()),
                     new DatabasParameters("@Webbadress", DataTyp.VarChar, ValvPost.Webbadress.ToString()),
@@ -176,7 +180,7 @@ namespace Valvetwebb.Datalager
             try
             {
                 sql = "UPDATE ValvPost " +
-                    "SET AnvandarID = @AnvandarID, Konto = @Konto, Inloggning = @Inloggning, Losenord = @Losenord, Postnamn = @Postnamn, " +
+                    "SET AnvandarID = @AnvandarID, Konto = @Konto, Usernamn = @Usernamn, Losenord = @Losenord, Postnamn = @Postnamn, " +
                     "Webbadress = @Webbadress, Anteckningar = @Anteckningar, nvandarNamnSkapad = @AnvandarNamnSkapad, " +
                     "SkapadDatum = @SkapadDatum, AnvandarNamnUppdat = @AnvandarNamnUppdat, UppdatDatum = @UppdatDatum) " +
                     "WHERE PostID = @PostID ANDAnvandarID = @AnvandarID";
@@ -185,7 +189,7 @@ namespace Valvetwebb.Datalager
                     new DatabasParameters("@PostID", DataTyp.Int, ValvPost.PostID.ToString()),
                     new DatabasParameters("@AnvandarID", DataTyp.Int, ValvPost.AnvandarID.ToString()),
                     new DatabasParameters("@Konto", DataTyp.VarChar, ValvPost.Konto.ToString()),
-                    new DatabasParameters("@Inloggning", DataTyp.VarChar, ValvPost.Inloggning.ToString()),
+                    new DatabasParameters("@Usernamn", DataTyp.VarChar, ValvPost.Usernamn.ToString()),
                     new DatabasParameters("@Losenord", DataTyp.VarChar, ValvPost.Losenord.ToString()),
                     new DatabasParameters("@Postnamn", DataTyp.VarChar, ValvPost.Postnamn.ToString()),
                     new DatabasParameters("@Webbadress", DataTyp.VarChar, ValvPost.Webbadress.ToString()),

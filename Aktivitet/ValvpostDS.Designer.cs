@@ -285,7 +285,7 @@ namespace Valvetwebb.Aktivitet {
             
             private global::System.Data.DataColumn columnKonto;
             
-            private global::System.Data.DataColumn columnInloggning;
+            private global::System.Data.DataColumn columnUsernamn;
             
             private global::System.Data.DataColumn columnLosenord;
             
@@ -364,9 +364,9 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn InloggningColumn {
+            public global::System.Data.DataColumn UsernamnColumn {
                 get {
-                    return this.columnInloggning;
+                    return this.columnUsernamn;
                 }
             }
             
@@ -479,13 +479,13 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ValvPostRow AddValvPostRow(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
+            public ValvPostRow AddValvPostRow(int AnvandarID, string Konto, string Usernamn, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
                 ValvPostRow rowValvPostRow = ((ValvPostRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         AnvandarID,
                         Konto,
-                        Inloggning,
+                        Usernamn,
                         Losenord,
                         Postnamn,
                         Anvandarnamn,
@@ -528,7 +528,7 @@ namespace Valvetwebb.Aktivitet {
                 this.columnPostID = base.Columns["PostID"];
                 this.columnAnvandarID = base.Columns["AnvandarID"];
                 this.columnKonto = base.Columns["Konto"];
-                this.columnInloggning = base.Columns["Inloggning"];
+                this.columnUsernamn = base.Columns["Usernamn"];
                 this.columnLosenord = base.Columns["Losenord"];
                 this.columnPostnamn = base.Columns["Postnamn"];
                 this.columnAnvandarnamn = base.Columns["Anvandarnamn"];
@@ -549,8 +549,8 @@ namespace Valvetwebb.Aktivitet {
                 base.Columns.Add(this.columnAnvandarID);
                 this.columnKonto = new global::System.Data.DataColumn("Konto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKonto);
-                this.columnInloggning = new global::System.Data.DataColumn("Inloggning", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInloggning);
+                this.columnUsernamn = new global::System.Data.DataColumn("Usernamn", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUsernamn);
                 this.columnLosenord = new global::System.Data.DataColumn("Losenord", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLosenord);
                 this.columnPostnamn = new global::System.Data.DataColumn("Postnamn", typeof(string), null, global::System.Data.MappingType.Element);
@@ -580,7 +580,7 @@ namespace Valvetwebb.Aktivitet {
                 this.columnAnvandarID.AllowDBNull = false;
                 this.columnKonto.AllowDBNull = false;
                 this.columnKonto.MaxLength = 150;
-                this.columnInloggning.MaxLength = 150;
+                this.columnUsernamn.MaxLength = 150;
                 this.columnLosenord.AllowDBNull = false;
                 this.columnLosenord.MaxLength = 50;
                 this.columnPostnamn.AllowDBNull = false;
@@ -770,17 +770,17 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Inloggning {
+            public string Usernamn {
                 get {
                     try {
-                        return ((string)(this[this.tableValvPost.InloggningColumn]));
+                        return ((string)(this[this.tableValvPost.UsernamnColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Inloggning\' in table \'ValvPost\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Usernamn\' in table \'ValvPost\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableValvPost.InloggningColumn] = value;
+                    this[this.tableValvPost.UsernamnColumn] = value;
                 }
             }
             
@@ -905,14 +905,14 @@ namespace Valvetwebb.Aktivitet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsInloggningNull() {
-                return this.IsNull(this.tableValvPost.InloggningColumn);
+            public bool IsUsernamnNull() {
+                return this.IsNull(this.tableValvPost.UsernamnColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetInloggningNull() {
-                this[this.tableValvPost.InloggningColumn] = global::System.Convert.DBNull;
+            public void SetUsernamnNull() {
+                this[this.tableValvPost.UsernamnColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1126,7 +1126,7 @@ namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
             tableMapping.ColumnMappings.Add("PostID", "PostID");
             tableMapping.ColumnMappings.Add("AnvandarID", "AnvandarID");
             tableMapping.ColumnMappings.Add("Konto", "Konto");
-            tableMapping.ColumnMappings.Add("Inloggning", "Inloggning");
+            tableMapping.ColumnMappings.Add("Usernamn", "Usernamn");
             tableMapping.ColumnMappings.Add("Losenord", "Losenord");
             tableMapping.ColumnMappings.Add("Postnamn", "Postnamn");
             tableMapping.ColumnMappings.Add("Anvandarnamn", "Anvandarnamn");
@@ -1146,11 +1146,11 @@ namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ValvPost] ([AnvandarID], [Konto], [Inloggning], [Losenord], [Postnamn], [Anvandarnamn], [Webbadress], [Anteckningar], [AnvandarNamnSkapad], [SkapadDatum], [AnvandarNamnUppdat], [UppdatDatum]) VALUES (@AnvandarID, @Konto, @Inloggning, @Losenord, @Postnamn, @Anvandarnamn, @Webbadress, @Anteckningar, @AnvandarNamnSkapad, @SkapadDatum, @AnvandarNamnUppdat, @UppdatDatum)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ValvPost] ([AnvandarID], [Konto], [Usernamn], [Losenord], [Postnamn], [Anvandarnamn], [Webbadress], [Anteckningar], [AnvandarNamnSkapad], [SkapadDatum], [AnvandarNamnUppdat], [UppdatDatum]) VALUES (@AnvandarID, @Konto, @Usernamn, @Losenord, @Postnamn, @Anvandarnamn, @Webbadress, @Anteckningar, @AnvandarNamnSkapad, @SkapadDatum, @AnvandarNamnUppdat, @UppdatDatum)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Konto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Konto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inloggning", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inloggning", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usernamn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usernamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Losenord", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Losenord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Postnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Postnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1162,11 +1162,11 @@ namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UppdatDatum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UppdatDatum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ValvPost] SET [AnvandarID] = @AnvandarID, [Konto] = @Konto, [Inloggning] = @Inloggning, [Losenord] = @Losenord, [Postnamn] = @Postnamn, [Anvandarnamn] = @Anvandarnamn, [Webbadress] = @Webbadress, [Anteckningar] = @Anteckningar, [AnvandarNamnSkapad] = @AnvandarNamnSkapad, [SkapadDatum] = @SkapadDatum, [AnvandarNamnUppdat] = @AnvandarNamnUppdat, [UppdatDatum] = @UppdatDatum WHERE (([PostID] = @Original_PostID) AND ([AnvandarID] = @Original_AnvandarID))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ValvPost] SET [AnvandarID] = @AnvandarID, [Konto] = @Konto, [Usernamn] = @Usernamn, [Losenord] = @Losenord, [Postnamn] = @Postnamn, [Anvandarnamn] = @Anvandarnamn, [Webbadress] = @Webbadress, [Anteckningar] = @Anteckningar, [AnvandarNamnSkapad] = @AnvandarNamnSkapad, [SkapadDatum] = @SkapadDatum, [AnvandarNamnUppdat] = @AnvandarNamnUppdat, [UppdatDatum] = @UppdatDatum WHERE (([PostID] = @Original_PostID) AND ([AnvandarID] = @Original_AnvandarID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AnvandarID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AnvandarID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Konto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Konto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inloggning", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inloggning", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usernamn", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Usernamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Losenord", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Losenord", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Postnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Postnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anvandarnamn", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anvandarnamn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1193,9 +1193,9 @@ namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PostID, AnvandarID, Konto, Inloggning, Losenord, Postnamn, Anvandarnamn, W" +
-                "ebbadress, Anteckningar, AnvandarNamnSkapad, SkapadDatum, AnvandarNamnUppdat, Up" +
-                "pdatDatum FROM dbo.ValvPost";
+            this._commandCollection[0].CommandText = "SELECT PostID, AnvandarID, Konto, Usernamn, Losenord, Postnamn, Anvandarnamn, Web" +
+                "badress, Anteckningar, AnvandarNamnSkapad, SkapadDatum, AnvandarNamnUppdat, Uppd" +
+                "atDatum FROM dbo.ValvPost";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1279,7 +1279,7 @@ namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
+        public virtual int Insert(int AnvandarID, string Konto, string Usernamn, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AnvandarID));
             if ((Konto == null)) {
                 throw new global::System.ArgumentNullException("Konto");
@@ -1287,11 +1287,11 @@ namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Konto));
             }
-            if ((Inloggning == null)) {
+            if ((Usernamn == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Inloggning));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Usernamn));
             }
             if ((Losenord == null)) {
                 throw new global::System.ArgumentNullException("Losenord");
@@ -1367,7 +1367,7 @@ namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int AnvandarID, string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
+        public virtual int Update(int AnvandarID, string Konto, string Usernamn, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AnvandarID));
             if ((Konto == null)) {
                 throw new global::System.ArgumentNullException("Konto");
@@ -1375,11 +1375,11 @@ namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Konto));
             }
-            if ((Inloggning == null)) {
+            if ((Usernamn == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Inloggning));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Usernamn));
             }
             if ((Losenord == null)) {
                 throw new global::System.ArgumentNullException("Losenord");
@@ -1457,8 +1457,8 @@ namespace Valvetwebb.Aktivitet.ValvPostDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Konto, string Inloggning, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
-            return this.Update(Original_AnvandarID, Konto, Inloggning, Losenord, Postnamn, Anvandarnamn, Webbadress, Anteckningar, AnvandarNamnSkapad, SkapadDatum, AnvandarNamnUppdat, UppdatDatum, Original_PostID, Original_AnvandarID);
+        public virtual int Update(string Konto, string Usernamn, string Losenord, string Postnamn, string Anvandarnamn, string Webbadress, string Anteckningar, string AnvandarNamnSkapad, string SkapadDatum, string AnvandarNamnUppdat, string UppdatDatum, int Original_PostID, int Original_AnvandarID) {
+            return this.Update(Original_AnvandarID, Konto, Usernamn, Losenord, Postnamn, Anvandarnamn, Webbadress, Anteckningar, AnvandarNamnSkapad, SkapadDatum, AnvandarNamnUppdat, UppdatDatum, Original_PostID, Original_AnvandarID);
         }
     }
     

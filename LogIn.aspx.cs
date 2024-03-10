@@ -67,7 +67,7 @@ namespace Valvetwebb
                         Session["WebUser"] = Anvandare;
                         Session["Losenord"] = txtLosenord.Text;
                         Session["Navigation"] = "Yes";
-                        Response.Redirect("Valvlista.aspx");
+                        Response.Redirect("Meny.aspx");
                     }
                     else
                     {

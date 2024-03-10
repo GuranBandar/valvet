@@ -154,6 +154,7 @@
     <Content Include="Global.asax" />
     <Content Include="App.Master" />
     <Content Include="Images\Valvet.jpeg" />
+    <Content Include="Meny.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -236,6 +237,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="ValvPostInfo.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -294,6 +296,13 @@
     </Compile>
     <Compile Include="Kontroller\Extensions.cs" />
     <Compile Include="Kontroller\GUI_kontroller.cs" />
+    <Compile Include="Meny.aspx.cs">
+      <DependentUpon>Meny.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Meny.aspx.designer.cs">
+      <DependentUpon>Meny.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Objekt\ValvPost.cs" />
     <Compile Include="Valvlista.aspx.cs">
       <DependentUpon>Valvlista.aspx</DependentUpon>
@@ -335,6 +344,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ValvPostInfo.aspx.cs">
+      <DependentUpon>ValvPostInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ValvPostInfo.aspx.designer.cs">
+      <DependentUpon>ValvPostInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
