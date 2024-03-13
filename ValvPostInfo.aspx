@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="ValvPost" Language="C#" AutoEventWireup="true" MasterPageFile="~/App.Master"
     CodeBehind="ValvPostInfo.aspx.cs" Inherits="Valvetwebb.ValvPostInfo" %>
 
-<asp:Content ContentPlaceHolderID="Main" runat="server" >
+<asp:Content ContentPlaceHolderID="Main" runat="server">
     <script type="text/javascript">
         function Confirm_Delete() {
             var confirm_value = document.getElementById('confirm_value');
@@ -43,7 +43,7 @@
                             <tr>
                                 <td>
                                     <asp:Label ID="Label6" Width="1%" runat="server"></asp:Label>
-                                    <asp:Label ID="lblPostnamn" runat="server" CssClass="headerStyle" text="Postnamn" Enabled="true" Font-Bold="true"></asp:Label>
+                                    <asp:Label ID="lblPostnamn" runat="server" CssClass="headerStyle" Text="Postnamn" Enabled="true" Font-Bold="true"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -80,7 +80,9 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="txtLosenord" runat="server" CssClass="brodtext" Height="21" Width="200" Enabled="true" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtLosenord" runat="server" Height="21" Width="200" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+                        <br />
+                        <asp:CheckBox ID="chkShowPass" runat="server" CssClass="rubriktext" Text="Visa lösenord" OnCheckedChanged="chkShowPass_Click" AutoPostBack="true"/>
                         <asp:Label ID="Label20" Height="3px" Width="2%" runat="server"></asp:Label>
                     </td>
                 </tr>
@@ -118,7 +120,7 @@
                         <asp:Button ID="knappSpara" Text="Spara" OnClick="knappSpara_Click" Style="cursor: hand" runat="server" CssClass="ButtonClass"></asp:Button>
                         <asp:Button ID="knappNy" Text="Ny post" OnClick="knappNy_Click" Style="cursor: hand" runat="server" CssClass="ButtonClass"></asp:Button>
                         <asp:Button ID="knappTaBort" Text="Ta bort" OnClick="knappTaBort_Click" Style="cursor: hand" runat="server" CssClass="ButtonClass"
-                             OnClientClick="Confirm_Delete()"></asp:Button>
+                            OnClientClick="Confirm_Delete()"></asp:Button>
                     </td>
                 </tr>
                 <tr>

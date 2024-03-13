@@ -159,6 +159,15 @@ namespace Valvetwebb
         protected global::System.Web.UI.WebControls.TextBox txtLosenord;
 
         /// <summary>
+        /// chkShowPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkShowPass;
+
+        /// <summary>
         /// Label20 control.
         /// </summary>
         /// <remarks>

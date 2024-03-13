@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI;
 using Valvetwebb.Aktivitet;
 using Valvetwebb.Objekt;
 
@@ -94,6 +95,8 @@ namespace Valvetwebb
             txtAnteckningar.Text = valvPost.Anteckningar;
             Session["PostID"] = valvPost.PostID;
             Session["AnvandarID"] = valvPost.AnvandarID;
+            string Password = txtLosenord.Text;
+            txtLosenord.Attributes.Add("value", Password);
         }
 
         /// <summary>
@@ -107,6 +110,23 @@ namespace Valvetwebb
             txtLosenord.Text = string.Empty;
             txtWebadress.Text = string.Empty;
             txtAnteckningar.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// Checkboxen för visa lösenord är klickad
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void chkShowPass_Click(object sender, EventArgs e)
+        {
+            if (chkShowPass.Checked == true)
+            {
+                txtLosenord.TextMode = System.Web.UI.WebControls.TextBoxMode.SingleLine;
+            }
+            else
+            {
+                txtLosenord.TextMode = System.Web.UI.WebControls.TextBoxMode.Password;
+            }
         }
 
         /// <summary>
