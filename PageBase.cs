@@ -6,6 +6,7 @@ using System.Data;
 using System.Globalization;
 using System.Web;
 using System.Web.UI;
+using Valvetwebb.Kontroller;
 using Valvetwebb.Objekt;
 
 namespace Valvetwebb
@@ -158,6 +159,16 @@ namespace Valvetwebb
         protected void Redirect(string navigateUrl)
         {
             Server.Transfer(navigateUrl);
+        }
+
+        /// <summary>
+        /// Skriv meddelande
+        /// </summary>
+        /// <param name="text">Actual text</param>
+        /// <returns>A string with the actual text.</returns>
+        public void MessageBoxOKButton(string text)
+        {
+            Extensions.MessageBoxOKButton(this, text);
         }
 
         /// <summary>

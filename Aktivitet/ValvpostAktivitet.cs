@@ -85,5 +85,50 @@ namespace Valvetwebb.Aktivitet
             }
             return ValvPost;
         }
+
+        /// <summary>
+        /// Sparar alla förändringar i ValvPost i databasen 
+        /// </summary>
+        /// <param name="valvPost">Aktuell bokning</param>
+        /// <param name="nyBokning">Ny Anvandare, true or false</param>
+        /// <param name="felID">Felmeddelande i Ordlistan som ska visas</param>
+        /// <param name="feltext">Ev kompletterande felmeddelande som returneras</param>
+        public int Spara(ValvPost valvPost, bool nyPost, ref string felID, ref string feltext)
+        {
+            int nyttPostID = 0;
+            bool kollaOK = true;
+            //                Kolla(bokningDag, ref felID, ref feltext);
+
+            if (kollaOK)
+            {
+                ValvPostData valvPostData = new ValvPostData();
+                if (nyPost)
+                {
+                    nyttPostID = valvPostData.SparaNyValvPost(valvPost, ref felID, ref feltext);
+                }
+                else
+                {
+                    valvPostData.SparaValvPost(valvPost, ref felID, ref feltext);
+                }
+            }
+            else
+            {
+                throw new ValvetException();
+            }
+
+            return nyttPostID;
+        }
+
+        /// <summary>
+        /// Ta bort BokningDag i databasen 
+        /// </summary>
+        /// <param name="BokningDag">Aktuell bokning</param>
+        /// <param name="felID">Felmeddelande i Ordlistan som ska visas</param>
+        /// <param name="feltext">Ev kompletterande felmeddelande som returneras</param>
+        public void TaBortValvPost(ValvPost valvPost, ref string felID, ref string feltext)
+        {
+            ValvPostData valvPostData = new ValvPostData();
+            valvPostData.TaborValvPost(valvPost, ref felID, ref feltext);
+        }
     }
 }

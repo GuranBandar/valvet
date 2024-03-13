@@ -15,7 +15,7 @@
             <tr>
                 <td>
                     <asp:Label ID="Label9" Width="1%" runat="server"></asp:Label>
-                    <h3>Välj sida</h3>
+                    <asp:Label ID="RubrikMenysida" runat="server" CssClass="h2" Text="Välj sida"></asp:Label>
                     <asp:Label ID="Label10" Width="1%" runat="server"></asp:Label>
                 </td>
             </tr>

@@ -109,6 +109,9 @@ namespace Valvetwebb.Datalager
 
         /// <summary>
         /// Ny ValvPost.
+        /// 
+        /// Valvpost användarnamn uppdaterad finne inte, samma lika med uppdaterad datum
+        /// 
         /// </summary>
         /// <param name="Valvpost">Valvpost</param>
         /// <param name="felID">Felmeddelande i Ordlistan som ska visas</param>
@@ -126,8 +129,7 @@ namespace Valvetwebb.Datalager
                     "AnvandarNamnUppdat, UppdatDatum) " + 
                     "Values " +
                     "(@AnvandarID, @Konto, @Usernamn, @Losenord, @Postnamn, " +
-                    "@Webbadress, @Anteckningar, @AnvandarNamnSkapad, @SkapadDatum, " +
-                    "@AnvandarNamnUppdat, @UppdatDatum)";
+                    "@Webbadress, @Anteckningar, @AnvandarNamnSkapad, @SkapadDatum";
                 List<DatabasParameters> dbParameters = new List<DatabasParameters>()
                 {
                     new DatabasParameters("@AnvandarID", DataTyp.Int, ValvPost.AnvandarID.ToString()),
@@ -138,9 +140,7 @@ namespace Valvetwebb.Datalager
                     new DatabasParameters("@Webbadress", DataTyp.VarChar, ValvPost.Webbadress.ToString()),
                     new DatabasParameters("@Anteckningar", DataTyp.VarChar, ValvPost.Anteckningar.ToString()),
                     new DatabasParameters("@AnvandarNamnSkapad", DataTyp.VarChar, ValvPost.AnvandarNamnSkapad.ToString()),
-                    new DatabasParameters("@SkapadDatum", DataTyp.VarChar, ValvPost.SkapadDatum.ToString()),
-                    new DatabasParameters("@AnvandarNamnUppdat", DataTyp.VarChar, ValvPost.AnvandarNamnUppdat.ToString()),
-                    new DatabasParameters("@UppdatDatum", DataTyp.VarChar, ValvPost.UppdatDatum.ToString())
+                    new DatabasParameters("@SkapadDatum", DataTyp.VarChar, ValvPost.SkapadDatum.ToString())
                 };
                 DatabasAccess.RunSql(sql, dbParameters);
                 sql = "SELECT LAST_INSERT_ID()";
@@ -168,6 +168,9 @@ namespace Valvetwebb.Datalager
 
         /// <summary>
         /// Sparar i ValvPost.
+        /// 
+        /// Valvpost användarnamn skapad finne redan, samma lika med skapad datum
+        /// 
         /// </summary>
         /// <param name="ValvPost">ValvPost</param>
         /// <param name="felID">Felmeddelande i Ordlistan som ska visas</param>
@@ -181,9 +184,9 @@ namespace Valvetwebb.Datalager
             {
                 sql = "UPDATE ValvPost " +
                     "SET AnvandarID = @AnvandarID, Konto = @Konto, Usernamn = @Usernamn, Losenord = @Losenord, Postnamn = @Postnamn, " +
-                    "Webbadress = @Webbadress, Anteckningar = @Anteckningar, nvandarNamnSkapad = @AnvandarNamnSkapad, " +
-                    "SkapadDatum = @SkapadDatum, AnvandarNamnUppdat = @AnvandarNamnUppdat, UppdatDatum = @UppdatDatum) " +
-                    "WHERE PostID = @PostID ANDAnvandarID = @AnvandarID";
+                    "Webbadress = @Webbadress, Anteckningar = @Anteckningar, " +
+                    "AnvandarNamnUppdat = @AnvandarNamnUppdat, UppdatDatum = @UppdatDatum " +
+                    "WHERE PostID = @PostID AND AnvandarID = @AnvandarID";
                 List<DatabasParameters> dbParameters = new List<DatabasParameters>()
                 {
                     new DatabasParameters("@PostID", DataTyp.Int, ValvPost.PostID.ToString()),
@@ -194,8 +197,6 @@ namespace Valvetwebb.Datalager
                     new DatabasParameters("@Postnamn", DataTyp.VarChar, ValvPost.Postnamn.ToString()),
                     new DatabasParameters("@Webbadress", DataTyp.VarChar, ValvPost.Webbadress.ToString()),
                     new DatabasParameters("@Anteckningar", DataTyp.VarChar, ValvPost.Anteckningar.ToString()),
-                    new DatabasParameters("@AnvandarNamnSkapad", DataTyp.VarChar, ValvPost.AnvandarNamnSkapad.ToString()),
-                    new DatabasParameters("@SkapadDatum", DataTyp.VarChar, ValvPost.SkapadDatum.ToString()),
                     new DatabasParameters("@AnvandarNamnUppdat", DataTyp.VarChar, ValvPost.AnvandarNamnUppdat.ToString()),
                     new DatabasParameters("@UppdatDatum", DataTyp.VarChar, ValvPost.UppdatDatum.ToString())
                 };

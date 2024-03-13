@@ -42,6 +42,15 @@ namespace Valvetwebb
         protected global::System.Web.UI.HtmlControls.HtmlTable TableValvlista;
 
         /// <summary>
+        /// RubrikValvLista control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RubrikValvLista;
+
+        /// <summary>
         /// lblSearchPost control.
         /// </summary>
         /// <remarks>
@@ -78,15 +87,6 @@ namespace Valvetwebb
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// knappNy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button knappNy;
-
-        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -121,6 +121,15 @@ namespace Valvetwebb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button knappAvbryt;
+
+        /// <summary>
+        /// knappNy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button knappNy;
 
         /// <summary>
         /// knappLogout control.

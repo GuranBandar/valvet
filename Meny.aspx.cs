@@ -22,15 +22,14 @@ namespace Valvetwebb
 
         protected void SetSessionVariabler()
         {
-            Session["hfiNyBokning"] = string.Empty;
+            Session["hfiNyPost"] = string.Empty;
             Session["Referencepage"] = string.Empty;
-            Session["hfiBokningID"] = string.Empty;
+            Session["hfiPostID"] = string.Empty;
             Session["hfiAnvandarNamnSkapad"] = string.Empty;
             Session["hfiSkapadDatum"] = string.Empty;
             Session["MessageTitle"] = "Menyval";
             Session["MessageText"] = string.Empty;
             Session["Referencepage"] = "Meny.aspx";
-            Session["Bokningsdag"] = string.Empty;
         }
 
         protected void KnappValvlista_Click(object sender, EventArgs e)
@@ -44,7 +43,7 @@ namespace Valvetwebb
             Session["Ny session"] = "Ja";
             Anvandare anvandare = (Anvandare)Session["Webuser"];
             string anvandarID = anvandare.AnvandarID.ToString();
-            Session["Bokningsdag"] = "Tisdag";
+            Session["hifiNyPost"] = "Nej";
             Response.Redirect("ValvPostInfo.aspx");
         }
 

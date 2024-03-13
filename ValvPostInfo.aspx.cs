@@ -12,6 +12,8 @@ namespace Valvetwebb
 
         public int PostID { get; set; }
 
+        public int AnvandarID { get; set; }
+
         public Anvandare WebUser { get; set; }
         /// <summary>
         /// FelID från metodanrop till GUI:et
@@ -42,6 +44,7 @@ namespace Valvetwebb
                 if (PostID != 0)
                 {
                     //Då kommer det från ValvListan
+                    AnvandarID = WebUser.AnvandarID;
                     VisaValvPost();
                 }
                 else
@@ -61,7 +64,7 @@ namespace Valvetwebb
 
             try
             {
-                valvPost = valvpostAktivitet.HämtaValvPost(PostID, WebUser.AnvandarID);
+                valvPost = valvpostAktivitet.HämtaValvPost(PostID, AnvandarID);
 
                 if (valvPost != null)
                 {
@@ -84,11 +87,13 @@ namespace Valvetwebb
         /// </summary>
         private void FyllBild()
         {
-            lblPostnamn.Text = valvPost.Postnamn;
+            txtPostnamn.Text = valvPost.Postnamn;
             txtUsernamn.Text = valvPost.Usernamn;
             txtLosenord.Text = valvPost.Losenord;
             txtWebadress.Text = valvPost.Webbadress;
             txtAnteckningar.Text = valvPost.Anteckningar;
+            Session["PostID"] = valvPost.PostID;
+            Session["AnvandarID"] = valvPost.AnvandarID;
         }
 
         /// <summary>
@@ -105,9 +110,8 @@ namespace Valvetwebb
         /// <param name="e"></param>
         protected void knappSpara_Click(object sender, EventArgs e)
         {
-            ValvPostAktivitet valv;
+            ValvPostAktivitet valvPostAktivitet;
             int nyttPostID;
-            lblMessage.Text = string.Empty;
 
             try
             {
@@ -116,30 +120,23 @@ namespace Valvetwebb
                     NyPost = true;
                 }
 
-                if (AllaFältBokningDagOK() && AllaFältBokningListaOK())
+                if (AllaFältValvPostOK())
                 {
-                    bokningAktivitet = new BokningAktivitet();
-                    nyttBokningID = bokningAktivitet.Spara(BokningDag, NyBokning, ref FelID, ref Feltext);
+                    valvPostAktivitet = new ValvPostAktivitet();
+                    nyttPostID = valvPostAktivitet.Spara(valvPost, NyPost, ref FelID, ref Feltext);
 
-                    if (NyBokning)
+                    if (NyPost)
                     {
-                        BokningID = nyttBokningID;
-                        Session["hfiNyBokning"] = "Nej";
+                        PostID = nyttPostID;
+                        Session["hfiNyPost"] = "Nej";
                     }
                     else
                     {
-                        BokningID = int.Parse(Session["hfiBokningID"].ToString());
+                        PostID = int.Parse(Session["PostID"].ToString());
+                        AnvandarID = (int)Session["AnvandarID"];
                     }
 
-                    VisaBokning();
-
-                    List<DropDownList> allControls = new List<DropDownList>();
-                    gUI_Kontroller.GetControlList<DropDownList>(Page.Controls, allControls);
-
-                    foreach (var childControl in allControls)
-                    {
-                        childControl.Enabled = true;
-                    }
+                    VisaValvPost();
 
                     MessageBoxOKButton("Uppdatateringen lyckades");
                     knappNy.Enabled = true;
@@ -156,13 +153,67 @@ namespace Valvetwebb
         }
 
         /// <summary>
+        /// Ta bort knappen är tryckt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void knappTaBort_Click(object sender, EventArgs e)
+        {
+            ValvPostAktivitet valvPostAktivitet;
+            string confirmValue = Request.Form["confirm_Value"];
+            Anvandare webUser = (Anvandare)Session["WebUser"];
+
+            if (confirmValue == "Ja")
+            {
+                valvPostAktivitet = new ValvPostAktivitet();
+            }
+            else
+            {
+                return;
+            }
+
+            try
+            {
+                PostID = int.Parse(Session["hfiPostID"].ToString());
+                valvPost = valvPostAktivitet.HämtaValvPost(PostID, webUser.AnvandarID);
+
+                if (valvPost != null)
+                {
+                    valvPostAktivitet.TaBortValvPost(valvPost, ref FelID, ref Feltext);
+                }
+                else
+                {
+                    Session["MessageText"] = "Valvpost saknas";
+                    MessageBox();
+                }
+                Session["Referencepage"] = "Valvlista.aspx";
+                Session["MessageText"] = "Borttag av posten lyckades";
+                MessageBox();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Nyknappen är tryckt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void knappNy_Click(object sender, EventArgs e)
+        {
+            this.VisaTomValvPost();
+        }
+
+        /// <summary>
         /// Sparaknappen är tryckt
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void knappTillbaka_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Meny.aspx");
+            Response.Redirect(Session["Referencepage"].ToString());
         }
 
         /// <summary>
@@ -182,8 +233,9 @@ namespace Valvetwebb
         /// <returns>True om OK annars false</returns>
         private bool AllaFältValvPostOK()
         {
-            ValvPostAktivitet valvPostAktivitet;
+            ValvPostAktivitet valvPostAktivitet = new ValvPostAktivitet();
             DateTime dagensDatum = DateTime.Today;
+            Anvandare webUser = (Anvandare)Session["WebUser"];
 
             if (txtUsernamn.Text == string.Empty)
             {
@@ -192,47 +244,33 @@ namespace Valvetwebb
                 return false;
             }
 
-            DateTime bokningsdatum = DateTime.Parse(DateTime.Today.ToString());
-            string sokdatum = bokningsdatum.ToString("yyyy-MM-dd");
+            if (txtLosenord.Text == string.Empty)
+            {
+                Session["MessageText"] = "Lösenord saknas";
+                return false;
+            }
 
             valvPost = new ValvPost();
+            valvPost.AnvandarID = webUser.AnvandarID;
+            valvPost.Usernamn = txtUsernamn.Text;
+            valvPost.Losenord = txtLosenord.Text;
+            valvPost.Webbadress = txtWebadress.Text;
+            valvPost.Postnamn = txtPostnamn.Text;
+            valvPost.Anteckningar = txtAnteckningar.Text;
+            valvPost.Konto = webUser.Konto;
 
-            //Alla fält från bilden flyttas till objektet
-            if (Session["hfiNyPost"].ToString() == "Nej")
+            if (Session["hfiNyPost"].ToString() == "Ja")
             {
-                //BokningDag.BokningID = Convert.ToInt32(Session["hfiBokningID"]);
-            }
-
-            BokningDag.Datum = txtDatum.Text.ToString().Trim();
-            BokningDag.Tider = txtTider.Text.ToString().Trim();
-            BokningDag.Bana = txtBana.Text.ToString().Trim();
-
-            switch (Session["Bokningsdag"].ToString())
-            {
-                case "Tisdag":
-                    BokningDag.TisdagTorsdag = 2;
-                    break;
-                case "Torsdag":
-                    BokningDag.TisdagTorsdag = 4;
-                    break;
-                default:
-                    //Session["MessageText"].ToString() = "ja, vad fan gör vi då?";
-                    break;
-            }
-
-            if (Session["hfiNyBokning"].ToString() == "Ja")
-            {
-                BokningDag.AnvandarNamnSkapad = Session["AnvandarNamn"].ToString();
-                BokningDag.SkapadDatum = DateTime.Now.ToString("yyyy-MM-dd");
+                valvPost.AnvandarNamnSkapad = webUser.Anvandarnamn.ToString();
+                valvPost.SkapadDatum = DateTime.Now.ToString("yyyy-MM-dd");
             }
             else
             {
-                BokningDag.AnvandarNamnSkapad = Session["hfiAnvandarNamnSkapad"].ToString();
-                BokningDag.SkapadDatum = Session["hfiSkapadDatum"].ToString();
+                valvPost.PostID = int.Parse(Session["PostID"].ToString());
+                valvPost.AnvandarNamnUppdat = webUser.Anvandarnamn;
+                valvPost.UppdatDatum = DateTime.Now.ToString("yyyy-MM-dd");
             }
-            BokningDag.AnvandarNamnUppdat = Session["AnvandarNamn"].ToString();
-            BokningDag.UppdatDatum = DateTime.Now.ToString("yyyy-MM-dd");
-            BokningDag.Notering = txtNotering.Text.ToString().Trim();
+
             return true;
         }
     }

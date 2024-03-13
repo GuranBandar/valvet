@@ -60,6 +60,24 @@ namespace Valvetwebb
         protected global::System.Web.UI.WebControls.Label lblPostnamn;
 
         /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
+        /// txtPostnamn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPostnamn;
+
+        /// <summary>
         /// Label8 control.
         /// </summary>
         /// <remarks>
@@ -249,6 +267,24 @@ namespace Valvetwebb
         protected global::System.Web.UI.WebControls.Button knappSpara;
 
         /// <summary>
+        /// knappNy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button knappNy;
+
+        /// <summary>
+        /// knappTaBort control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button knappTaBort;
+
+        /// <summary>
         /// knappTillbaka control.
         /// </summary>
         /// <remarks>
@@ -267,21 +303,12 @@ namespace Valvetwebb
         protected global::System.Web.UI.WebControls.Button knappLogout;
 
         /// <summary>
-        /// Label12 control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
-
-        /// <summary>
-        /// Label16 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label16;
+        protected global::System.Web.UI.WebControls.Label Label3;
     }
 }
