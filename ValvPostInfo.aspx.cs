@@ -101,6 +101,12 @@ namespace Valvetwebb
         /// </summary>
         private void VisaTomValvPost()
         {
+            Session["hfiNyPost"] = "Ja";
+            txtPostnamn.Text = string.Empty;
+            txtUsernamn.Text = string.Empty;
+            txtLosenord.Text = string.Empty;
+            txtWebadress.Text = string.Empty;
+            txtAnteckningar.Text = string.Empty;
         }
 
         /// <summary>
@@ -133,9 +139,9 @@ namespace Valvetwebb
                     else
                     {
                         PostID = int.Parse(Session["PostID"].ToString());
-                        AnvandarID = (int)Session["AnvandarID"];
                     }
 
+                    AnvandarID = valvPost.AnvandarID;
                     VisaValvPost();
 
                     MessageBoxOKButton("Uppdatateringen lyckades");
@@ -174,7 +180,7 @@ namespace Valvetwebb
 
             try
             {
-                PostID = int.Parse(Session["hfiPostID"].ToString());
+                PostID = int.Parse(Session["PostID"].ToString());
                 valvPost = valvPostAktivitet.HämtaValvPost(PostID, webUser.AnvandarID);
 
                 if (valvPost != null)

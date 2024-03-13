@@ -125,11 +125,10 @@ namespace Valvetwebb.Datalager
             {
                 DatabasAccess.SkapaTransaktion();
                 sql = "INSERT INTO ValvPost (AnvandarID, Konto, Usernamn, Losenord, Postnamn, " +
-                    "Webbadress, Anteckningar, AnvandarNamnSkapad, SkapadDatum, " +
-                    "AnvandarNamnUppdat, UppdatDatum) " + 
+                    "Webbadress, Anteckningar, AnvandarNamnSkapad, SkapadDatum) " + 
                     "Values " +
                     "(@AnvandarID, @Konto, @Usernamn, @Losenord, @Postnamn, " +
-                    "@Webbadress, @Anteckningar, @AnvandarNamnSkapad, @SkapadDatum";
+                    "@Webbadress, @Anteckningar, @AnvandarNamnSkapad, @SkapadDatum)";
                 List<DatabasParameters> dbParameters = new List<DatabasParameters>()
                 {
                     new DatabasParameters("@AnvandarID", DataTyp.Int, ValvPost.AnvandarID.ToString()),

@@ -49,7 +49,7 @@
                             <tr>
                                 <td>
                                     <asp:Label ID="Label2" Width="1%" runat="server"></asp:Label>
-                                    <asp:TextBox ID="txtPostnamn" runat="server" CssClass="brodtext" Enabled="true" Font-Bold="true"></asp:TextBox>
+                                    <asp:TextBox ID="txtPostnamn" runat="server" CssClass="brodtext" Width="200" Enabled="true" Font-Bold="true"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
@@ -67,7 +67,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="txtUsernamn" runat="server" CssClass="brodtext" Height="21" Width="137" Enabled="true"></asp:TextBox>
+                        <asp:TextBox ID="txtUsernamn" runat="server" CssClass="brodtext" Height="21" Width="200" Enabled="true"></asp:TextBox>
                         <asp:Label ID="Label7" Height="3px" Width="2%" runat="server"></asp:Label>
                     </td>
                 </tr>
@@ -80,7 +80,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="txtLosenord" runat="server" CssClass="brodtext" Height="21" Width="137" Enabled="true"></asp:TextBox>
+                        <asp:TextBox ID="txtLosenord" runat="server" CssClass="brodtext" Height="21" Width="200" Enabled="true" TextMode="Password"></asp:TextBox>
                         <asp:Label ID="Label20" Height="3px" Width="2%" runat="server"></asp:Label>
                     </td>
                 </tr>
@@ -93,7 +93,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="txtWebadress" runat="server" CssClass="brodtext" Height="21" Width="137" Enabled="true"></asp:TextBox>
+                        <asp:TextBox ID="txtWebadress" runat="server" CssClass="brodtext" Height="21" Width="200" Enabled="true"></asp:TextBox>
                         <asp:Label ID="Label24" Height="3px" Width="2%" runat="server"></asp:Label>
                     </td>
                 </tr>
@@ -106,7 +106,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:TextBox ID="txtAnteckningar" runat="server" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtAnteckningar" runat="server" TextMode="MultiLine" Width="200"></asp:TextBox>
                         <asp:Label ID="Label26" Height="3px" Width="2%" runat="server"></asp:Label>
                     </td>
                 </tr>
@@ -117,7 +117,8 @@
                     <td>
                         <asp:Button ID="knappSpara" Text="Spara" OnClick="knappSpara_Click" Style="cursor: hand" runat="server" CssClass="ButtonClass"></asp:Button>
                         <asp:Button ID="knappNy" Text="Ny post" OnClick="knappNy_Click" Style="cursor: hand" runat="server" CssClass="ButtonClass"></asp:Button>
-                        <asp:Button ID="knappTaBort" Text="Ta bort" OnClick="knappTaBort_Click" Style="cursor: hand" runat="server" CssClass="ButtonClass"></asp:Button>
+                        <asp:Button ID="knappTaBort" Text="Ta bort" OnClick="knappTaBort_Click" Style="cursor: hand" runat="server" CssClass="ButtonClass"
+                             OnClientClick="Confirm_Delete()"></asp:Button>
                     </td>
                 </tr>
                 <tr>
