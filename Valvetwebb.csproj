@@ -156,6 +156,7 @@
     <Content Include="Images\Lösenordsvalv.jpg" />
     <Content Include="Images\Valvet.jpeg" />
     <Content Include="Meny.aspx" />
+    <Content Include="NyttLösenord.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -304,6 +305,13 @@
     </Compile>
     <Compile Include="Meny.aspx.designer.cs">
       <DependentUpon>Meny.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NyttLösenord.aspx.cs">
+      <DependentUpon>NyttLösenord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NyttLösenord.aspx.designer.cs">
+      <DependentUpon>NyttLösenord.aspx</DependentUpon>
     </Compile>
     <Compile Include="Objekt\ValvPost.cs" />
     <Compile Include="Valvlista.aspx.cs">

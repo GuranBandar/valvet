@@ -55,7 +55,7 @@ namespace Valvetwebb
         protected void knappNyLösen_Click(object sender, EventArgs e)
         {
             Session["Ny session"] = "Ja";
-            //Response.Redirect("NyttLösenord.aspx");
+            Response.Redirect("NyttLösenord.aspx");
         }
         protected void knappAvbryt_Click(object sender, EventArgs e)
         {
