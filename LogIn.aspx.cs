@@ -51,29 +51,47 @@ namespace Valvetwebb
 
                 if (txtAnvandarNamn.Text.Length > 0)
                 {
-                    Anvandare = anvandareAktivitet.LoggaIn(txtAnvandarNamn.Text, txtLosenord.Text);
+                    Anvandare = anvandareAktivitet.HämtaAnvandare(txtAnvandarNamn.Text);
 
                     if (Anvandare != null)
                     {
-                        //Inloggningen lyckades, spara nu användarobjektet
-                        string inloggadDatum = DateTime.Now.ToString("yyyy-MM-dd");
-                        Anvandare.SenastInloggadDatum = inloggadDatum;
-                        AppUser = Anvandare;
-                        anvandareAktivitet.Spara(Anvandare, false, ref FelID, ref Feltext);
-                                                anvandareAktivitet.InloggningOK(Anvandare.AnvandarID, Anvandare.SenastInloggadDatum,
-                                                    ref FelID, ref Feltext);
+                        if (Anvandare.Aktiv == "0")
+                        {
+                            Session["MessageText"] = "Användare spärrad!";
+                            Response.Redirect("MessageBox.aspx");
+                            return;
+                        }
 
-                        Session["AnvandarNamn"] = txtAnvandarNamn.Text;
-                        Session["WebUser"] = Anvandare;
-                        Session["Losenord"] = txtLosenord.Text;
-                        Session["Navigation"] = "Yes";
-                        Response.Redirect("Meny.aspx");
+                        if (Anvandare.Losenord.Equals(txtLosenord.Text))
+                        {
+                            //Inloggningen lyckades, spara nu användarobjektet
+                            string inloggadDatum = DateTime.Now.ToString("yyyy-MM-dd");
+                            Anvandare.SenastInloggadDatum = inloggadDatum;
+                            Anvandare.MisslyckadeInloggningar = 0;
+                            AppUser = Anvandare;
+                            anvandareAktivitet.Spara(Anvandare, false, ref FelID, ref Feltext);
+                            anvandareAktivitet.InloggningOK(Anvandare.AnvandarID, Anvandare.SenastInloggadDatum,
+                                ref FelID, ref Feltext);
+
+                            Session["AnvandarNamn"] = txtAnvandarNamn.Text;
+                            Session["WebUser"] = Anvandare;
+                            Session["Losenord"] = txtLosenord.Text;
+                            Session["Navigation"] = "Yes";
+                            Response.Redirect("Meny.aspx");
+                        }
+                        else
+                        {
+                            Anvandare.MisslyckadeInloggningar++;
+                            anvandareAktivitet.Spara(Anvandare, false, ref FelID, ref Feltext);
+                            txtAnvandarNamn.Text = "";
+                            txtLosenord.Text = "";
+                            Session["MessageText"] = "Felaktig inloggning";
+                            Response.Redirect("MessageBox.aspx");
+                        }
                     }
                     else
                     {
-                        txtAnvandarNamn.Text = "";
-                        txtLosenord.Text = "";
-                        Session["MessageText"] = "Felaktig inloggning";
+                        Session["MessageText"] = "Användare saknas eller lösenord felaktigt";
                         Response.Redirect("MessageBox.aspx");
                     }
                 }

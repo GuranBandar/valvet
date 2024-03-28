@@ -75,6 +75,36 @@ namespace Valvetwebb.Datalager
         }
 
         /// <summary>
+        /// Hämta användare
+        /// </summary>
+        /// <param name="anvandarID">Aktuellt anvandarID</param>
+        /// <returns>Anvandare DS</returns>
+        public AnvandareDS HämtaAnvandare(string anvandarnamn)
+        {
+            AnvandareDS anvandareDS = new AnvandareDS();
+
+            try
+            {
+                anvandareDS.EnforceConstraints = false;
+                string sql = "SELECT a.* FROM Anvandare a WHERE a.Anvandarnamn = @Anvandarnamn";
+                List<DatabasParameters> dbParameters = new List<DatabasParameters>()
+                {
+                    new DatabasParameters("@Anvandarnamn", anvandarnamn)
+                };
+                DatabasAccess.FyllEnkeltDataSet(sql, dbParameters, anvandareDS);
+            }
+            catch (ValvetException hex)
+            {
+                throw hex;
+            }
+            finally
+            {
+                DatabasAccess.Dispose();
+            }
+            return anvandareDS;
+        }
+
+        /// <summary>
         /// Hämtar rad från tabellen Anvandare i aktuell databas med angiven nyckel.
         /// </summary>
         /// <param name="sqlSok">Eventuellt where-villkor</param>
@@ -200,11 +230,11 @@ namespace Valvetwebb.Datalager
                 sql = "INSERT INTO Anvandare(Anvandarnamn, Losenord, " +
                     "SenastInloggadDatum, " +
                     "SenastByttLosenordDatum, Epostadress, " +
-                    "Aktiv)" +
+                    "Aktiv, MisslyckadeInloggningar )" +
                     "VALUES " +
                     "(@Anvandarnamn, @Losenord, @SenastInloggadDatum, " +
                     "@SenastByttLosenordDatum, @Epostadress, " +
-                    "@Aktiv)";
+                    "@Aktiv, @MisslyckadeInloggningar)";
                 List<DatabasParameters> dbParameters = new List<DatabasParameters>()
                 {
                     new DatabasParameters("@Anvandarnamn", DataTyp.VarChar, anvandare.Anvandarnamn.ToString()),
@@ -212,7 +242,8 @@ namespace Valvetwebb.Datalager
                     new DatabasParameters("@SenastInloggadDatum", DataTyp.VarChar, anvandare.SenastByttLosenordDatum.ToString()),
                     new DatabasParameters("@SenastByttLosenordDatum", DataTyp.VarChar, anvandare.SenastByttLosenordDatum.ToString()),
                     new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString()),
-                    new DatabasParameters("@Aktiv", DataTyp.VarChar, anvandare.Aktiv.ToString())
+                    new DatabasParameters("@Aktiv", DataTyp.VarChar, anvandare.Aktiv.ToString()),
+                    new DatabasParameters("@MisslyckadeInloggningar", DataTyp.Int, anvandare.MisslyckadeInloggningar.ToString())
                 };
                 DatabasAccess.RunSql(sql, dbParameters);
                 sql = "SELECT LAST_INSERT_ID()";
@@ -256,7 +287,7 @@ namespace Valvetwebb.Datalager
                     "SenastInloggadDatum = @SenastInloggadDatum, " +
                     "SenastByttLosenordDatum = @SenastByttLosenordDatum, " +
                     "Epostadress = @Epostadress, " +
-                    "Aktiv = @Aktiv " +
+                    "Aktiv = @Aktiv, MisslyckadeInloggningar = @MisslyckadeInloggningar " +
                     "WHERE AnvandarID = @AnvandarID";
                 List<DatabasParameters> dbParameters = new List<DatabasParameters>()
                 {
@@ -266,7 +297,8 @@ namespace Valvetwebb.Datalager
                     new DatabasParameters("@SenastInloggadDatum", DataTyp.VarChar, anvandare.SenastInloggadDatum.ToString()),
                     new DatabasParameters("@SenastByttLosenordDatum", DataTyp.VarChar, anvandare.SenastByttLosenordDatum.ToString()),
                     new DatabasParameters("@Epostadress", DataTyp.VarChar, anvandare.Epostadress.ToString()),
-                    new DatabasParameters("@Aktiv", DataTyp.VarChar, anvandare.Aktiv.ToString())
+                    new DatabasParameters("@Aktiv", DataTyp.VarChar, anvandare.Aktiv.ToString()),
+                    new DatabasParameters("@MisslyckadeInloggningar", DataTyp.Int, anvandare.MisslyckadeInloggningar.ToString())
                 };
                 DatabasAccess.RunSql(sql, dbParameters);
                 DatabasAccess.BekräftaTransaktion();

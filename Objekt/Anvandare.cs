@@ -51,6 +51,10 @@ namespace Valvetwebb.Objekt
         #endregion
 
         /// <summary>
+        /// Antal misslyckade inloggningsförsök
+        /// </summary>
+        public int MisslyckadeInloggningar { get; set; }
+        /// <summary>
         /// Defaultkonstruktor
         /// </summary>
         public Anvandare()

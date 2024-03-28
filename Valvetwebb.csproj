@@ -189,6 +189,9 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Aktivitet\ValvPostDS.xsc">
+      <DependentUpon>ValvPostDS.xsd</DependentUpon>
+    </Content>
     <Content Include="Aktivitet\AnvandareDS.xsc">
       <DependentUpon>AnvandareDS.xsd</DependentUpon>
     </Content>
@@ -199,9 +202,6 @@
     </None>
     <Content Include="Aktivitet\AnvandareDS.xss">
       <DependentUpon>AnvandareDS.xsd</DependentUpon>
-    </Content>
-    <Content Include="Aktivitet\ValvPostDS.xsc">
-      <DependentUpon>ValvPostDS.xsd</DependentUpon>
     </Content>
     <None Include="Aktivitet\ValvPostDS.xsd">
       <SubType>Designer</SubType>

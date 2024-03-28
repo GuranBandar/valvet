@@ -50,6 +50,8 @@ namespace Valvetwebb.Aktivitet
                         string.Empty : anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
                     anvandare.Aktiv = anvandareDS.Anvandare[0].Aktiv.ToString();
                     anvandare.Konto = anvandareDS.Anvandare[0].Konto.ToString();
+                    anvandare.MisslyckadeInloggningar = (anvandareDS.Anvandare[0].IsMisslyckadeInloggningarNull()) ?
+                        0 : anvandareDS.Anvandare[0].MisslyckadeInloggningar;
                 }
             }
             catch (Exception ex)
@@ -84,6 +86,41 @@ namespace Valvetwebb.Aktivitet
                 anvandare.Epostadress = (anvandareDS.Anvandare[0].IsEpostadressNull())
                     ? string.Empty : anvandareDS.Anvandare[0].Epostadress;
                 anvandare.Aktiv = anvandareDS.Anvandare[0].Aktiv.ToString();
+                anvandare.Konto = anvandareDS.Anvandare[0].Konto.ToString();
+                anvandare.MisslyckadeInloggningar = (anvandareDS.Anvandare[0].IsMisslyckadeInloggningarNull()) ?
+                    0 : anvandareDS.Anvandare[0].MisslyckadeInloggningar;
+            }
+            return anvandare;
+        }
+
+        /// <summary>
+        /// Hämtar rad från tabellen Användare i aktuell databas med angiven nyckel.
+        /// </summary>
+        /// <param name="anvandarnamn">Aktuellt användarnamn</param>
+        /// <returns>Objekt med efterfrågat data</returns>
+        public Anvandare HämtaAnvandare(string anvandarnamn)
+        {
+            AnvandareData anvandareData = new AnvandareData();
+            AnvandareDS anvandareDS = anvandareData.HämtaAnvandare(anvandarnamn);
+            Anvandare anvandare = null;
+
+            if (anvandareDS.Anvandare.Count == 1)
+            {
+                //Skapa Användarobjektet
+                anvandare = new Anvandare();
+                anvandare.Anvandarnamn = anvandareDS.Anvandare[0].Anvandarnamn;
+                anvandare.AnvandarID = anvandareDS.Anvandare[0].AnvandarID;
+                anvandare.Losenord = anvandareDS.Anvandare[0].Losenord;
+                anvandare.SenastInloggadDatum = (anvandareDS.Anvandare[0].IsSenastInloggadDatumNull()) ?
+                    string.Empty : anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
+                anvandare.SenastByttLosenordDatum = (anvandareDS.Anvandare[0].IsSenastByttLosenordDatumNull()) ?
+                    string.Empty : anvandareDS.Anvandare[0].SenastByttLosenordDatum.ToString();
+                anvandare.Epostadress = (anvandareDS.Anvandare[0].IsEpostadressNull())
+                    ? string.Empty : anvandareDS.Anvandare[0].Epostadress;
+                anvandare.Aktiv = anvandareDS.Anvandare[0].Aktiv.ToString();
+                anvandare.Konto = anvandareDS.Anvandare[0].Konto.ToString();
+                anvandare.MisslyckadeInloggningar = (anvandareDS.Anvandare[0].IsMisslyckadeInloggningarNull()) ?
+                    0 : anvandareDS.Anvandare[0].MisslyckadeInloggningar;
             }
             return anvandare;
         }
@@ -125,7 +162,9 @@ namespace Valvetwebb.Aktivitet
                         SenastInloggadDatum = rad["SenastInloggadDatum"].ToString(),
                         SenastByttLosenordDatum = rad["SenastByttLosenordDatum"].ToString(),
                         Epostadress = rad["Epostadress"].ToString(),
-                        Aktiv = rad["Aktiv"].ToString()
+                        Aktiv = rad["Aktiv"].ToString(),
+                        Konto = rad["Konto"].ToString(),
+                        MisslyckadeInloggningar = int.Parse(rad["MisslyckadeInloggningar"].ToString())
                     });
                 }
                 return Anvandare;
@@ -172,7 +211,6 @@ namespace Valvetwebb.Aktivitet
         ///     Metoden kollar informationen innan uppdatering ska göras
         /// </summary>
         /// <param name="anvandare">Objekt Anvandare som ska kollas</param>
-        /// <param name="Golfklubb">Golfklubbobjekt med informationen som ska kollas</param>
         /// <param name="felID">Ev felID som returneras</param>
         /// <param name="felmeddelande">Ev felmeddelande som returneras</param>
         private bool Kolla(Anvandare anvandare, ref string felID, ref string felmeddelande)
@@ -188,6 +226,10 @@ namespace Valvetwebb.Aktivitet
                 felID = "FELLOSEN";
                 felmeddelande = "";
                 return false;
+            }
+            if (anvandare.MisslyckadeInloggningar > 4)
+            {
+                anvandare.Aktiv = "0";
             }
             return true;
         }

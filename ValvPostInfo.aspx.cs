@@ -229,6 +229,7 @@ namespace Valvetwebb
         protected void knappNy_Click(object sender, EventArgs e)
         {
             this.VisaTomValvPost();
+            Response.Redirect("ValvPostInfo.aspx");
         }
 
         /// <summary>
