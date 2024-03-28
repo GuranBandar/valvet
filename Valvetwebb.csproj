@@ -153,6 +153,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="App.Master" />
+    <Content Include="Images\Lösenordsvalv.jpg" />
     <Content Include="Images\Valvet.jpeg" />
     <Content Include="Meny.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />

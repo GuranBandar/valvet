@@ -13,7 +13,7 @@
         </table>
         <div class="form">
             <table id="TableValvlista" style="margin: auto; border: 3px solid white"
-                class="form" runat="server">
+                class="custom-table" runat="server">
                 <tr></tr>
                 <tr>
                     <td>

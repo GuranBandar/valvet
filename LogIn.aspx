@@ -18,7 +18,7 @@
                         </td>
                     </tr>
                 </table>
-                <table id="TableLogIn" style="margin: auto; border: 5px solid white">
+                <table id="TableLogIn" class="custom-table"; style="margin: auto; border: 5px solid darkgray" >
                     <tr></tr>
                     <tr>
                         <td>

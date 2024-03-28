@@ -3,7 +3,7 @@
 
 <asp:Content ContentPlaceHolderID="Main" runat="server">
     <div>
-        <table id="TableHeader" class="form" runat="server">
+        <table id="TableHeader" class="custom-table" runat="server">
             <tr>
                 <td></td>
                 <td>
@@ -11,7 +11,7 @@
                 </td>
             </tr>
         </table>
-        <table id="TableRubrik" style="margin: auto; border: 3px solid white">
+        <table id="TableRubrik" class="custom-table" style="margin: auto; border: 3px solid white">
             <tr>
                 <td>
                     <asp:Label ID="Label9" Width="1%" runat="server"></asp:Label>
@@ -73,28 +73,9 @@
                 <td style="height: 5px" align="center"></td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
                 <td>
-                    <asp:Button ID="knappAvbryt" runat="server" Text="Tillbaka" OnClick="knappAvbryt_Click" />
-                </td>
-            </tr>
-            <tr>
-                <td style="height: 5px" align="center"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
+                    <asp:Button ID="knappAvbryt" runat="server" Text="Tillbaka" OnClick="knappAvbryt_Click" CssClass="ButtonClass" />
                     <asp:Button ID="knappLogout" runat="server" Text="Logga ut" OnClick="knappLogout_Click" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label15" Width="1%" runat="server"></asp:Label>
-                    <asp:Label ID="Label16" Width="1%" runat="server"></asp:Label>
                 </td>
             </tr>
         </table>

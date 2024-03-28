@@ -95,7 +95,7 @@ namespace Valvetwebb
 
         protected void knappAvbryt_Click(object sender, EventArgs e)
         {
-            Response.Redirect("LogIn.aspx");
+            Response.Redirect("Meny.aspx");
         }
 
         /// <summary>

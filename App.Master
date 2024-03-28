@@ -32,6 +32,7 @@
     window.history.forward();
 </script>
 <body>
+    <%--<body style="background-image: url('images/Lösenordsvalv.jpg');">--%>
     <form id="form1" runat="server">
         <!-- page start -->
         <div id="page">

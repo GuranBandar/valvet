@@ -23,7 +23,7 @@
         }
     </script>
     <div>
-        <table id="TableHeader" class="form" runat="server">
+        <table id="TableHeader" class="custom-table" runat="server">
             <tr>
                 <td></td>
                 <td>
@@ -32,14 +32,14 @@
             </tr>
         </table>
         <div class="form">
-            <table id="TableValvpost" style="margin: auto; border: 5px solid white"
-                class="form" runat="server">
+            <table id="TableValvpost" style="margin: auto; border: 5px solid darkgray"
+                class="custom-table" runat="server">
                 <tr>
                     <td style="height: 5px" align="center"></td>
                 </tr>
                 <tr>
                     <td>
-                        <table>
+                        <table class="custom-table">
                             <tr>
                                 <td>
                                     <asp:Label ID="Label6" Width="1%" runat="server"></asp:Label>
@@ -52,64 +52,67 @@
                                     <asp:TextBox ID="txtPostnamn" runat="server" CssClass="brodtext" Width="200" Enabled="true" Font-Bold="true"></asp:TextBox>
                                 </td>
                             </tr>
+                            <tr>
+                                <td style="height: 5px" align="center"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label8" Height="3px" Width="2%" runat="server"></asp:Label>
+                                    <asp:Label ID="lblUsernamn" runat="server" CssClass="rubriktext" Text="Usernamn"></asp:Label>
+                                    <asp:Label ID="Label1" Height="3px" Width="2%" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtUsernamn" runat="server" CssClass="brodtext" Height="21" Width="200" Enabled="true"></asp:TextBox>
+                                    <asp:Label ID="Label7" Height="3px" Width="2%" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label17" Height="3px" Width="2%" runat="server"></asp:Label>
+                                    <asp:Label ID="lblLosenord" runat="server" CssClass="rubriktext" Text="Lösenord "></asp:Label>
+                                    <asp:Label ID="Label19" Height="3px" Width="2%" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtLosenord" runat="server" Height="21" Width="200" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:CheckBox ID="chkShowPass" runat="server" CssClass="brodtext" Text="Visa lösenord" OnCheckedChanged="chkShowPass_Click" AutoPostBack="true" />
+                                    <asp:Label ID="Label20" Height="3px" Width="2%" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label21" Height="3px" Width="2%" runat="server"></asp:Label>
+                                    <asp:Label ID="lblWebbadress" runat="server" CssClass="rubriktext" Text="Webbadress"></asp:Label>
+                                    <asp:Label ID="Label23" Height="3px" Width="2%" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtWebadress" runat="server" CssClass="brodtext" Height="21" Width="200" Enabled="true"></asp:TextBox>
+                                    <asp:Label ID="Label24" Height="3px" Width="2%" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label18" Height="3px" Width="2%" runat="server"></asp:Label>
+                                    <asp:Label ID="lblAnteckningar" runat="server" CssClass="rubriktext" Text="Anteckningar"></asp:Label>
+                                    <asp:Label ID="Label25" Height="3px" Width="2%" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtAnteckningar" runat="server" TextMode="MultiLine" Width="200"></asp:TextBox>
+                                    <asp:Label ID="Label26" Height="3px" Width="2%" runat="server"></asp:Label>
+                                </td>
+                            </tr>
                         </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="height: 5px" align="center"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="Label8" Height="3px" Width="2%" runat="server"></asp:Label>
-                        <asp:Label ID="lblUsernamn" runat="server" CssClass="rubriktext" Text="Usernamn"></asp:Label>
-                        <asp:Label ID="Label1" Height="3px" Width="2%" runat="server"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:TextBox ID="txtUsernamn" runat="server" CssClass="brodtext" Height="21" Width="200" Enabled="true"></asp:TextBox>
-                        <asp:Label ID="Label7" Height="3px" Width="2%" runat="server"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="Label17" Height="3px" Width="2%" runat="server"></asp:Label>
-                        <asp:Label ID="lblLosenord" runat="server" CssClass="rubriktext" Text="Lösenord "></asp:Label>
-                        <asp:Label ID="Label19" Height="3px" Width="2%" runat="server"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:TextBox ID="txtLosenord" runat="server" Height="21" Width="200" TextMode="Password" ClientIDMode="Static"></asp:TextBox>
-                        <br />
-                        <asp:CheckBox ID="chkShowPass" runat="server" CssClass="rubriktext" Text="Visa lösenord" OnCheckedChanged="chkShowPass_Click" AutoPostBack="true"/>
-                        <asp:Label ID="Label20" Height="3px" Width="2%" runat="server"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="Label21" Height="3px" Width="2%" runat="server"></asp:Label>
-                        <asp:Label ID="lblWebbadress" runat="server" CssClass="rubriktext" Text="Webbadress"></asp:Label>
-                        <asp:Label ID="Label23" Height="3px" Width="2%" runat="server"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:TextBox ID="txtWebadress" runat="server" CssClass="brodtext" Height="21" Width="200" Enabled="true"></asp:TextBox>
-                        <asp:Label ID="Label24" Height="3px" Width="2%" runat="server"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="Label18" Height="3px" Width="2%" runat="server"></asp:Label>
-                        <asp:Label ID="lblAnteckningar" runat="server" CssClass="rubriktext" Text="Anteckningar"></asp:Label>
-                        <asp:Label ID="Label25" Height="3px" Width="2%" runat="server"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:TextBox ID="txtAnteckningar" runat="server" TextMode="MultiLine" Width="200"></asp:TextBox>
-                        <asp:Label ID="Label26" Height="3px" Width="2%" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
