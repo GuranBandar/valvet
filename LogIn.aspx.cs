@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Web.UI;
 using Valvetwebb.Aktivitet;
 using Valvetwebb.Objekt;
 
@@ -114,7 +115,10 @@ namespace Valvetwebb
         }
         protected void knappAvbryt_Click(object sender, EventArgs e)
         {
-            knappAvbryt.Attributes.Add("OnClick", "window.close();");
+            //knappAvbryt.Attributes.Add("OnClick", "window.close();");
+
+            Response.Write("<script>window.close();</script>");
+
             //Page.ClientScript.RegisterOnSubmitStatement(typeof(Page), "closePage", "window.onunload = CloseWindow();");
             //Session.RemoveAll();
             //FormsAuthentication.SignOut();

@@ -74,7 +74,7 @@
                         <td>
                             <asp:Button ID="knappOK" runat="server" Text="OK" OnClick="knappOK_Click" CssClass="ButtonClass" />
                             <asp:Label ID="Label3" Width="1%" runat="server"></asp:Label>
-                            <asp:Button ID="knappAvbryt" runat="server" Text="Avbryt" OnClick="knappAvbryt_Click" CssClass="ButtonClass" />
+                            <asp:Button ID="knappAvbryt" runat="server" Text="Stäng" OnClick="knappAvbryt_Click" CssClass="ButtonClass" />
                         </td>
                     </tr>
                     <tr>
