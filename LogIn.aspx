@@ -2,11 +2,13 @@
     AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="Valvetwebb.LogIn" %>
 
 <asp:Content ContentPlaceHolderID="Main" runat="server">
-    <script type="text/javascript">
-        function CloseWindow() {
-            window.close();
-        }
-    </script>
+<script type="text/javascript">
+    function closeWindow() {
+        window.open('', '_parent', '');
+        window.close();
+    }
+</script>
+    <a href="javascript:window.open('','_self').close();">close</a>
     <div>
         <div>
             <div class="table-responsive">
@@ -74,7 +76,7 @@
                         <td>
                             <asp:Button ID="knappOK" runat="server" Text="OK" OnClick="knappOK_Click" CssClass="ButtonClass" />
                             <asp:Label ID="Label3" Width="1%" runat="server"></asp:Label>
-                            <asp:Button ID="knappAvbryt" runat="server" Text="Stäng" OnClick="knappAvbryt_Click" CssClass="ButtonClass" />
+                            <%--<asp:Button ID="knappAvbryt" runat="server" Text="Stäng" OnClick="knappAvbryt_Click" CssClass="ButtonClass" />--%>
                         </td>
                     </tr>
                     <tr>

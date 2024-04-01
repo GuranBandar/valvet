@@ -30,7 +30,16 @@
 </head>
 <script language="JavaScript" type="text/javascript">
     window.history.forward();
+
 </script>
+<script type="text/javascript">
+    function closeWindow() {
+        window.open('', '_parent', '');
+        window.close();
+    }
+</script>
+
+<a href="javascript:window.open('','_self').close();">close</a>
 <body>
     <%--<body style="background-image: url('images/Lösenordsvalv.jpg');">--%>
     <form id="form1" runat="server">

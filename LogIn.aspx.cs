@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Web;
 using System.Web.UI;
 using Valvetwebb.Aktivitet;
 using Valvetwebb.Objekt;
@@ -113,10 +114,21 @@ namespace Valvetwebb
                 Response.Redirect("MessageBox.aspx");
             }
         }
+
+        /// <summary>
+        /// Tanken var att med ett knapptryck stänga fliken, men funkar inte.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void knappAvbryt_Click(object sender, EventArgs e)
         {
             //knappAvbryt.Attributes.Add("OnClick", "window.close();");
+            //SessionLogout();
+            //Response.Clear();
+            //Response.Flush();
+            //Response.End();
 
+            HttpContext.Current.ApplicationInstance.CompleteRequest();
             Response.Write("<script>window.close();</script>");
 
             //Page.ClientScript.RegisterOnSubmitStatement(typeof(Page), "closePage", "window.onunload = CloseWindow();");
