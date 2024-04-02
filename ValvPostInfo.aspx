@@ -108,7 +108,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="txtAnteckningar" runat="server" TextMode="MultiLine" Width="200"></asp:TextBox>
+                                    <asp:TextBox ID="txtAnteckningar" runat="server" TextMode="MultiLine" Width="200" Height="100"></asp:TextBox>
                                     <asp:Label ID="Label26" Height="3px" Width="2%" runat="server"></asp:Label>
                                 </td>
                             </tr>
