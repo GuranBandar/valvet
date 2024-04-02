@@ -108,7 +108,6 @@ namespace Valvetwebb
             txtPostnamn.Focus();
             txtUsernamn.Text = string.Empty;
             txtLosenord.Text = string.Empty;
-            chkShowPass.Checked = true;
             txtWebadress.Text = string.Empty;
             txtAnteckningar.Text = string.Empty;
         }

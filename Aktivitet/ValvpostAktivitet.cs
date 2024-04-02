@@ -76,6 +76,8 @@ namespace Valvetwebb.Aktivitet
                 ValvPost.Postnamn = ValvpostDS.ValvPost[0].Postnamn;
                 ValvPost.Webbadress = (ValvpostDS.ValvPost[0].IsWebbadressNull()) ?
                     string.Empty : ValvpostDS.ValvPost[0].Webbadress;
+                ValvPost.Anteckningar = (ValvpostDS.ValvPost[0].IsAnteckningarNull()) ?
+                    string.Empty : ValvpostDS.ValvPost[0].Anteckningar;
                 ValvPost.AnvandarNamnSkapad = ValvpostDS.ValvPost[0].AnvandarNamnSkapad;
                 ValvPost.SkapadDatum = ValvpostDS.ValvPost[0].SkapadDatum;
                 ValvPost.AnvandarNamnUppdat = (ValvpostDS.ValvPost[0].IsAnvandarNamnUppdatNull()) ?
