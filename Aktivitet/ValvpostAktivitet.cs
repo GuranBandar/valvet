@@ -42,7 +42,7 @@ namespace Valvetwebb.Aktivitet
                         SkapadDatum = rad["SkapadDatum"].ToString(),
                         AnvandarNamnUppdat = rad["AnvandarNamnUppdat"].ToString(),
                         UppdatDatum = rad["UppdatDatum"].ToString()
-                    }); ;
+                    }); 
                 }
                 return ValvPost;
             }
@@ -84,6 +84,65 @@ namespace Valvetwebb.Aktivitet
                     string.Empty : ValvpostDS.ValvPost[0].AnvandarNamnUppdat.ToString();
                 ValvPost.UppdatDatum = (ValvpostDS.ValvPost[0].IsUppdatDatumNull()) ?
                     string.Empty : ValvpostDS.ValvPost[0].UppdatDatum.ToString();
+            }
+            return ValvPost;
+        }
+
+        /// <summary>
+        /// Söker rad/-er från tabellen ValvPost i aktuell databas med angivet sökvillkor.
+        /// </summary>
+        /// <param name="namn">Aktuell namn</param>
+        /// <returns>Golfklubbobjekt med efterfrågat data</returns>
+        public List<ValvPost> SökValvPost(string konto, string namn)
+        {
+            DataSet valvPostDS = new DataSet();
+            ValvPostData valvPostData = new ValvPostData();
+            List<ValvPost> ValvPost = null;
+            short antArgument = 0;
+            string sqlSok = "";
+            string sql = "";
+
+            try
+            {
+                if (!string.IsNullOrEmpty(namn))
+                {
+                    WhereMedLikeEfter(namn, "Postnamn", ref sqlSok, ref antArgument);
+                }
+
+                if (antArgument > 0)
+                {
+                    sql = sql + " WHERE Konto = @Konto AND " + sqlSok;
+                }
+
+                valvPostDS = valvPostData.SökValvPost(konto, sql);
+
+                if (valvPostDS.Tables["ValvPost"].Rows.Count > 0)
+                {
+                    //Skapa ValvPostobjekten
+                    ValvPost = new List<ValvPost>(valvPostDS.Tables["ValvPost"].Rows.Count);
+                    foreach (DataRow rad in valvPostDS.Tables["ValvPost"].Rows)
+                    {
+                        ValvPost.Add(new ValvPost()
+                        {
+                            PostID = (int)rad["PostID"],
+                            AnvandarID = (int)rad["AnvandarID"],
+                            Konto = rad["Konto"].ToString(),
+                            Usernamn = rad["Usernamn"].ToString(),
+                            Losenord = rad["Losenord"].ToString(),
+                            Postnamn = rad["Postnamn"].ToString(),
+                            Webbadress = rad["Webbadress"].ToString(),
+                            Anteckningar = rad["Anteckningar"].ToString(),
+                            AnvandarNamnSkapad = rad["AnvandarNamnSkapad"].ToString(),
+                            SkapadDatum = rad["SkapadDatum"].ToString(),
+                            AnvandarNamnUppdat = rad["AnvandarNamnUppdat"].ToString(),
+                            UppdatDatum = rad["UppdatDatum"].ToString()
+                        });
+                    }
+                }
+            }
+            catch (ValvetException)
+            {
+                throw;
             }
             return ValvPost;
         }

@@ -41,6 +41,7 @@ namespace Valvetwebb
                 Session["MessageTitle"] = "Valvlista";
                 Session["MessageText"] = string.Empty;
                 this.knappSearch_Click(sender, e);
+                txtSearchPost.Focus();
             }
         }
 
@@ -110,14 +111,24 @@ namespace Valvetwebb
         }
 
         /// <summary>
-        /// Sök Valvpost med AnvändarID
+        /// Sök Valvpost med konto och kankse postnamn
         /// </summary>
         /// <returns></returns>
         private DataView InitieraValvlista()
         {
             Anvandare webUser = (Anvandare)Session["WebUser"];
+            List<ValvPost> valvpostList = null;
             ValvPostAktivitet ValvpostAktivitet = new ValvPostAktivitet();
-            List<ValvPost> valvpostList = ValvpostAktivitet.HämtaAlla(webUser.Konto);
+
+            if (txtSearchPost.Text == string.Empty)
+            {
+                valvpostList = ValvpostAktivitet.HämtaAlla(webUser.Konto);
+            }
+            else
+            {
+                valvpostList = ValvpostAktivitet.SökValvPost(webUser.Konto, txtSearchPost.Text);
+            }
+
             DataTable dt = new DataTable();
             DataRow dr;
             dt.Columns.Add(new DataColumn("PostID", typeof(Int32)));

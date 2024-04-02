@@ -43,6 +43,13 @@
                                             <asp:Label ID="Label3" Height="4px" Width="3%" runat="server"></asp:Label>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Button ID="knappAvbryt" runat="server" Text="Tillbaka" OnClick="knappAvbryt_Click" CssClass="ButtonClass" />
+                                            <asp:Button ID="knappNy" runat="server" Text="Ny post" OnClick="knappNy_Click" CssClass="ButtonClass" />
+                                            <asp:Button ID="knappLogout" runat="server" Text="Logga ut" OnClick="knappLogout_Click" />
+                                        </td>
+                                    </tr>
                             </table>
                         </div>
                     </td>
@@ -81,13 +88,6 @@
                             <tr>
                                 <td>
                                     <asp:Label ID="Label1" Height="4px" Width="3%" runat="server"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button ID="knappAvbryt" runat="server" Text="Tillbaka" OnClick="knappAvbryt_Click" CssClass="ButtonClass" />
-                                    <asp:Button ID="knappNy" runat="server" Text="Ny post" OnClick="knappNy_Click" CssClass="ButtonClass" />
-                                    <asp:Button ID="knappLogout" runat="server" Text="Logga ut" OnClick="knappLogout_Click" />
                                 </td>
                             </tr>
                         </table>

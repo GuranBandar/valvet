@@ -68,6 +68,40 @@ namespace Valvetwebb.Datalager
         }
 
         /// <summary>
+        /// Hämtar rad/-er från tabellen Golfklubb i aktuell databas med angiven nyckel.
+        /// </summary>
+        /// <param name="sqlSok">Eventuellt where-villkor</param>
+        /// <returns>Otypat dataset med efterfrågat data</returns>
+        public DataSet SökValvPost(string konto, string sqlSok)
+        {
+            DataSet ValvPostDS = new DataSet();
+            List<DatabasParameters> dbParameters = new List<DatabasParameters>()
+                {
+                    new DatabasParameters("@Konto", DataTyp.String, konto.ToString())
+                };
+
+            ValvPostDS.EnforceConstraints = false;
+            string sql = "SELECT * " +
+                "FROM ValvPost " +
+                sqlSok.ToString() +
+                " ORDER BY Postnamn";
+            try
+            {
+                ValvPostDS = DatabasAccess.FyllDataSet(sql, dbParameters);
+                ValvPostDS.Tables[0].TableName = "ValvPost";
+                return ValvPostDS;
+            }
+            catch (ValvetException hex)
+            {
+                throw hex;
+            }
+            finally
+            {
+                DatabasAccess.Dispose();
+            }
+        }
+
+        /// <summary>
         /// Ta bort ValvPost.
         /// </summary>
         /// <param name="Valvpost">Valvpost</param>
