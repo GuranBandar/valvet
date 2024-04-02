@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Globalization;
 using System.Web;
 using System.Web.UI;
@@ -197,6 +198,57 @@ namespace Valvetwebb
             Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetNoStore();
+        }
+
+
+        /// <summary>
+        /// Användaren har klickat på en länken, kör nu den i den Web Browser användaren föredrar
+        /// </summary>
+        /// <param name="url">Länken som ska köras</param>
+        protected void StartWebbrowser(string url)
+        {
+            System.Web.HttpBrowserCapabilities browser = Request.Browser;
+            string browserType = browser.Browser;
+
+            try
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                switch (browserType)
+                {
+                    case "Chrome":
+                        startInfo.FileName = "chrome.exe";
+                        startInfo.Arguments = url;
+                        Process.Start(startInfo);
+                        break;
+                    case "Edge":
+                        Process.Start("microsoft-edge:https://" + url);
+                        break;
+                    case "Firefox":
+                        startInfo.FileName = "firefox.exe";
+                        startInfo.Arguments = url;
+                        Process.Start(startInfo);
+                        break;
+                    case "IExplore":
+                        startInfo.FileName = "IExplore.exe";
+                        startInfo.Arguments = url;
+                        Process.Start(startInfo);
+                        break;
+                    case "Opera":
+                        startInfo.FileName = "opera.exe";
+                        startInfo.Arguments = url;
+                        Process.Start(startInfo);
+                        break;
+                    default:
+                        Process.Start(url);
+                        break;
+                }
+            }
+            catch (System.ComponentModel.Win32Exception w)
+            {
+
+                throw;
+                //("Unable to find the Webb Browser... " + AppUser.WebBrowser + " not found!");
+            }
         }
     }
 }

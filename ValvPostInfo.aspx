@@ -96,7 +96,12 @@
                             <tr>
                                 <td>
                                     <asp:TextBox ID="txtWebadress" runat="server" CssClass="brodtext" Height="21" Width="200" Enabled="true"></asp:TextBox>
-                                    <asp:Label ID="Label24" Height="3px" Width="2%" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:LinkButton ID="lkbLanka" runat="server" text="Länka" OnClick="lkbLanka_Click" Enabled="true"></asp:LinkButton>
+                                    <asp:Label ID="Label4" Height="3px" Width="2%" runat="server"></asp:Label>
                                 </td>
                             </tr>
                             <tr>

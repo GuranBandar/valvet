@@ -96,6 +96,15 @@ namespace Valvetwebb
             Session["AnvandarID"] = valvPost.AnvandarID;
             string Password = txtLosenord.Text;
             txtLosenord.Attributes.Add("value", Password);
+
+            if (txtWebadress.Text != string.Empty)
+            {
+                lkbLanka.Visible = true;
+            }
+            else
+            {
+                lkbLanka.Visible = false;
+            }
         }
 
         /// <summary>
@@ -127,6 +136,16 @@ namespace Valvetwebb
             {
                 txtLosenord.TextMode = System.Web.UI.WebControls.TextBoxMode.Password;
             }
+        }
+
+        /// <summary>
+        /// Länka till eventuell hemsida
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void lkbLanka_Click(object sender, EventArgs e)
+        {
+            base.StartWebbrowser(txtWebadress.Text);
         }
 
         /// <summary>
