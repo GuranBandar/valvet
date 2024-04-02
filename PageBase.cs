@@ -221,7 +221,7 @@ namespace Valvetwebb
                         Process.Start(startInfo);
                         break;
                     case "Edge":
-                        Process.Start("microsoft-edge:https://" + url);
+                        Process.Start("msedge.exe", url);
                         break;
                     case "Firefox":
                         startInfo.FileName = "firefox.exe";
@@ -246,8 +246,12 @@ namespace Valvetwebb
             catch (System.ComponentModel.Win32Exception w)
             {
 
-                throw;
+                throw w.InnerException;
                 //("Unable to find the Webb Browser... " + AppUser.WebBrowser + " not found!");
+            }
+            catch (Exception ex)
+            {
+                throw ex.InnerException;
             }
         }
     }
