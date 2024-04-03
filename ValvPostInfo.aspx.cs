@@ -145,7 +145,14 @@ namespace Valvetwebb
         /// <param name="e"></param>
         protected void lkbLanka_Click(object sender, EventArgs e)
         {
-            base.StartWebbrowser(txtWebadress.Text);
+            try
+            {
+                base.StartWebbrowser(txtWebadress.Text);
+            }
+            catch 
+            {
+                MessageBox();
+            }
         }
 
         /// <summary>
@@ -232,7 +239,6 @@ namespace Valvetwebb
                     MessageBox();
                 }
                 Session["Referencepage"] = "Valvlista.aspx";
-                Session["MessageText"] = "Borttag av posten lyckades";
                 MessageBox();
             }
             catch (Exception ex)

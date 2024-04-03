@@ -209,6 +209,7 @@ namespace Valvetwebb
         {
             System.Web.HttpBrowserCapabilities browser = Request.Browser;
             string browserType = browser.Browser;
+            var RunningProcessPaths = ProcessFileNameFinderClass.GetAllRunningProcessFilePaths();
 
             try
             {
@@ -216,27 +217,55 @@ namespace Valvetwebb
                 switch (browserType)
                 {
                     case "Chrome":
-                        startInfo.FileName = "chrome.exe";
-                        startInfo.Arguments = url;
-                        Process.Start(startInfo);
+                        if (RunningProcessPaths.Contains("chrome.exe"))
+                        {
+                            startInfo.FileName = "chrome.exe";
+                            startInfo.Arguments = url;
+                            Process.Start(startInfo);
+                        }
+                        else
+                        {
+                            Process.Start("chrome.exe", "https://" + url);
+                        }
                         break;
                     case "Edge":
                         Process.Start("msedge.exe", url);
                         break;
                     case "Firefox":
-                        startInfo.FileName = "firefox.exe";
-                        startInfo.Arguments = url;
-                        Process.Start(startInfo);
+                        if (RunningProcessPaths.Contains("firefox.exe"))
+                        {
+                            startInfo.FileName = "firefox.exe";
+                            startInfo.Arguments = url;
+                            Process.Start(startInfo);
+                        }
+                        else
+                        {
+                            Process.Start("firefox.exe", "https://" + url);
+                        }
                         break;
                     case "IExplore":
-                        startInfo.FileName = "IExplore.exe";
-                        startInfo.Arguments = url;
-                        Process.Start(startInfo);
+                        if (RunningProcessPaths.Contains("IExplore.exe"))
+                        {
+                            startInfo.FileName = "IExplore.exe";
+                            startInfo.Arguments = url;
+                            Process.Start(startInfo);
+                        }
+                        else
+                        {
+                            Process.Start("IExplore.exe", "https://" + url);
+                        }
                         break;
                     case "Opera":
-                        startInfo.FileName = "opera.exe";
-                        startInfo.Arguments = url;
-                        Process.Start(startInfo);
+                        if (RunningProcessPaths.Contains("opera.exe"))
+                        {
+                            startInfo.FileName = "opera.exe";
+                            startInfo.Arguments = url;
+                            Process.Start(startInfo);
+                        }
+                        else
+                        {
+                            Process.Start("opera.exe", "https://" + url);
+                        }
                         break;
                     default:
                         Process.Start(url);
@@ -245,13 +274,13 @@ namespace Valvetwebb
             }
             catch (System.ComponentModel.Win32Exception w)
             {
-
-                throw w.InnerException;
-                //("Unable to find the Webb Browser... " + AppUser.WebBrowser + " not found!");
+                Session["MessageText"] = "Unable to find the Webb Browser... " + browserType + " not found!" + Environment.NewLine + w.InnerException;
+                MessageBox();
             }
             catch (Exception ex)
             {
-                throw ex.InnerException;
+                Session["MessageText"] = ex.InnerException;
+                MessageBox();
             }
         }
     }

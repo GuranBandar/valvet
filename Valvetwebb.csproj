@@ -299,8 +299,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Kontroller\Enumkoder.cs" />
     <Compile Include="Kontroller\Extensions.cs" />
     <Compile Include="Kontroller\GUI_kontroller.cs" />
+    <Compile Include="Kontroller\ProcessFileNameFinderClass.cs" />
     <Compile Include="Meny.aspx.cs">
       <DependentUpon>Meny.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
