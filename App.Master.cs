@@ -76,14 +76,7 @@ namespace Valvetwebb
             Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetNoStore();
-            //string myPageUrl;
-            //string logOutUrl;
-            //string statJS;
             StringBuilder clientScript = new StringBuilder();
-
-            //myPageUrl = ConfigurationManager.AppSettings["MyPageUrl"].ToString();
-            //logOutUrl = ConfigurationManager.AppSettings["LogOutUrl"].ToString();
-            //statJS = ConfigurationManager.AppSettings["StatJS"].ToString();
 
             //Register client script on page
             Page.ClientScript.GetPostBackEventReference(this, "");

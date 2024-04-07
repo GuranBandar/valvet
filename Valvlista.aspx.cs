@@ -43,6 +43,10 @@ namespace Valvetwebb
                 this.knappSearch_Click(sender, e);
                 txtSearchPost.Focus();
             }
+            else
+            {
+                Session["SearchPost"] = txtSearchPost.Text;
+            }
         }
 
         /// <summary>
@@ -83,6 +87,17 @@ namespace Valvetwebb
 
         protected void knappSearch_Click(object sender, EventArgs e)
         {
+
+            if (Session["SearchPost"] != null)
+            {
+                txtSearchPost.Text = Session["SearchPost"].ToString();
+            }
+            else
+            {
+                txtSearchPost.Text = string.Empty;
+            }
+
+            Session["SearchPost"] = txtSearchPost.Text;
             dgList.DataSource = InitieraValvlista();
             dgList.DataBind();
         }
@@ -94,8 +109,14 @@ namespace Valvetwebb
             VisaSida(Sidan);
         }
 
+        /// <summary>
+        /// Tillbaka knappen tryckt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void knappAvbryt_Click(object sender, EventArgs e)
         {
+            Session["SearchPost"] = string.Empty;
             Response.Redirect("Meny.aspx");
         }
 
@@ -119,15 +140,7 @@ namespace Valvetwebb
             Anvandare webUser = (Anvandare)Session["WebUser"];
             List<ValvPost> valvpostList = null;
             ValvPostAktivitet ValvpostAktivitet = new ValvPostAktivitet();
-
-            if (txtSearchPost.Text == string.Empty)
-            {
-                valvpostList = ValvpostAktivitet.HämtaAlla(webUser.Konto);
-            }
-            else
-            {
-                valvpostList = ValvpostAktivitet.SökValvPost(webUser.Konto, txtSearchPost.Text);
-            }
+            valvpostList = ValvpostAktivitet.SökValvPost(webUser.Konto, Session["SearchPost"].ToString());
 
             DataTable dt = new DataTable();
             DataRow dr;

@@ -96,15 +96,16 @@ namespace Valvetwebb
             Session["AnvandarID"] = valvPost.AnvandarID;
             string Password = txtLosenord.Text;
             txtLosenord.Attributes.Add("value", Password);
+            lkbLanka.Visible = false;
 
-            if (txtWebadress.Text != string.Empty)
-            {
-                lkbLanka.Visible = true;
-            }
-            else
-            {
-                lkbLanka.Visible = false;
-            }
+            //if (txtWebadress.Text != string.Empty)
+            //{
+            //    lkbLanka.Visible = true;
+            //}
+            //else
+            //{
+            //    lkbLanka.Visible = false;
+            //}
         }
 
         /// <summary>

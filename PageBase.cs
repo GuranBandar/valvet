@@ -203,6 +203,7 @@ namespace Valvetwebb
 
         /// <summary>
         /// Användaren har klickat på en länken, kör nu den i den Web Browser användaren föredrar
+        /// Funkar inte, vet inte hur jag ska lösa det heller.
         /// </summary>
         /// <param name="url">Länken som ska köras</param>
         protected void StartWebbrowser(string url)
@@ -213,73 +214,85 @@ namespace Valvetwebb
 
             try
             {
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                switch (browserType)
-                {
-                    case "Chrome":
-                        if (RunningProcessPaths.Contains("chrome.exe"))
-                        {
-                            startInfo.FileName = "chrome.exe";
-                            startInfo.Arguments = url;
-                            Process.Start(startInfo);
-                        }
-                        else
-                        {
-                            Process.Start("chrome.exe", "https://" + url);
-                        }
-                        break;
-                    case "Edge":
-                        Process.Start("msedge.exe", url);
-                        break;
-                    case "Firefox":
-                        if (RunningProcessPaths.Contains("firefox.exe"))
-                        {
-                            startInfo.FileName = "firefox.exe";
-                            startInfo.Arguments = url;
-                            Process.Start(startInfo);
-                        }
-                        else
-                        {
-                            Process.Start("firefox.exe", "https://" + url);
-                        }
-                        break;
-                    case "IExplore":
-                        if (RunningProcessPaths.Contains("IExplore.exe"))
-                        {
-                            startInfo.FileName = "IExplore.exe";
-                            startInfo.Arguments = url;
-                            Process.Start(startInfo);
-                        }
-                        else
-                        {
-                            Process.Start("IExplore.exe", "https://" + url);
-                        }
-                        break;
-                    case "Opera":
-                        if (RunningProcessPaths.Contains("opera.exe"))
-                        {
-                            startInfo.FileName = "opera.exe";
-                            startInfo.Arguments = url;
-                            Process.Start(startInfo);
-                        }
-                        else
-                        {
-                            Process.Start("opera.exe", "https://" + url);
-                        }
-                        break;
-                    default:
-                        Process.Start(url);
-                        break;
-                }
+                string fullUrl = HttpContext.Current.Request.Url.AbsoluteUri; // Full URL (including query parameters)
+                Response.Redirect("http://google.com");
+
+                //Process.Start(new ProcessStartInfo
+                //{
+                //    UseShellExecute = true,
+                //    FileName = url
+                //});
+                //    ProcessStartInfo startInfo = new ProcessStartInfo();
+                //    switch (browserType)
+                //    {
+                //        case "Chrome":
+                //            if (RunningProcessPaths.Contains("chrome.exe"))
+                //            {
+                //                startInfo.FileName = "chrome.exe";
+                //                startInfo.Arguments = url;
+                //                Process.Start(startInfo);
+                //            }
+                //            else
+                //            {
+                //                Process.Start(new ProcessStartInfo
+                //                {
+                //                    UseShellExecute = true,
+                //                    FileName = url
+                //                });
+                //            }
+                //            break;
+                //        case "Edge":
+                //            Process.Start("msedge.exe", url);
+                //            break;
+                //        case "Firefox":
+                //            if (RunningProcessPaths.Contains("firefox.exe"))
+                //            {
+                //                startInfo.FileName = "firefox.exe";
+                //                startInfo.Arguments = url;
+                //                Process.Start(startInfo);
+                //            }
+                //            else
+                //            {
+                //                Process.Start("firefox.exe", "https://" + url);
+                //            }
+                //            break;
+                //        case "IExplore":
+                //            if (RunningProcessPaths.Contains("IExplore.exe"))
+                //            {
+                //                startInfo.FileName = "IExplore.exe";
+                //                startInfo.Arguments = url;
+                //                Process.Start(startInfo);
+                //            }
+                //            else
+                //            {
+                //                Process.Start("IExplore.exe", "https://" + url);
+                //            }
+                //            break;
+                //        case "Opera":
+                //            if (RunningProcessPaths.Contains("opera.exe"))
+                //            {
+                //                startInfo.FileName = "opera.exe";
+                //                startInfo.Arguments = url;
+                //                Process.Start(startInfo);
+                //            }
+                //            else
+                //            {
+                //                Process.Start("opera.exe", "https://" + url);
+                //            }
+                //            break;
+                //        default:
+                //            Process.Start("explorer.exe", "http://google.com");
+                //            break;
+                //    }
             }
             catch (System.ComponentModel.Win32Exception w)
             {
-                Session["MessageText"] = "Unable to find the Webb Browser... " + browserType + " not found!" + Environment.NewLine + w.InnerException;
+                Session["MessageText"] = "Unable to find the Web Browser... " + browserType + " not found!" + Environment.NewLine + w.InnerException;
                 MessageBox();
             }
             catch (Exception ex)
             {
-                Session["MessageText"] = ex.InnerException;
+                Session["MessageText"] = "Failed to open url: " + url;
                 MessageBox();
             }
         }
