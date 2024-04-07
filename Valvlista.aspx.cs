@@ -163,8 +163,9 @@ namespace Valvetwebb
             }
             else
             {
-                //Visa felmeddelande och ta bort ev From-datum
-                MessageBoxOKButton("Finns inga valvposter");
+                Session["MessageText"] = "Finns inga valvposter med postnamn = eller < '" + Session["SearchPost"] + "'";
+                Session["SearchPost"] = string.Empty;
+                MessageBox();
             }
 
             DataView dv = new DataView(dt);

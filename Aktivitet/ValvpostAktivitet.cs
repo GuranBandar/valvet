@@ -97,7 +97,7 @@ namespace Valvetwebb.Aktivitet
         {
             DataSet valvPostDS = new DataSet();
             ValvPostData valvPostData = new ValvPostData();
-            List<ValvPost> ValvPost = null;
+            //List<ValvPost> ValvPost = null;
             short antArgument = 0;
             string sqlSok = "";
             string sql = "";
@@ -115,14 +115,11 @@ namespace Valvetwebb.Aktivitet
                 }
 
                 valvPostDS = valvPostData.SökValvPost(konto, sql);
+                List<ValvPost> valvPost = new List<ValvPost>(valvPostDS.Tables["ValvPost"].Rows.Count);
 
-                if (valvPostDS.Tables["ValvPost"].Rows.Count > 0)
-                {
-                    //Skapa ValvPostobjekten
-                    ValvPost = new List<ValvPost>(valvPostDS.Tables["ValvPost"].Rows.Count);
                     foreach (DataRow rad in valvPostDS.Tables["ValvPost"].Rows)
                     {
-                        ValvPost.Add(new ValvPost()
+                        valvPost.Add(new ValvPost()
                         {
                             PostID = (int)rad["PostID"],
                             AnvandarID = (int)rad["AnvandarID"],
@@ -138,13 +135,12 @@ namespace Valvetwebb.Aktivitet
                             UppdatDatum = rad["UppdatDatum"].ToString()
                         });
                     }
-                }
+                return valvPost;
             }
             catch (ValvetException)
             {
                 throw;
             }
-            return ValvPost;
         }
 
         /// <summary>

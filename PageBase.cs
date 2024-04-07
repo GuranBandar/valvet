@@ -202,7 +202,7 @@ namespace Valvetwebb
 
 
         /// <summary>
-        /// Användaren har klickat på en länken, kör nu den i den Web Browser användaren föredrar
+        /// Användaren har klickat på en länken, kör nu den i den Web Browser användaren föredrar.
         /// Funkar inte, vet inte hur jag ska lösa det heller.
         /// </summary>
         /// <param name="url">Länken som ska köras</param>
