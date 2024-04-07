@@ -290,9 +290,9 @@ namespace Valvetwebb
                 Session["MessageText"] = "Unable to find the Web Browser... " + browserType + " not found!" + Environment.NewLine + w.InnerException;
                 MessageBox();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Session["MessageText"] = "Failed to open url: " + url;
+                Session["MessageText"] = "Failed to open url: " + url ;
                 MessageBox();
             }
         }
