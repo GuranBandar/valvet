@@ -1,5 +1,6 @@
 ﻿using System;
 using Valvetwebb.Aktivitet;
+using Valvetwebb.Kontroller;
 using Valvetwebb.Objekt;
 
 namespace Valvetwebb
@@ -33,6 +34,8 @@ namespace Valvetwebb
 
             if (!IsPostBack)
             {
+                Session["Referencepage"] = "ValvPostInfo.aspx";
+                Session["MessageTitle"] = "Valvpost";
                 valvPost = new ValvPost();
 
                 if (!string.IsNullOrEmpty(Request.QueryString.ToString()))
@@ -47,6 +50,12 @@ namespace Valvetwebb
                     AnvandarID = WebUser.AnvandarID;
                     VisaValvPost();
                 }
+                //Kolla om det kommer efter att ett felmeddelande visats
+                //else if (Session["MessageText"].ToString() != null)
+                //{
+                //    Session["MessageText"] = string.Empty;
+                //    return;
+                //}
                 else
                 {
                     VisaTomValvPost();
@@ -165,7 +174,7 @@ namespace Valvetwebb
         {
             ValvPostAktivitet valvPostAktivitet;
             int nyttPostID;
-
+            //PopUpMessage message = new PopUpMessage();
             try
             {
                 if (Session["hfiNyPost"].ToString() == "Ja")
@@ -196,7 +205,9 @@ namespace Valvetwebb
                 }
                 else
                 {
+                    //PopUpMessage.Show(this, Session["MessageText"].ToString());
                     MessageBoxOKButton(Session["MessageText"].ToString());
+                    //MessageBox();
                 }
             }
             catch (Exception ex)
@@ -266,7 +277,8 @@ namespace Valvetwebb
         /// <param name="e"></param>
         protected void knappTillbaka_Click(object sender, EventArgs e)
         {
-            Response.Redirect(Session["Referencepage"].ToString());
+            //Response.Redirect(Session["Referencepage"].ToString());
+            Response.Redirect("Valvlista.aspx");
         }
 
         /// <summary>
