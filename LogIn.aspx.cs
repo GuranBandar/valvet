@@ -32,6 +32,7 @@ namespace Valvetwebb
             {
                 lblErrorMessage.Visible = false;
                 txtAnvandarNamn.Text = string.Empty;
+                txtAnvandarNamn.Focus();
                 txtLosenord.Text = string.Empty;
                 txtAnvandarNamn.Focus();
                 GetCurrentCulture();

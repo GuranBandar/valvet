@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.UI;
 using Valvetwebb.Kontroller;
 using Valvetwebb.Objekt;
+using Microsoft.AspNet;
+using System.Runtime.InteropServices;
 
 namespace Valvetwebb
 {
@@ -214,8 +216,9 @@ namespace Valvetwebb
 
             try
             {
-                string fullUrl = HttpContext.Current.Request.Url.AbsoluteUri; // Full URL (including query parameters)
-                Response.Redirect("http://google.com");
+                //WebBrowser.OpenBrowser(url);
+                //string fullUrl = HttpContext.Current.Request.Url.AbsoluteUri; // Full URL (including query parameters)
+                //Response.Redirect("http://google.com");
 
                 //Process.Start(new ProcessStartInfo
                 //{

@@ -16,6 +16,7 @@ namespace Valvetwebb
             if (!IsPostBack)
             {
                 lblErrorMessage.Visible = false;
+                knappValvlista.Focus();
                 SetSessionVariabler();
             }
         }
