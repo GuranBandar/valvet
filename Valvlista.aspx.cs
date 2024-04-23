@@ -132,6 +132,17 @@ namespace Valvetwebb
         }
 
         /// <summary>
+        /// Sakap Pdf
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void knappSkapaPdf_Click(object sender, EventArgs e)
+        {
+            PDFLista.WebUser = (Anvandare)Session["WebUser"];
+            PDFLista.CreatePdf();
+        }
+
+        /// <summary>
         /// Sök Valvpost med konto och kankse postnamn
         /// </summary>
         /// <returns></returns>

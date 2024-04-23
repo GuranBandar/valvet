@@ -48,6 +48,7 @@
                                             <asp:Button ID="knappAvbryt" runat="server" Text="Tillbaka" OnClick="knappAvbryt_Click" CssClass="ButtonClass" />
                                             <asp:Button ID="knappNy" runat="server" Text="Ny post" OnClick="knappNy_Click" CssClass="ButtonClass" />
                                             <asp:Button ID="knappLogout" runat="server" Text="Logga ut" OnClick="knappLogout_Click" />
+                                            <asp:Button ID="knappSkapaPdf" runat="server" Text="Skapa Pdf" OnClick="knappSkapaPdf_Click" />
                                         </td>
                                     </tr>
                             </table>
