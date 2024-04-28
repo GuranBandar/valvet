@@ -138,7 +138,14 @@ namespace Valvetwebb
         /// <param name="e"></param>
         protected void knappSkapaPdf_Click(object sender, EventArgs e)
         {
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + "ValvetLista.pdf" + ";");
             PDFLista.WebUser = (Anvandare)Session["WebUser"];
+            var isMobile = DeviceControl.IsMobile(Context.Request.Headers["user-agent"].ToString()); 
+
+            if (isMobile)
+            {
+                return;
+            }
             PDFLista.CreatePdf();
         }
 

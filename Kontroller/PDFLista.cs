@@ -6,6 +6,7 @@ using iTextSharp.text.pdf;
 using Valvetwebb.Aktivitet;
 using Valvetwebb.Objekt;
 using System.IO;
+using System.Drawing;
 
 namespace Valvetwebb.Kontroller
 {
@@ -67,12 +68,30 @@ namespace Valvetwebb.Kontroller
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(@"C:\\Mina program\\Valvet\\" + "ValvetLista.pdf", FileMode.Create));
             DataTable dataTable = GenereraDataTable(valvpostList);
 
+            var header = new PDFFooter();
             document.Open();
+            writer.PageEvent = header;
+            header.HeaderText = "Valvlista";
             iTextSharp.text.Font fontH = iTextSharp.text.FontFactory.GetFont(FontFactory.HELVETICA, 7, 2);
             iTextSharp.text.Font fontP = iTextSharp.text.FontFactory.GetFont(FontFactory.HELVETICA, 6);
             iTextSharp.text.Font font5 = iTextSharp.text.FontFactory.GetFont(FontFactory.HELVETICA, 5);
 
+            fontH.Color = BaseColor.GRAY;
+            //Chunk chkHeader = new Chunk("ValvetLista", fontH);
+            //Phrase p1 = new Phrase(chkHeader);
+
+            //Header objHeaderFooter = new Header();
+            //objHeaderFooter.setHeader(new Phrase(HeaderText));
+            //writer.PageEvent = new pdf objHeaderFooter;
+
+            //document.= new HeaderFooter(p1, false);
+
+            //header.Alignment = 1;
+
             PdfPTable table = new PdfPTable(dataTable.Columns.Count);
+            table.HeaderRows = 1; /*---->> this property repeats the headers of an iTextSharp PdfPTable on each page */
+            //table.TotalWidth = 900f;
+            //table.LockedWidth = true;
             PdfPRow row = null;
             float[] widths = new float[dataTable.Columns.Count];
             for (int i = 0; i < dataTable.Columns.Count; i++)
@@ -101,6 +120,7 @@ namespace Valvetwebb.Kontroller
                     table.AddCell(new Phrase(valvpost.Postnamn.ToString(), fontP));
                     table.AddCell(new Phrase(valvpost.Usernamn.ToString(), font5));
                     table.AddCell(new Phrase(valvpost.Losenord.ToString(), font5));
+                    table.AddCell(new Phrase(valvpost.Anteckningar.ToString(), font5));
                 }
             }
 
@@ -115,6 +135,7 @@ namespace Valvetwebb.Kontroller
             columns.Add("Postnamn", typeof(string));
             columns.Add("Usernamn", typeof(string));
             columns.Add("Losenord", typeof(string));
+            columns.Add("Anteckningar", typeof(string));
             return table;
         }
     }
