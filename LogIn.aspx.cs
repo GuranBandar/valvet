@@ -31,11 +31,12 @@ namespace Valvetwebb
             if (!IsPostBack)
             {
                 lblErrorMessage.Visible = false;
+                txtKonto.Text = string.Empty;
+                txtKonto.Focus();
                 txtAnvandarNamn.Text = string.Empty;
-                txtAnvandarNamn.Focus();
                 txtLosenord.Text = string.Empty;
-                txtAnvandarNamn.Focus();
                 GetCurrentCulture();
+                knappAvbryt.Visible = false;
                 Session["MessageTitle"] = "Inloggning";
                 Session["MessageText"] = string.Empty;
                 Session["Referencepage"] = "LogIn.aspx";

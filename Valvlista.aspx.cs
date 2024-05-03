@@ -42,6 +42,7 @@ namespace Valvetwebb
                 Session["MessageText"] = string.Empty;
                 this.knappSearch_Click(sender, e);
                 txtSearchPost.Focus();
+                knappSkapaPdf.Visible = false;
             }
             else
             {
