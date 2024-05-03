@@ -35,6 +35,7 @@ namespace Valvetwebb
                 Titel.Text = Session["MessageTitle"].ToString();
                 headertext.Append(Session["MessageText"].ToString());
                 lblMessagetext.Text = headertext.ToString();
+                knappOK.Focus();
                 //lblMessagetext.ForeColor = Color.Red;
             }
             catch (Exception ex)

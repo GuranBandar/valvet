@@ -113,28 +113,32 @@ namespace Valvetwebb.Aktivitet
                 {
                     sql = sql + " WHERE Konto = @Konto AND " + sqlSok;
                 }
+                else
+                {
+                    sql = sql + " WHERE Konto = @Konto ";
+                }
 
                 valvPostDS = valvPostData.SökValvPost(konto, sql);
                 List<ValvPost> valvPost = new List<ValvPost>(valvPostDS.Tables["ValvPost"].Rows.Count);
 
-                    foreach (DataRow rad in valvPostDS.Tables["ValvPost"].Rows)
+                foreach (DataRow rad in valvPostDS.Tables["ValvPost"].Rows)
+                {
+                    valvPost.Add(new ValvPost()
                     {
-                        valvPost.Add(new ValvPost()
-                        {
-                            PostID = (int)rad["PostID"],
-                            AnvandarID = (int)rad["AnvandarID"],
-                            Konto = rad["Konto"].ToString(),
-                            Usernamn = rad["Usernamn"].ToString(),
-                            Losenord = rad["Losenord"].ToString(),
-                            Postnamn = rad["Postnamn"].ToString(),
-                            Webbadress = rad["Webbadress"].ToString(),
-                            Anteckningar = rad["Anteckningar"].ToString(),
-                            AnvandarNamnSkapad = rad["AnvandarNamnSkapad"].ToString(),
-                            SkapadDatum = rad["SkapadDatum"].ToString(),
-                            AnvandarNamnUppdat = rad["AnvandarNamnUppdat"].ToString(),
-                            UppdatDatum = rad["UppdatDatum"].ToString()
-                        });
-                    }
+                        PostID = (int)rad["PostID"],
+                        AnvandarID = (int)rad["AnvandarID"],
+                        Konto = rad["Konto"].ToString(),
+                        Usernamn = rad["Usernamn"].ToString(),
+                        Losenord = rad["Losenord"].ToString(),
+                        Postnamn = rad["Postnamn"].ToString(),
+                        Webbadress = rad["Webbadress"].ToString(),
+                        Anteckningar = rad["Anteckningar"].ToString(),
+                        AnvandarNamnSkapad = rad["AnvandarNamnSkapad"].ToString(),
+                        SkapadDatum = rad["SkapadDatum"].ToString(),
+                        AnvandarNamnUppdat = rad["AnvandarNamnUppdat"].ToString(),
+                        UppdatDatum = rad["UppdatDatum"].ToString()
+                    });
+                }
                 return valvPost;
             }
             catch (ValvetException)

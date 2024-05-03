@@ -39,7 +39,7 @@ namespace Valvetwebb
                 GetCurrentCulture();
                 Session["Referencepage"] = "Valvlista.aspx";
                 Session["MessageTitle"] = "Valvlista";
-                Session["MessageText"] = string.Empty;
+                //Session["MessageText"] = string.Empty;
                 this.knappSearch_Click(sender, e);
                 txtSearchPost.Focus();
                 knappSkapaPdf.Visible = false;
@@ -182,9 +182,24 @@ namespace Valvetwebb
             }
             else
             {
-                Session["MessageText"] = "Finns inga valvposter med postnamn = eller < '" + Session["SearchPost"] + "'";
-                Session["SearchPost"] = string.Empty;
-                MessageBox();
+                if (Session["MessageText"].ToString() != string.Empty)
+                {
+                    //Då är ett meddelande redan visat
+                    Session["MessageText"] = string.Empty;
+                }
+                else
+                {
+                    if (Session["SearchPost"].ToString() == string.Empty)
+                    {
+                        Session["MessageText"] = "Finns inga valvposter";
+                    }
+                    else
+                    {
+                        Session["MessageText"] = "Finns inga valvposter med postnamn = eller < '" + Session["SearchPost"] + "'";
+                    }
+                    //Session["SearchPost"] = string.Empty;
+                    MessageBox();
+                }
             }
 
             DataView dv = new DataView(dt);
