@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Web.UI.WebControls;
 using Valvetwebb.Aktivitet;
 using Valvetwebb.Kontroller;
@@ -42,7 +43,7 @@ namespace Valvetwebb
                 //Session["MessageText"] = string.Empty;
                 this.knappSearch_Click(sender, e);
                 txtSearchPost.Focus();
-                knappSkapaPdf.Visible = false;
+                knappSkapaPdf.Visible = true;
             }
             else
             {
@@ -139,7 +140,6 @@ namespace Valvetwebb
         /// <param name="e"></param>
         protected void knappSkapaPdf_Click(object sender, EventArgs e)
         {
-            Response.AddHeader("Content-Disposition", "attachment; filename=" + "ValvetLista.pdf" + ";");
             PDFLista.WebUser = (Anvandare)Session["WebUser"];
             var isMobile = DeviceControl.IsMobile(Context.Request.Headers["user-agent"].ToString()); 
 
@@ -147,7 +147,15 @@ namespace Valvetwebb
             {
                 return;
             }
-            PDFLista.CreatePdf();
+
+            MemoryStream stream = PDFLista.CreatePdf();
+            // Set response headers
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + "ValvetLista.pdf" + ";");
+            Response.BinaryWrite(stream.ToArray());
+            Response.Flush();
+            Response.End();
+
         }
 
         /// <summary>

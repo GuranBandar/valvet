@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Data;
 using iText.Kernel.Pdf;
 using iText.Layout.Element;
+using iText.Kernel.Colors;
 using iText.Layout.Properties;
 using Valvetwebb.Aktivitet;
 using Valvetwebb.Objekt;
 using System.IO;
+using System.Web.UI;
 using System.Drawing;
 using iText.Layout;
+using iText.Kernel.Font;
+using iText.IO.Font;
 
 namespace Valvetwebb.Kontroller
 {
@@ -62,13 +66,34 @@ namespace Valvetwebb.Kontroller
         }
 
 
-        public static void CreatePdf()
+        public static MemoryStream CreatePdf()
         {
-            //List<ValvPost> valvpostList = GetData();
+            List<ValvPost> valvpostList = GetData();
 
-            //Document document = new Document();
+            FontStyle fontStyle = FontStyle.Italic;
+            MemoryStream memoryStream = new MemoryStream();
+            PdfWriter writer = new PdfWriter(memoryStream);
+            PdfDocument pdf = new PdfDocument(writer);
+            //PdfFont fontH = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
+            PdfFont font = PdfFontFactory.CreateRegisteredFont("Verdana", PdfEncodings.CP1252);
+            float fontSize = 11f;
+            float fontSizeH = 12f;
+            Document document = new Document(pdf).SetFont(font).SetFontSize(fontSize);
+
             //PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(@"C:\\Mina program\\Valvet\\" + "ValvetLista.pdf", FileMode.Create));
-            //DataTable dataTable = GenereraDataTable(valvpostList);
+            DataTable dataTable = GenereraDataTable(valvpostList);
+
+            // Add header to the document
+            Paragraph header = new Paragraph("Valvetlista")
+                                    .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+                                    .SetFontSize(fontSizeH);
+            // New line
+            Paragraph newline = new Paragraph(new Text("\n"));
+
+            //document.Add(newline);
+            document.Add(header);
+
+            //iText.Layout.Font.FontSet fontH = new iText.Layout.Font.FontSet();
 
             //var header = new PDFFooter();
             //document.Open();
@@ -80,7 +105,7 @@ namespace Valvetwebb.Kontroller
 
             //fontH.Color = BaseColor.GRAY;
 
-            //PdfPTable table = new PdfPTable(dataTable.Columns.Count);
+            Table table = new Table(dataTable.Columns.Count);
             //table.HeaderRows = 1; /*---->> this property repeats the headers of an iTextSharp PdfPTable on each page */
             //PdfPRow row = null;
             //float[] widths = new float[dataTable.Columns.Count];
@@ -95,25 +120,28 @@ namespace Valvetwebb.Kontroller
 
             //cell.Colspan = dataTable.Columns.Count;
 
-            //foreach (DataColumn c in dataTable.Columns)
-            //{
+            foreach (DataColumn c in dataTable.Columns)
+            {
+                table.AddHeaderCell(new Cell().Add(new Paragraph(c.ColumnName)).SetFontSize(fontSize));
+            }
 
-            //    table.AddCell(new Phrase(c.ColumnName, fontH));
-            //}
+            if (valvpostList.Count > 0)
+            {
+                foreach (ValvPost valvpost in valvpostList)
+                {
+                    table.AddCell(new Cell().Add(new Paragraph(valvpost.Postnamn.ToString())).SetFontSize(fontSize));
+                    table.AddCell(new Cell().Add(new Paragraph(valvpost.Usernamn.ToString())).SetFontSize(fontSize));
+                    table.AddCell(new Cell().Add(new Paragraph(valvpost.Losenord.ToString())).SetFontSize(fontSize));
+                    table.AddCell(new Cell().Add(new Paragraph(valvpost.Anteckningar.ToString())).SetFontSize(fontSize));
+                }
+            }
 
-            //if (valvpostList.Count > 0)
-            //{
-            //    foreach (ValvPost valvpost in valvpostList)
-            //    {
-            //        table.AddCell(new Phrase(valvpost.Postnamn.ToString(), fontP));
-            //        table.AddCell(new Phrase(valvpost.Usernamn.ToString(), font5));
-            //        table.AddCell(new Phrase(valvpost.Losenord.ToString(), font5));
-            //        table.AddCell(new Phrase(valvpost.Anteckningar.ToString(), font5));
-            //    }
-            //}
+            document.Add(table);
+            document.Close();
 
-            //document.Add(table);
-            //document.Close();
+            return memoryStream;
+            // Return the PDF file
+            //return File(memoryStream.ToArray(), "application/pdf", $"Report.pdf");
         }
 
         private static DataTable GenereraDataTable(List<ValvPost> dt)
