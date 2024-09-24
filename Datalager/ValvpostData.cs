@@ -68,6 +68,37 @@ namespace Valvetwebb.Datalager
         }
 
         /// <summary>
+        /// Hämtar max postid från tabellen Valvpost i aktuell databas med SQL.
+        /// </summary>
+        /// <returns>Typat dataset med efterfrågat data</returns>
+        public string HämtaMaxPostID()
+        {
+            DataSet valvpostDS = new DataSet();
+            string nyttPostID = string.Empty;
+            string sql;
+
+            try
+            {
+                sql = "SELECT v.PostID FROM ValvPost v " +
+                    " ORDER BY v.PostID DESC";
+                valvpostDS = DatabasAccess.RunSql(sql);
+            }
+            catch (ValvetException hex)
+            {
+                throw hex;
+            }
+            finally
+            {
+                if (DatabasAccess != null)
+                {
+                    DatabasAccess.Dispose();
+                }
+            }
+            nyttPostID = valvpostDS.Tables[0].Rows[0]["PostID"].ToString();
+            return nyttPostID;
+        }
+
+        /// <summary>
         /// Hämtar rad/-er från tabellen Golfklubb i aktuell databas med angiven nyckel.
         /// </summary>
         /// <param name="sqlSok">Eventuellt where-villkor</param>
@@ -150,7 +181,7 @@ namespace Valvetwebb.Datalager
         /// <param name="Valvpost">Valvpost</param>
         /// <param name="felID">Felmeddelande i Ordlistan som ska visas</param>
         /// <param name="feltext">Ev kompletterande felmeddelande som returneras</param>
-        public int SparaNyValvPost(ValvPost ValvPost, ref string felID, ref string feltext)
+        public void SparaNyValvPost(ValvPost ValvPost, ref string felID, ref string feltext)
         {
             string sql;
             int nyttPostID;
@@ -176,8 +207,8 @@ namespace Valvetwebb.Datalager
                     new DatabasParameters("@SkapadDatum", DataTyp.VarChar, ValvPost.SkapadDatum.ToString())
                 };
                 DatabasAccess.RunSql(sql, dbParameters);
-                sql = "SELECT LAST_INSERT_ID()";
-                nyttPostID = Convert.ToInt32(DatabasAccess.ExecuteScalar(sql));
+                //sql = "SELECT LAST_INSERT_ID()";
+                //nyttPostID = Convert.ToInt32(DatabasAccess.ExecuteScalar(sql));
                 DatabasAccess.BekräftaTransaktion();
             }
             catch (ValvetException hex)
@@ -196,7 +227,7 @@ namespace Valvetwebb.Datalager
             {
                 DatabasAccess.Dispose();
             }
-            return nyttPostID;
+            //return nyttPostID;
         }
 
         /// <summary>

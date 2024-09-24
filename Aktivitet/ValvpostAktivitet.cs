@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using Valvetwebb.Datalager;
 using Valvetwebb.Kontroller;
@@ -158,14 +159,15 @@ namespace Valvetwebb.Aktivitet
         {
             int nyttPostID = 0;
             bool kollaOK = true;
-            //                Kolla(bokningDag, ref felID, ref feltext);
 
             if (kollaOK)
             {
                 ValvPostData valvPostData = new ValvPostData();
                 if (nyPost)
                 {
-                    nyttPostID = valvPostData.SparaNyValvPost(valvPost, ref felID, ref feltext);
+                    valvPostData.SparaNyValvPost(valvPost, ref felID, ref feltext);
+                    nyttPostID = Convert.ToInt32(valvPostData.HämtaMaxPostID());
+                    valvPost.PostID = nyttPostID;
                 }
                 else
                 {
