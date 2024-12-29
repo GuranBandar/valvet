@@ -148,13 +148,14 @@ namespace Valvetwebb
                 return;
             }
 
-            MemoryStream stream = PDFLista.CreatePdf();
+            PDFLista.ExportToPdf();
+            //MemoryStream stream = PDFLista.CreatePdf();
             // Set response headers
-            Response.ContentType = "application/pdf";
-            Response.AddHeader("Content-Disposition", "attachment; filename=" + "ValvetLista.pdf" + ";");
-            Response.BinaryWrite(stream.ToArray());
-            Response.Flush();
-            Response.End();
+            //Response.ContentType = "application/pdf";
+            //Response.AddHeader("Content-Disposition", "attachment; filename=" + "ValvetLista.pdf" + ";");
+            //Response.BinaryWrite(stream.ToArray());
+            //Response.Flush();
+            //Response.End();
 
         }
 

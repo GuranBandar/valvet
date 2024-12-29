@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Valvet {
+namespace Bokningswebben {
     
     
     public partial class ViewSwitcher {

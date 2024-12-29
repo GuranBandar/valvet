@@ -1,13 +1,9 @@
-﻿using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
-using iText.Layout.Properties;
-using System;
+﻿using System;
 
 namespace Valvetwebb.Kontroller
 {
     //public class PDFFooter : PdfPageEventHelper
-    public class PDFFoote
+    public class PDFFooter
     {
         public string HeaderText { get; set; }
         

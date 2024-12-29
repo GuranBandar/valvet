@@ -3,7 +3,7 @@ using System.Web;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls.Resolvers;
 
-namespace Valvetwebb
+namespace Bokningswebben
 {
     public partial class ViewSwitcher : System.Web.UI.UserControl
     {
