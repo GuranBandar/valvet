@@ -47,8 +47,10 @@
         <div id="page">
             <div id="header">
                 <span>
-                    <asp:Literal ID="litDatabas" EnableViewState="false" runat="server" />
-                    <asp:Literal ID="litUser" EnableViewState="false" runat="server" />
+                    <asp:Label ID="lblDatabas" runat="server" CssClass="messagetext"></asp:Label>
+                    <asp:Label ID="lblUser" runat="server" CssClass="messagetext"></asp:Label>
+                    <%--                   <asp:Literal ID="litDatabas" EnableViewState="false" runat="server" />
+                    <asp:Literal ID="litUser" EnableViewState="false" runat="server--%>
                 </span>
             </div>
             <!-- content place holder -->

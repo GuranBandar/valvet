@@ -90,9 +90,9 @@ namespace Valvetwebb
         {
             if (Session["WebUser"] != null)
             {
-                litUser.Text = "Användare: " + WebUser.Anvandarnamn; // display user name
+                lblUser.Text = "Användare: " + WebUser.Anvandarnamn; // display user name
                 string database = ConfigurationManager.AppSettings["Default_Databas"];
-                litDatabas.Text = " Database: " + database;
+                lblDatabas.Text = " Database: " + database;
             }
         }
     }
